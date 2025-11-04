@@ -1,0 +1,1 @@
+export { storiesData } from './data';
