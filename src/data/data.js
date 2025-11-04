@@ -17,7 +17,7 @@ export const storiesData = [
     characters: [
       {
         name: "Romeo",
-        img: "../assets/stories/romeo-and-juliet/characters/romeo.webp",
+        img: "../../src/assets/stories/romeo-and-juliet/characters/romeo.webp",
         description:
           "The male protagonist, who is passionate, impulsive, and romantic young man, about 16 years old. He is deeply emotional and idealistic about love. At first, he’s infatuated with Rosaline, but upon meeting Juliet, he falls in love instantly.",
       },
