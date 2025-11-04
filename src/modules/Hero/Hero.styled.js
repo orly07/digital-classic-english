@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import heroBg from "../../assets/hero-bg.jpg";
 
 export const HeroSection = styled.section`
   height: 100vh;
   min-height: 600px;
-    background: url("/src/assets/hero-bg.jpg") center/cover no-repeat; 
+    background: url(${heroBg}) center/cover no-repeat; 
   display: flex;
   align-items: center;
   justify-content: center;
