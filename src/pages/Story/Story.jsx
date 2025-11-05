@@ -2,7 +2,6 @@ import React, { useMemo, memo, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { storiesData } from '../../data/data';
 import CharacterCard from "../../components/Cards/CharacterCard/CharacterCard";
-import SettingCard from '../../components/Cards/SettingCard';
 import ScrollGallery from '../../components/ScrollGallery/ScrollGallery';
 import  Button  from '../../components/Buttons/Button';
 import { StoryWrapper } from './Story.styled';
@@ -68,13 +67,6 @@ const Story = memo(() => {
           </ScrollGallery>
         )}
 
-        {story.settings?.length > 0 && (
-          <ScrollGallery title="Settings">
-            {story.settings.map((setting) => (
-              <SettingCard key={setting.name} setting={setting} />
-            ))}
-          </ScrollGallery>
-        )}
       </div>
     </StoryWrapper>
   );
