@@ -8,7 +8,6 @@ import {
   SonnetText, 
   AudioControls,
   PlaybackControls,
-  BackButton,
   VoiceSettings,
   SettingsPanel,
   ControlButtonsTop,
@@ -137,9 +136,6 @@ const SonnetDetail = memo(() => {
 
   return (
     <SonnetDetailWrapper>
-      <BackButton to="/">
-        &larr; Back to Sonnets
-      </BackButton>
 
       <SonnetContent>
         <h1>{sonnet.title}</h1>

@@ -12,23 +12,6 @@ export const SonnetDetailWrapper = styled.div`
   }
 `;
 
-export const BackButton = styled(Link)`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #00b96b;
-  text-decoration: none;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-
-  &:hover {
-    background: rgba(0, 185, 107, 0.1);
-    transform: translateX(-4px);
-  }
-`;
 
 export const SonnetContent = styled.div`
   text-align: center;
