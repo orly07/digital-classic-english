@@ -5,7 +5,7 @@ export const GalleryContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 3rem 0 1.5rem;
-
+position: relative;
   h3 {
     font-size: 2rem;
     font-weight: 700;
@@ -34,17 +34,20 @@ export const ScrollContainer = styled.div`
 `;
 export const GalleryContent = styled.div`
   display: flex;
-  overflow-x: auto;
   gap: 1.5rem;
+  overflow-x: auto;
+  overflow-y: auto; /* Add this line for vertical overflow */
   padding: 1rem 0;
   margin-bottom: 3rem;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
-
+  
+  /* Webkit browsers */
   &::-webkit-scrollbar {
     display: none;
   }
+
 
   @media (max-width: 768px) {
     gap: 1rem;

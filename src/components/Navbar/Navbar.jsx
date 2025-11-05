@@ -2,15 +2,15 @@ import { memo, useState, useCallback, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link, useLocation } from "react-router-dom";
 import { FaBook, FaTimes, FaBars } from "react-icons/fa";
-import { 
-  NavbarContainer, 
-  NavLinks, 
-  NavItem, 
+import {
+  NavbarContainer,
+  NavLinks,
+  NavItem,
   MobileMenuButton,
   MobileMenu,
   MobileMenuOverlay,
   MobileNavLinks,
-  MobileNavItem
+  MobileNavItem,
 } from "./Navbar.styled";
 
 const Navbar = memo(() => {
@@ -26,11 +26,11 @@ const Navbar = memo(() => {
     }
 
     const handleScroll = () => {
-      const heroSection = document.getElementById('hero-section');
+      const heroSection = document.getElementById("hero-section");
       if (heroSection) {
         const heroHeight = heroSection.offsetHeight;
         const scrollPosition = window.scrollY;
-        
+
         if (scrollPosition > heroHeight - 100) {
           setIsScrolled(true);
         } else {
@@ -41,25 +41,25 @@ const Navbar = memo(() => {
 
     handleScroll();
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
   // Handle body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.classList.add('menu-open');
+      document.body.classList.add("menu-open");
     } else {
-      document.body.classList.remove('menu-open');
+      document.body.classList.remove("menu-open");
     }
 
     return () => {
-      document.body.classList.remove('menu-open');
+      document.body.classList.remove("menu-open");
     };
   }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = useCallback(() => {
-    setIsMobileMenuOpen(prev => !prev);
+    setIsMobileMenuOpen((prev) => !prev);
   }, []);
 
   const closeMobileMenu = useCallback(() => {
@@ -76,33 +76,37 @@ const Navbar = memo(() => {
   }, [location, closeMobileMenu]);
 
   // Navigation items configuration
-  const navItems = isHome 
+  const navItems = isHome
     ? [
+        { to: "hero-section", label: "Home", type: "scroll" },
         { to: "stories", label: "Stories", type: "scroll" },
         { to: "sonnets", label: "Sonnets", type: "scroll" },
-        { to: "about", label: "About", type: "scroll" }
+        { to: "about", label: "About", type: "scroll" },
       ]
     : [
         { to: "/", label: "Home", type: "link" },
-        { to: "/#about", label: "About", type: "link" }
+        { to: "/#about", label: "About", type: "link" },
       ];
 
   return (
     <>
-      <NavbarContainer $isScrolled={isScrolled} $isMobileMenuOpen={isMobileMenuOpen}>
+      <NavbarContainer
+        $isScrolled={isScrolled}
+        $isMobileMenuOpen={isMobileMenuOpen}
+      >
         <Link to="/" className="logo" onClick={closeMobileMenu}>
           <FaBook /> CLASSIC ENGLISH
         </Link>
-        
+
         {/* Desktop Navigation */}
         <NavLinks>
-          {navItems.map((item) => 
+          {navItems.map((item) =>
             item.type === "scroll" ? (
-              <ScrollLink 
+              <ScrollLink
                 key={item.to}
-                to={item.to} 
-                smooth 
-                duration={1000} 
+                to={item.to}
+                smooth
+                duration={1000}
                 offset={-80}
               >
                 <NavItem $isScrolled={isScrolled}>{item.label}</NavItem>
@@ -116,8 +120,8 @@ const Navbar = memo(() => {
         </NavLinks>
 
         {/* Mobile Menu Button */}
-        <MobileMenuButton 
-          onClick={toggleMobileMenu} 
+        <MobileMenuButton
+          onClick={toggleMobileMenu}
           aria-label="Toggle menu"
           aria-expanded={isMobileMenuOpen}
           $isScrolled={isScrolled}
@@ -127,9 +131,7 @@ const Navbar = memo(() => {
       </NavbarContainer>
 
       {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <MobileMenuOverlay onClick={closeMobileMenu} />
-      )}
+      {isMobileMenuOpen && <MobileMenuOverlay onClick={closeMobileMenu} />}
 
       {/* Mobile Menu Sidebar */}
       <MobileMenu $isOpen={isMobileMenuOpen} aria-hidden={!isMobileMenuOpen}>
@@ -137,33 +139,26 @@ const Navbar = memo(() => {
           <Link to="/" className="logo" onClick={closeMobileMenu}>
             CLASSIC ENGLISH
           </Link>
-          <MobileMenuButton 
-            onClick={toggleMobileMenu} 
-            aria-label="Close menu"
-          >
+          <MobileMenuButton onClick={toggleMobileMenu} aria-label="Close menu">
             <FaTimes />
           </MobileMenuButton>
         </div>
 
         <MobileNavLinks>
-          {navItems.map((item) => 
+          {navItems.map((item) =>
             item.type === "scroll" ? (
-              <ScrollLink 
+              <ScrollLink
                 key={item.to}
-                to={item.to} 
-                smooth 
-                duration={1000} 
+                to={item.to}
+                smooth
+                duration={1000}
                 offset={-80}
                 onClick={handleNavClick}
               >
                 <MobileNavItem>{item.label}</MobileNavItem>
               </ScrollLink>
             ) : (
-              <Link 
-                key={item.to} 
-                to={item.to}
-                onClick={handleNavClick}
-              >
+              <Link key={item.to} to={item.to} onClick={handleNavClick}>
                 <MobileNavItem>{item.label}</MobileNavItem>
               </Link>
             )
@@ -178,5 +173,5 @@ const Navbar = memo(() => {
   );
 });
 
-Navbar.displayName = 'Navbar';
+Navbar.displayName = "Navbar";
 export default Navbar;

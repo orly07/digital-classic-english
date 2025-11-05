@@ -6,6 +6,8 @@ import "./styles/global.css";
 // Lazy load pages
 const LandingPage = lazy(() => import("./pages/LandingPage/LandingPage"));
 const Story = lazy(() => import("./pages/Story/Story"));
+const About = lazy(() => import("./modules/About/About"));
+const SonnetDetail = lazy(() => import("./pages/SonnetDetail/SonnetDetail"));
 
 // Loading component
 const LoadingFallback = () => (
@@ -26,7 +28,8 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/story/:id" element={<Story />} />
-          {/* Remove About route since it's now part of LandingPage */}
+          <Route path="/sonnet/:id" element={<SonnetDetail />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Suspense>
     </Layout>

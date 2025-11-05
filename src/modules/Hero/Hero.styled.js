@@ -1,27 +1,38 @@
 import styled from "styled-components";
 import heroBg from "../../assets/hero-bg.jpg";
+import heroBgMobile from "../../assets/classic-english-cover-mobile.jpg";
 
 export const HeroSection = styled.section`
   height: 100vh;
   min-height: 600px;
-    background: url(${heroBg}) center/cover no-repeat; 
+  background: url(${heroBg}) center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   position: relative;
   padding: 0 2rem;
+  overflow: hidden;
 
+  /* 🔹 Overlay */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* adjust opacity for darkness */
+    z-index: 0;
+  }
 
   @media (max-width: 768px) {
     min-height: 500px;
     padding: 0 1rem;
+    background: url(${heroBgMobile}) center/cover no-repeat;
   }
 `;
 
 export const HeroContent = styled.div`
   position: relative;
-  z-index: 1;
+  z-index: 1; /* ensures content is above overlay */
   text-align: center;
   max-width: 800px;
 
@@ -70,9 +81,9 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroButton = styled.button`
-  background: ${props => props.$primary ? "#00b96b" : "transparent"};
+  background: ${(props) => (props.$primary ? "#00b96b" : "transparent")};
   color: white;
-  border: ${props => props.$primary ? "none" : "2px solid white"};
+  border: ${(props) => (props.$primary ? "none" : "2px solid white")};
   border-radius: 12px;
   padding: 14px 32px;
   font-weight: 600;
@@ -82,8 +93,8 @@ export const HeroButton = styled.button`
   min-width: 160px;
 
   &:hover {
-    background: ${props => props.$primary ? "#009e5a" : "white"};
-    color: ${props => props.$primary ? "white" : "#333"};
+    background: ${(props) => (props.$primary ? "#009e5a" : "white")};
+    color: ${(props) => (props.$primary ? "white" : "#333")};
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
