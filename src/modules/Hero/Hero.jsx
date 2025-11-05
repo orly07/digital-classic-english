@@ -18,7 +18,7 @@ const Hero = memo(() => {
             as={Link}
             to="stories"
             smooth
-            duration={500}
+            duration={1000}
             variant="primary"
             size="large"
           >
@@ -28,7 +28,7 @@ const Hero = memo(() => {
             as={Link}
             to="sonnets"
             smooth
-            duration={500}
+            duration={1000}
             variant="secondary"
             size="large"
           >
