@@ -1,5 +1,11 @@
 import { memo } from "react";
-import { CardContainer, CardImage, CardContent, CardAuthor } from "./SonnetCard.styled";
+import { 
+  CardContainer, 
+  CardImage, 
+  CardContent, 
+  CardAuthor, 
+  ListenButton 
+} from "./SonnetCard.styled";
 
 const SonnetCard = memo(({ sonnet }) => {
   return (
@@ -9,6 +15,9 @@ const SonnetCard = memo(({ sonnet }) => {
         <h5>{sonnet.title}</h5>
         <p>{sonnet.description}</p>
         <CardAuthor>By {sonnet.author}</CardAuthor>
+        <ListenButton to={`/sonnet/${sonnet.id}`}>
+          Listen Now
+        </ListenButton>
       </CardContent>
     </CardContainer>
   );
