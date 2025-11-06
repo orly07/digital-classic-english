@@ -1,3 +1,4 @@
+// src/components/Cards/StoryCard.styled.js
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { color, shadow, breakpoint, typography } from "../../styles/theme";

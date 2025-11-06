@@ -1,31 +1,30 @@
-import React, { memo, useMemo } from "react";
-import {
-  FilterContainer,
-  Dropdown,
-  DropdownLabel,
-} from "./FilterDropdown.styled";
+import React, { memo, useMemo, useCallback } from "react";
+import * as S from "./FilterDropdown.styled";
 
 const FilterDropdown = memo(
   ({
-    data,
+    data = [],
     selectedAuthor,
     onAuthorChange,
     placeholder = "All Authors",
     label = "Filter by Author",
   }) => {
     const authors = useMemo(() => {
-      const uniqueAuthors = [...new Set(data.map((item) => item.author))];
-      return uniqueAuthors.sort();
+      const uniqueAuthors = Array.from(new Set(data.map(item => item.author))).sort();
+      return uniqueAuthors;
     }, [data]);
 
-    const handleChange = (event) => {
-      onAuthorChange(event.target.value || "");
-    };
+    const handleChange = useCallback(
+      (e) => onAuthorChange(e.target.value || ""),
+      [onAuthorChange]
+    );
 
     return (
-      <FilterContainer>
-        <DropdownLabel>{label}</DropdownLabel>
-        <Dropdown
+      <S.FilterContainer>
+        <S.DropdownLabel htmlFor="author-dropdown">{label}</S.DropdownLabel>
+
+        <S.Dropdown
+          id="author-dropdown"
           value={selectedAuthor}
           onChange={handleChange}
           aria-label={label}
@@ -36,8 +35,8 @@ const FilterDropdown = memo(
               {author}
             </option>
           ))}
-        </Dropdown>
-      </FilterContainer>
+        </S.Dropdown>
+      </S.FilterContainer>
     );
   }
 );
