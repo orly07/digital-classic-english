@@ -1,13 +1,10 @@
-// ICONS
 import { FaBookOpen, FaLightbulb, FaHandshake, FaGlobe } from "react-icons/fa";
 
-// TEAM IMAGES
 import GeanImg from "../assets/team/gean-jpg.jpg";
 import DarcyImg from "../assets/team/darcy-jpg.jpg";
 import IrisImg from "../assets/team/iris-jpg.jpg";
 import OrlandoImg from "../assets/team/orlando.webp";
 
-// About Section Data
 export const missionVisionData = [
   {
     title: "Our Mission",

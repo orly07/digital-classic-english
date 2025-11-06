@@ -26,7 +26,6 @@ const CharacterCard = memo(({ character }) => {
     setShowLines(false);
   }, []);
 
-  // Check if description is long enough to need truncation
   const needsTruncation = character.description && character.description.length > 60;
   const hasLines = character.lines && character.lines.trim().length > 0;
 

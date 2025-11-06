@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { Helmet } from "react-helmet";
 
 const GlobalStyle = createGlobalStyle`
   
@@ -15,9 +14,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
       'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
-    line-height: 1.6;
+    line-height: 1.6;    color: #333;
+  }
+  body {
     scroll-behavior: smooth;
-    color: #333;
+
   }
 
   code {

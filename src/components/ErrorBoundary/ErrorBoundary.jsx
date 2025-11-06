@@ -1,34 +1,28 @@
-// ErrorBoundary.jsx (recommended)
-import React from 'react';
-
+import React from "react";
+import * as S from "./ErrorBoundary.styled";
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false, error: null };
   }
-
   static getDerivedStateFromError(error) {
     return { hasError: true, error };
   }
-
   componentDidCatch(error, errorInfo) {
-    console.error('Error caught by boundary:', error, errorInfo);
+    console.error("Error caught by boundary:", error, errorInfo);
   }
-
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ padding: '2rem', textAlign: 'center', marginTop: '80px' }}>
+        <S.ErrorWrapper>
           <h2>Something went wrong.</h2>
           <button onClick={() => window.location.reload()}>
             Refresh Page
           </button>
-        </div>
+        </S.ErrorWrapper>
       );
     }
-
     return this.props.children;
   }
 }
-
 export default ErrorBoundary;

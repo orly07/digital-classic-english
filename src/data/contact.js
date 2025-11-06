@@ -1,4 +1,3 @@
-// src/data/contact.js
 export const contactData = {
   email: "classicstories@gmail.com",
   phone: "09095984478",

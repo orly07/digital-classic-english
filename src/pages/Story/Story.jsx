@@ -1,7 +1,7 @@
 import React, { useMemo, memo, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { storiesData } from '../../data'; 
-import CharacterCard from "../../components/Cards/CharacterCard/CharacterCard";
+import CharacterCard from "../../components/Cards/CharacterCard";
 import ScrollGallery from '../../components/ScrollGallery/ScrollGallery';
 import Button from '../../components/Buttons/Button';
 import { StoryWrapper } from './Story.styled';

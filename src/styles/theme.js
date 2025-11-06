@@ -1,10 +1,11 @@
-
+// Media Query
 export const breakpoint = {
   mobile: "@media (max-width: 768px)",
   tablet: "@media (min-width: 769px) and (max-width: 1024px)",
   desktop: "@media (min-width: 1025px)",
 };
 
+// Color
 export const color = {
   transparent: "transparent",
   white: "#ffffff",
@@ -39,6 +40,7 @@ export const color = {
   },
 };
 
+// Box Shadow
 export const shadow = {
   xs: "0 1px 2px rgba(0, 0, 0, 0.05)",
   sm: "0 2px 4px rgba(0, 0, 0, 0.08)",
@@ -47,6 +49,7 @@ export const shadow = {
   xl: "0 20px 40px rgba(0, 0, 0, 0.12)",
 };
 
+// Text
 export const typography = {
   fontFamily: "'Inter', 'Roboto', sans-serif",
   fontSize: {

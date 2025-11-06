@@ -1,19 +1,14 @@
 import React, { memo } from "react";
-import {
-  AboutSection,
-  MissionVisionValues,
-  TeamSection,
-  ContactSection,
-} from "./About.styled";
+import * as S from "./About.styled";
 import MissionVisionCard from "../../components/Cards/MissionVisionCard";
 import TeamCard from "../../components/Cards/TeamCard";
 import Button from "../../components/Buttons/Button";
-import { missionVisionData, teamData, contactData } from "../../data"; // Added teamData import
+import { missionVisionData, teamData, contactData } from "../../data";
 
 const About = memo(() => {
   return (
     <>
-      <AboutSection id="about">
+      <S.AboutSection id="about">
         <h1>About Us</h1>
         <p>
           Making literature more engaging through Classic English digital storytelling.
@@ -27,7 +22,7 @@ const About = memo(() => {
           relatable, and impactful for today's generation.
         </p>
 
-        <MissionVisionValues>
+        <S.MissionVisionValues>
           {missionVisionData.map((item, index) => (
             <MissionVisionCard
               key={index}
@@ -36,10 +31,10 @@ const About = memo(() => {
               values={item.values}
             />
           ))}
-        </MissionVisionValues>
-      </AboutSection>
+        </S.MissionVisionValues>
+      </S.AboutSection>
 
-      <TeamSection>
+      <S.TeamSection>
         <h2>Meet the Team</h2>
         <div className="team-container">
           {teamData.map((member, index) => (
@@ -49,9 +44,9 @@ const About = memo(() => {
             />
           ))}
         </div>
-      </TeamSection>
+      </S.TeamSection>
 
-      <ContactSection>
+      <S.ContactSection>
         <h2>Contact Us</h2>
         <p>We'd love to hear from you! Reach out with questions or ideas.</p>
         <div className="contact-info">
@@ -67,7 +62,7 @@ const About = memo(() => {
         >
           Send us an Email
         </Button>
-      </ContactSection>
+      </S.ContactSection>
     </>
   );
 });

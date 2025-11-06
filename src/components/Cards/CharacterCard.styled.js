@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color, shadow, breakpoint, typography } from "../../../styles/theme";
+import { color, shadow, breakpoint, typography } from "../../styles/theme";
 
 export const CardContainer = styled.div`
   min-width: 350px;
@@ -119,7 +119,7 @@ export const CardDescription = styled.p`
   line-height: 1.5;
   margin: 0;
   display: -webkit-box;
-  -webkit-line-clamp: ${(props) => (props.$isExpanded ? "unset" : "3")};
+  -webkit-line-clamp: ${(props) => (props.$isExpanded ? "unset" : "2")};
   -webkit-box-orient: vertical;
   overflow: ${(props) => (props.$isExpanded ? "visible" : "hidden")};
 

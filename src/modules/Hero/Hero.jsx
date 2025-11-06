@@ -1,12 +1,12 @@
 import React, { memo } from "react";
-import { HeroSection, HeroContent } from "./Hero.styled";
+import * as S from "./Hero.styled";
 import  Button  from "../../components/Buttons/Button";
 import { Link } from "react-scroll";
 
 const Hero = memo(() => {
   return (
-    <HeroSection id="hero-section">
-      <HeroContent>
+    <S.HeroSection id="hero-section">
+      <S.HeroContent>
         <h1>Bringing Literature to Life through Digital Storytelling</h1>
         <h2>
           Explore stories with narration, visuals, and interactive content
@@ -35,8 +35,8 @@ const Hero = memo(() => {
             Explore Sonnets
           </Button>
         </div>
-      </HeroContent>
-    </HeroSection>
+      </S.HeroContent>
+    </S.HeroSection>
   );
 });
 

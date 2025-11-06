@@ -7,36 +7,27 @@ import React, {
   useState,
   useCallback,
 } from "react";
-import { storiesData, sonnetsData } from "../../data"; // Updated import path
+import { storiesData, sonnetsData } from "../../data";
 import StoryCard from "../../components/Cards/StoryCard";
 import SonnetCard from "../../components/Cards/SonnetCard";
 import FilterDropdown from "../../components/Filter/FilterDropdown";
 import ScrollButton from "../../components/Buttons/ScrollButton";
+import LoadingFallback from "../../components/Loading/LoadingFallback";
 import Hero from "../../modules/Hero/Hero";
-import {
-  Section,
-  ScrollContainer,
-  ScrollContent,
-  SectionHeader,
-} from "./LandingPage.styled";
+import * as S from "./LandingPage.styled";
 
-// Lazy load About
 const About = lazy(() => import("../../modules/About/About"));
 
 const LandingPage = memo(() => {
-  // Refs for scrolling
   const storiesRef = useRef(null);
   const sonnetsRef = useRef(null);
 
-  // State for filters
   const [storiesFilter, setStoriesFilter] = useState("");
   const [sonnetsFilter, setSonnetsFilter] = useState("");
 
-  // Memoized data
   const stories = useMemo(() => storiesData, []);
   const sonnets = useMemo(() => sonnetsData, []);
 
-  // Filtered data
   const filteredStories = useMemo(() => {
     if (!storiesFilter) return stories;
     return stories.filter((story) => story.author === storiesFilter);
@@ -47,7 +38,6 @@ const LandingPage = memo(() => {
     return sonnets.filter((sonnet) => sonnet.author === sonnetsFilter);
   }, [sonnets, sonnetsFilter]);
 
-  // Scroll function
   const scroll = useCallback((ref, direction) => {
     if (ref.current) {
       const scrollAmount = 300;
@@ -55,7 +45,6 @@ const LandingPage = memo(() => {
     }
   }, []);
 
-  // Filter handlers
   const handleStoriesFilterChange = useCallback((author) => {
     setStoriesFilter(author);
   }, []);
@@ -64,7 +53,6 @@ const LandingPage = memo(() => {
     setSonnetsFilter(author);
   }, []);
 
-  // Reset filters
   const resetStoriesFilter = useCallback(() => {
     setStoriesFilter("");
   }, []);
@@ -77,8 +65,8 @@ const LandingPage = memo(() => {
     <>
       <Hero />
 
-      <Section id="stories">
-        <SectionHeader>
+      <S.Section id="stories">
+        <S.SectionHeader>
           <div className="title-section">
             <h2>Explore Stories</h2>
             {storiesFilter && (
@@ -102,10 +90,10 @@ const LandingPage = memo(() => {
             placeholder="All Stories"
             label="Filter Stories"
           />
-        </SectionHeader>
+        </S.SectionHeader>
 
-        <ScrollContainer>
-          <ScrollContent ref={storiesRef}>
+        <S.ScrollContainer>
+          <S.ScrollContent ref={storiesRef}>
             {filteredStories.length > 0 ? (
               filteredStories.map((story) => (
                 <StoryCard key={story.id} story={story} />
@@ -118,8 +106,8 @@ const LandingPage = memo(() => {
                 </button>
               </div>
             )}
-          </ScrollContent>
-        </ScrollContainer>
+          </S.ScrollContent>
+        </S.ScrollContainer>
 
         {filteredStories.length > 0 && (
           <div className="scroll-controls">
@@ -135,10 +123,10 @@ const LandingPage = memo(() => {
             />
           </div>
         )}
-      </Section>
+      </S.Section>
 
-      <Section id="sonnets">
-        <SectionHeader>
+      <S.Section id="sonnets">
+        <S.SectionHeader>
           <div className="title-section">
             <h2>Other Literary Works</h2>
             {sonnetsFilter && (
@@ -162,10 +150,10 @@ const LandingPage = memo(() => {
             placeholder="All Sonnets"
             label="Filter Sonnets"
           />
-        </SectionHeader>
+        </S.SectionHeader>
 
-        <ScrollContainer>
-          <ScrollContent ref={sonnetsRef}>
+        <S.ScrollContainer>
+          <S.ScrollContent ref={sonnetsRef}>
             {filteredSonnets.length > 0 ? (
               filteredSonnets.map((sonnet) => (
                 <SonnetCard key={sonnet.id} sonnet={sonnet} />
@@ -178,8 +166,8 @@ const LandingPage = memo(() => {
                 </button>
               </div>
             )}
-          </ScrollContent>
-        </ScrollContainer>
+          </S.ScrollContent>
+        </S.ScrollContainer>
 
         {filteredSonnets.length > 0 && (
           <div className="scroll-controls">
@@ -195,15 +183,9 @@ const LandingPage = memo(() => {
             />
           </div>
         )}
-      </Section>
+      </S.Section>
 
-      <Suspense
-        fallback={
-          <div style={{ textAlign: "center", padding: "4rem" }}>
-            Loading About...
-          </div>
-        }
-      >
+      <Suspense fallback={<LoadingFallback />}>
         <About />
       </Suspense>
     </>
