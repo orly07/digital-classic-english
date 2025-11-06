@@ -60,6 +60,7 @@ const Navbar = () => {
             { to: "stories", label: "Stories", type: "scroll" },
             { to: "sonnets", label: "Sonnets", type: "scroll" },
             { to: "about", label: "About", type: "scroll" },
+            {to: "authors", label: "Authors", type: "link"}
           ]
         : [
             { to: "/", label: "Home", type: "link" },

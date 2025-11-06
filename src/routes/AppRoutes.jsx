@@ -6,7 +6,7 @@ const LandingPage = lazy(() => import("../pages/LandingPage"));
 const Story = lazy(() => import("../pages/StoryPage"));
 const About = lazy(() => import("../modules/About"));
 const SonnetPage = lazy(() => import("../pages/SonnetPage"));
-
+const AuthorsPage = lazy(() => import("../pages/AuthorsPage"))
 const AppRoutes = () => {
   return (
     <Suspense fallback={<LoadingFallback />}>
@@ -15,6 +15,7 @@ const AppRoutes = () => {
         <Route path="/story/:id" element={<Story />} />
         <Route path="/sonnet/:id" element={<SonnetPage />} />
         <Route path="/about" element={<About />} />
+        <Route path="/authors" element={ <AuthorsPage />}/>
       </Routes>
     </Suspense>
   );
