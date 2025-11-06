@@ -1,51 +1,61 @@
-import React, { useMemo, memo, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { storiesData } from '../../data'; 
+import React, { useMemo, memo, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { motion } from "framer-motion";
+import { storiesData } from "../../data";
 import CharacterCard from "../../components/Cards/CharacterCard";
-import ScrollGallery from '../../components/ScrollGallery/ScrollGallery';
-import Button from '../../components/Buttons/Button';
-import { StoryWrapper } from './StoryPage.styled';
+import ScrollGallery from "../../components/ScrollGallery/ScrollGallery";
+import Button from "../../components/Buttons/Button";
+import * as S from "./StoryPage.styled";
 
 const StoryPage = memo(() => {
   const { id } = useParams();
-  
-  const story = useMemo(() => 
-    storiesData.find((s) => s.id === id),
-    [id]
-  );
+
+  const story = useMemo(() => storiesData.find((s) => s.id === id), [id]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100);
-    
-    return () => clearTimeout(timer);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [id]);
 
   if (!story) {
     return (
-      <div style={{ textAlign: 'center', padding: '2rem', marginTop: '80px' }}>
+      <S.NotFound>
         <h2>Story not found!</h2>
-      </div>
+      </S.NotFound>
     );
   }
 
   return (
-    <StoryWrapper>
-      <div className="video-container">
-        <iframe 
-          src={story.video} 
+    <S.StoryWrapper
+      as={motion.div}
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <S.VideoContainer
+        as={motion.div}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <iframe
+          src={story.video}
           title={story.title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          loading="lazy"
         />
-      </div>
-      
-      <div className="story-content">
+      </S.VideoContainer>
+
+      <S.StoryContent
+        as={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+      >
         <h1>{story.title}</h1>
         <p className="author">By {story.author}</p>
         <p className="description">{story.description}</p>
-        
+
         {story.fullStories && (
           <Button
             as="a"
@@ -66,11 +76,10 @@ const StoryPage = memo(() => {
             ))}
           </ScrollGallery>
         )}
-
-      </div>
-    </StoryWrapper>
+      </S.StoryContent>
+    </S.StoryWrapper>
   );
 });
 
-StoryPage.displayName = 'Story';
+StoryPage.displayName = "StoryPage";
 export default StoryPage;
