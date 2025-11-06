@@ -12,8 +12,7 @@ export const theCaskOfAmontilladoData = {
     "A gothic short story by Edgar Allan Poe about Montresor seeking revenge on Fortunato. He lures Fortunato into the catacombs with the promise of tasting a rare wine, Amontillado, and ultimately traps him alive behind a wall.",
   img: CaskCover,
   video: [
-    "https://www.youtube.com/embed/bhl8X7b1CuM",
-    "https://www.youtube.com/embed/utOm0Pw9pe4",
+    "https://www.youtube.com/embed/utOm0Pw9pe4?si=YU6V3VajeW_qNvPX",
   ],
   fullStories: "https://share.google/eCKDWZmFSqWT6Gyky",
   characters: [
