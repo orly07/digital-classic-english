@@ -1,38 +1,37 @@
-import React, { memo } from 'react';
-import { 
-  CardContainer, 
-  CardTitle, 
-  CardContent,
-  ValuesList,
-  ValueItem 
-} from './MissionVisionCard.styled';
+import React, { memo } from "react";
+import { motion } from "framer-motion";
+import * as S from "./MissionVisionCard.styled";
+import { fadeInUp } from "../../utils/motionVariants";
 
-const MissionVisionCard = memo(({ 
-  title, 
-  content, 
-  values = [],
-  icon: Icon 
-}) => {
+const MissionVisionCard = memo(({ title, content, values = [], icon: Icon }) => {
   return (
-    <CardContainer>
-      {Icon && <Icon className="card-icon" />}
-      <CardTitle>{title}</CardTitle>
-      <CardContent>
-        {content}
+    <S.CardContainer
+      as={motion.div}
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      role="article"
+      aria-label={`${title} Card`}
+    >
+      {Icon && <Icon className="card-icon" aria-hidden="true" />}
+      <S.CardTitle>{title}</S.CardTitle>
+      <S.CardContent>
+        <p className="card-description">{content}</p>
         {values.length > 0 && (
-          <ValuesList>
-            {values.map((value, index) => (
-              <ValueItem key={index}>
-                {value.icon && <value.icon />}
-                <span>{value.text}</span>
-              </ValueItem>
+          <S.ValuesList>
+            {values.map(({ icon: ValueIcon, text }, index) => (
+              <S.ValueItem key={index}>
+                {ValueIcon && <ValueIcon aria-hidden="true" />}
+                <span>{text}</span>
+              </S.ValueItem>
             ))}
-          </ValuesList>
+          </S.ValuesList>
         )}
-      </CardContent>
-    </CardContainer>
+      </S.CardContent>
+    </S.CardContainer>
   );
 });
 
-MissionVisionCard.displayName = 'MissionVisionCard';
+MissionVisionCard.displayName = "MissionVisionCard";
 export default MissionVisionCard;

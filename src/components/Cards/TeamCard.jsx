@@ -1,49 +1,57 @@
-import React, { memo, useState } from 'react';
-import { 
-  CardContainer, 
-  TeamImage, 
-  CardContent, 
-  MemberName, 
-  MemberRole, 
-  MemberDescription,
-  ToggleButton
-} from './TeamCard.styled';
+import React, { memo, useState } from "react";
+import { motion } from "framer-motion";
+import * as S from "./TeamCard.styled";
+import { fadeInUp } from "../../utils/motionVariants";
 
 const TeamCard = memo(({ member }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const maxLength = 80; 
+  const maxLength = 80;
 
-  const toggleDescription = () => setIsExpanded(!isExpanded);
+  const toggleDescription = () => setIsExpanded((prev) => !prev);
 
   const shouldTruncate = member.description.length > maxLength;
-  const displayText = isExpanded 
-    ? member.description 
+  const displayText = isExpanded
+    ? member.description
     : member.description.slice(0, maxLength) + (shouldTruncate ? "..." : "");
 
   return (
-    <CardContainer>
-      <TeamImage 
-        src={member.image} 
+    <S.CardContainer
+      as={motion.div}
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      role="article"
+      aria-label={`${member.name} - ${member.role}`}
+    >
+      <S.TeamImage
+        src={member.image}
         alt={member.name}
         loading="lazy"
+        decoding="async"
       />
-      <CardContent>
-        <MemberName>{member.name}</MemberName>
-        <MemberRole>{member.role}</MemberRole>
 
-        <MemberDescription $expanded={isExpanded}>
+      <S.CardContent>
+        <S.MemberName>{member.name}</S.MemberName>
+        <S.MemberRole>{member.role}</S.MemberRole>
+
+        <S.MemberDescription $expanded={isExpanded}>
           {displayText}
-        </MemberDescription>
+        </S.MemberDescription>
 
         {shouldTruncate && (
-          <ToggleButton onClick={toggleDescription}>
+          <S.ToggleButton
+            onClick={toggleDescription}
+            aria-expanded={isExpanded}
+            aria-label={`Toggle description for ${member.name}`}
+          >
             {isExpanded ? "See Less" : "See More"}
-          </ToggleButton>
+          </S.ToggleButton>
         )}
-      </CardContent>
-    </CardContainer>
+      </S.CardContent>
+    </S.CardContainer>
   );
 });
 
-TeamCard.displayName = 'TeamCard';
+TeamCard.displayName = "TeamCard";
 export default TeamCard;
