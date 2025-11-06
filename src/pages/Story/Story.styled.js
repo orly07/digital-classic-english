@@ -1,4 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import theme from "../../styles/theme";
+
+const { breakpoint, color, shadow, typography } = theme;
 
 export const StoryWrapper = styled.div`
   padding: 2rem;
@@ -10,7 +13,7 @@ export const StoryWrapper = styled.div`
     margin-bottom: 2rem;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: ${shadow.lg};
   }
 
   iframe {
@@ -19,7 +22,7 @@ export const StoryWrapper = styled.div`
     border: none;
     display: block;
 
-    @media (max-width: 768px) {
+    ${breakpoint.mobile} {
       height: 300px;
     }
 
@@ -32,55 +35,59 @@ export const StoryWrapper = styled.div`
     text-align: center;
 
     h1 {
-      font-size: 3rem;
-      font-weight: 800;
+      font-size: ${typography.fontSize["4xl"]};
+      font-weight: ${typography.fontWeight.bold};
       margin-bottom: 0.5rem;
-      color: #1a202c;
+      color: ${color.black};
+      font-family: ${typography.fontFamily};
 
-      @media (max-width: 768px) {
-        font-size: 2.5rem;
+      ${breakpoint.mobile} {
+        font-size: ${typography.fontSize["3xl"]};
       }
 
       @media (max-width: 480px) {
-        font-size: 2rem;
+        font-size: ${typography.fontSize["2xl"]};
       }
     }
 
     .author {
-      color: #00b96b;
-      font-size: 1.2rem;
-      font-weight: 600;
+      color: ${color.primary};
+      font-size: ${typography.fontSize.lg};
+      font-weight: ${typography.fontWeight.semibold};
       margin-bottom: 2rem;
+      font-family: ${typography.fontFamily};
     }
 
     .description {
-      font-size: 1.1rem;
+      font-size: ${typography.fontSize.base};
       line-height: 1.7;
-      color: #4a5568;
+      color: ${color.gray[600]};
       max-width: 800px;
       margin: 0 auto 3rem;
+      font-family: ${typography.fontFamily};
     }
 
     .link-button {
       display: inline-block;
-      background: #00b96b;
-      color: white;
+      background: ${color.primary};
+      color: ${color.white};
       padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: ${typography.fontWeight.semibold};
       margin-bottom: 3rem;
       transition: all 0.3s ease;
+      box-shadow: ${shadow.sm};
 
       &:hover {
-        background: #009e5a;
+        background: ${color.primaryDark};
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 185, 107, 0.3);
+        box-shadow: ${shadow.md};
       }
     }
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     padding: 1rem;
   }
 `;

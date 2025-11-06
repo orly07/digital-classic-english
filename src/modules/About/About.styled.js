@@ -1,34 +1,35 @@
 import styled from "styled-components";
+import { color, typography, breakpoint } from "../../styles/theme";
 
 export const AboutSection = styled.section`
   padding: 5rem 2rem;
   text-align: center;
-  background: #fff;
-  color: #222;
+  background: ${color.surface};
+  color: ${color.black};
 
   h1 {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: ${typography.fontSize["4xl"]};
+    font-weight: ${typography.fontWeight.bold};
     margin-bottom: 1rem;
-    color: #1a202c;
+    color: ${color.black};
 
-    @media (max-width: 768px) {
-      font-size: 2.5rem;
+    ${breakpoint.mobile} {
+      font-size: ${typography.fontSize["3xl"]};
     }
 
     @media (max-width: 480px) {
-      font-size: 2rem;
+      font-size: ${typography.fontSize["2xl"]};
     }
   }
 
   h2 {
     margin-top: 3rem;
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: #1a202c;
+    font-size: ${typography.fontSize["3xl"]};
+    font-weight: ${typography.fontWeight.bold};
+    color: ${color.black};
 
-    @media (max-width: 768px) {
-      font-size: 2rem;
+    ${breakpoint.mobile} {
+      font-size: ${typography.fontSize["2xl"]};
     }
   }
 
@@ -36,15 +37,18 @@ export const AboutSection = styled.section`
     max-width: 700px;
     margin: 1rem auto;
     line-height: 1.7;
-    color: #4a5568;
-    font-size: 1.1rem;
+    color: ${color.gray[600]};
+    font-size: ${typography.fontSize.lg};
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     padding: 4rem 1rem;
   }
 `;
 
+/* =============================
+   🔹 Mission, Vision, Values
+============================= */
 export const MissionVisionValues = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -52,25 +56,28 @@ export const MissionVisionValues = styled.div`
   gap: 2.5rem;
   margin-top: 4rem;
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     gap: 2rem;
     margin-top: 3rem;
   }
 `;
 
+/* =============================
+   🔹 Team Section
+============================= */
 export const TeamSection = styled.section`
-  background: #f8f9fa;
+  background: ${color.gray[50]};
   padding: 5rem 2rem;
   text-align: center;
 
   h2 {
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: #1a202c;
+    font-size: ${typography.fontSize["3xl"]};
+    font-weight: ${typography.fontWeight.bold};
+    color: ${color.black};
     margin-bottom: 1rem;
 
-    @media (max-width: 768px) {
-      font-size: 2rem;
+    ${breakpoint.mobile} {
+      font-size: ${typography.fontSize["2xl"]};
     }
   }
 
@@ -85,28 +92,31 @@ export const TeamSection = styled.section`
     margin-right: auto;
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     padding: 4rem 1rem;
-    
+
     .team-container {
       gap: 2rem;
     }
   }
 `;
 
+/* =============================
+   🔹 Contact Section
+============================= */
 export const ContactSection = styled.section`
-  background: #1a202c;
-  color: #fff;
+  background: ${color.black};
+  color: ${color.white};
   padding: 5rem 2rem;
   text-align: center;
 
   h2 {
-    font-size: 2.25rem;
-    font-weight: 700;
+    font-size: ${typography.fontSize["3xl"]};
+    font-weight: ${typography.fontWeight.bold};
     margin-bottom: 1.5rem;
 
-    @media (max-width: 768px) {
-      font-size: 2rem;
+    ${breakpoint.mobile} {
+      font-size: ${typography.fontSize["2xl"]};
     }
   }
 
@@ -114,7 +124,7 @@ export const ContactSection = styled.section`
     max-width: 600px;
     margin: 0.75rem auto;
     line-height: 1.6;
-    color: #e2e8f0;
+    color: ${color.gray[200]};
   }
 
   .contact-info {
@@ -123,15 +133,15 @@ export const ContactSection = styled.section`
 
     p {
       margin: 0.5rem 0;
-      font-size: 1.1rem;
+      font-size: ${typography.fontSize.lg};
     }
 
     strong {
-      color: #00b96b;
+      color: ${color.primary};
     }
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     padding: 4rem 1rem;
   }
 `;

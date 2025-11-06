@@ -1,23 +1,25 @@
 import styled from "styled-components";
+import { color, shadow, typography, breakpoint } from "../../styles/theme";
 
 export const GalleryContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 3rem 0 1.5rem;
-position: relative;
+  position: relative;
+
   h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1a202c;
+    font-size: ${typography.fontSize["3xl"]};
+    font-weight: ${typography.fontWeight.bold};
+    color: ${color.black};
     margin: 0;
 
-    @media (max-width: 768px) {
-      font-size: 1.75rem;
+    ${breakpoint.mobile} {
+      font-size: ${typography.fontSize["2xl"]};
     }
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     margin: 2rem 0 1rem;
 
     .scroll-controls {
@@ -25,6 +27,7 @@ position: relative;
     }
   }
 `;
+
 export const ScrollContainer = styled.div`
   width: 100%;
   display: flex;
@@ -32,32 +35,32 @@ export const ScrollContainer = styled.div`
   align-items: center;
   gap: 0.5rem;
 `;
+
 export const GalleryContent = styled.div`
   display: flex;
   gap: 1.5rem;
   overflow-x: auto;
-  overflow-y: auto; /* Add this line for vertical overflow */
+  overflow-y: auto; /* allows vertical overflow */
   padding: 1rem 0;
   margin-bottom: 3rem;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  
-  /* Webkit browsers */
+
+  /* Hide scrollbar for Webkit browsers */
   &::-webkit-scrollbar {
     display: none;
   }
 
-
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     gap: 1rem;
     margin-bottom: 2rem;
   }
 `;
 
 export const ScrollButton = styled.button`
-  background: white;
-  border: 2px solid #e2e8f0;
+  background: ${color.white};
+  border: 2px solid ${color.gray[200]};
   border-radius: 50%;
   width: 48px;
   height: 48px;
@@ -65,16 +68,16 @@ export const ScrollButton = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #4a5568;
+  font-size: ${typography.fontSize["2xl"]};
+  font-weight: ${typography.fontWeight.bold};
+  color: ${color.gray[600]};
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: ${shadow.md};
 
   &:hover {
-    background: #00b96b;
-    color: white;
-    border-color: #00b96b;
+    background: ${color.primary};
+    color: ${color.white};
+    border-color: ${color.primary};
     transform: scale(1.05);
   }
 
@@ -83,9 +86,9 @@ export const ScrollButton = styled.button`
     cursor: not-allowed;
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     width: 40px;
     height: 40px;
-    font-size: 1.25rem;
+    font-size: ${typography.fontSize.xl};
   }
 `;

@@ -13,7 +13,6 @@ const FilterDropdown = memo(
     placeholder = "All Authors",
     label = "Filter by Author",
   }) => {
-    // Get unique authors from data
     const authors = useMemo(() => {
       const uniqueAuthors = [...new Set(data.map((item) => item.author))];
       return uniqueAuthors.sort();

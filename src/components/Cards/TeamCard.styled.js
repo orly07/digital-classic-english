@@ -1,25 +1,24 @@
 import styled from "styled-components";
-import { color, shadow, breakpoint } from "../../styles/theme";
+import { color, shadow, breakpoint, typography } from "../../styles/theme";
 
 export const CardContainer = styled.div`
   background: ${color.white};
   border-radius: 16px;
-  box-shadow: ${shadow.soft};
-  width: 100%;
+  box-shadow: ${shadow.md};
   max-width: 320px;
   padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid ${color.gray[200]};
 
   &:hover {
     transform: translateY(-8px);
-    box-shadow: ${shadow.medium};
+    box-shadow: ${shadow.lg};
   }
 
-  @media (max-width: 768px) {
-    max-width: 100%;
+  @media ${breakpoint.mobile} {
     padding: 1.5rem;
+    max-width: 100%;
   }
 `;
 
@@ -28,10 +27,8 @@ export const TeamImage = styled.img`
   height: 160px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center;
   margin: 0 auto 1.5rem;
-  border: 4px solid ${color.green};
-  display: block;
+  border: 4px solid ${color.primary};
   transition: transform 0.3s ease;
 
   ${CardContainer}:hover & {
@@ -51,25 +48,23 @@ export const CardContent = styled.div`
 `;
 
 export const MemberName = styled.h4`
-  font-weight: 700;
+  font-weight: ${typography.fontWeight.bold};
   margin: 0;
   color: ${color.black};
-  font-size: 1.375rem;
-  line-height: 1.3;
+  font-size: ${typography.fontSize.xl};
 `;
 
 export const MemberRole = styled.p`
-  color: ${color.green};
-  font-weight: 600;
+  color: ${color.primary};
+  font-weight: ${typography.fontWeight.semibold};
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.4;
+  font-size: ${typography.fontSize.base};
 `;
 
 export const MemberDescription = styled.p`
   color: ${color.gray[600]};
   margin: 0;
-  font-size: 0.95rem;
+  font-size: ${typography.fontSize.sm};
   line-height: 1.5;
   overflow: hidden;
 
@@ -85,19 +80,15 @@ export const MemberDescription = styled.p`
 export const ToggleButton = styled.button`
   border: none;
   background: none;
-  color: ${color.green};
+  color: ${color.primary};
   cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: ${typography.fontSize.sm};
+  font-weight: ${typography.fontWeight.semibold};
   margin-top: 0.25rem;
   transition: color 0.3s ease;
 
   &:hover {
-    color: ${color.darkGreen};
+    color: ${color.primaryDark};
     text-decoration: underline;
-  }
-
-  &:focus {
-    outline: none;
   }
 `;

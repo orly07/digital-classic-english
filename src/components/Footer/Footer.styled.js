@@ -1,15 +1,22 @@
 import styled from "styled-components";
+import { color, typography, breakpoint, shadow } from "../../styles/theme";
 
 export const FooterContainer = styled.footer`
-  background: #1a202c;
-  color: #fff;
+  background: ${color.gray[900]};
+  color: ${color.white};
   text-align: center;
   padding: 3rem 2rem 2rem;
+  box-shadow: ${shadow.thin};
 
   p {
     margin-bottom: 1.5rem;
-    color: #a0aec0;
-    font-size: 1rem;
+    color: ${color.gray[400]};
+    font-size: ${typography.fontSize.base};
+    line-height: 1.6;
+
+    @media ${breakpoint.mobile} {
+      font-size: ${typography.fontSize.sm};
+    }
   }
 
   .socials {
@@ -21,16 +28,21 @@ export const FooterContainer = styled.footer`
     svg {
       cursor: pointer;
       transition: all 0.3s ease;
-      color: #a0aec0;
+      color: ${color.gray[400]};
 
       &:hover {
-        color: #00b96b;
-        transform: translateY(-2px);
+        color: ${color.green};
+        transform: translateY(-3px);
+        filter: drop-shadow(0 2px 6px rgba(0, 185, 107, 0.3));
       }
     }
   }
 
-  @media (max-width: 768px) {
+  @media ${breakpoint.tablet} {
+    padding: 2.5rem 1.5rem;
+  }
+
+  @media ${breakpoint.mobile} {
     padding: 2rem 1rem;
 
     .socials {

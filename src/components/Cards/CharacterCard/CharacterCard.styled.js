@@ -1,33 +1,26 @@
 import styled from "styled-components";
-import { color, shadow } from "../../../styles/theme";
+import { color, shadow, breakpoint, typography } from "../../../styles/theme";
 
 export const CardContainer = styled.div`
   min-width: 350px;
-  background: white;
+  background: ${color.surface};
   border-radius: 12px;
-  box-shadow: ${shadow.soft};
+  box-shadow: ${shadow.md};
   padding: 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid ${color.gray[200]};
   display: flex;
   flex-direction: column;
   height: fit-content;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: ${shadow.medium};
+    box-shadow: ${shadow.lg};
   }
 
-  @media (max-width: 768px) {
-    min-width: 300px;
-    padding: 1.25rem;
-  }
-
-  @media (max-width: 480px) {
+  @media ${breakpoint.mobile} {
     min-width: 280px;
-    height: fit-content;
-
     padding: 1rem;
   }
 `;
@@ -37,27 +30,21 @@ export const CardImage = styled.img`
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center;
   margin: 0 auto 1rem;
-  border: 3px solid ${color.green};
+  border: 3px solid ${color.primary};
   display: block;
   transition: all 0.3s ease;
   cursor: pointer;
 
   &:hover {
-    border-color: ${color.green};
-    transform: scale(1.02);
-    box-shadow: 0 4px 20px rgba(0, 185, 107, 0.3);
+    border-color: ${color.primaryDark};
+    transform: scale(1.03);
+    box-shadow: ${shadow.md};
   }
 
-  @media (max-width: 768px) {
-    width: 200px;
-    height: 200px;
-  }
-
-  @media (max-width: 480px) {
-    width: 150px;
-    height: 150px;
+  @media ${breakpoint.mobile} {
+    width: 180px;
+    height: 180px;
   }
 `;
 
@@ -66,28 +53,26 @@ export const CardContent = styled.div`
   flex-direction: column;
   gap: 0.75rem;
   flex: 1;
-  min-height: 0;
 `;
 
 export const CardTitle = styled.h6`
-  font-weight: 700;
+  font-weight: ${typography.fontWeight.bold};
   margin: 0;
   color: ${color.gray[700]};
-  font-size: 1.25rem;
+  font-size: ${typography.fontSize.lg};
   line-height: 1.3;
-  flex-shrink: 0;
 
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
+  @media ${breakpoint.mobile} {
+    font-size: ${typography.fontSize.base};
   }
 `;
 
 export const LinesContainer = styled.div`
   margin: 0.5rem 0;
   padding: 1rem;
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  background: linear-gradient(135deg, ${color.gray[50]}, ${color.gray[200]});
   border-radius: 8px;
-  border-left: 4px solid ${color.green};
+  border-left: 4px solid ${color.primary};
   animation: fadeInUp 0.3s ease;
 
   @keyframes fadeInUp {
@@ -105,40 +90,39 @@ export const LinesContainer = styled.div`
 export const LinesText = styled.p`
   margin: 0;
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: ${typography.fontSize.sm};
   line-height: 1.5;
   color: ${color.gray[600]};
   text-align: center;
-  font-weight: 500;
+  font-weight: ${typography.fontWeight.medium};
+
+  &::before,
+  &::after {
+    color: ${color.primary};
+    font-size: 1.2em;
+  }
 
   &::before {
     content: "“";
-    font-size: 1.2em;
-    color: ${color.green};
     margin-right: 4px;
   }
 
   &::after {
     content: "”";
-    font-size: 1.2em;
-    color: ${color.green};
     margin-left: 4px;
   }
 `;
 
 export const CardDescription = styled.p`
-  color: #718096;
-  font-size: 0.95rem;
+  color: ${color.gray[600]};
+  font-size: ${typography.fontSize.sm};
   line-height: 1.5;
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: ${(props) => (props.$isExpanded ? "unset" : "3")};
   -webkit-box-orient: vertical;
   overflow: ${(props) => (props.$isExpanded ? "visible" : "hidden")};
-  flex: 1;
-  min-height: 0;
 
-  /* Fallback for browsers that don't support line-clamp */
   @supports not (-webkit-line-clamp: 3) {
     max-height: ${(props) => (props.$isExpanded ? "none" : "4.5em")};
     overflow: hidden;
@@ -147,32 +131,25 @@ export const CardDescription = styled.p`
 
 export const SeeMoreButton = styled.button`
   background: transparent;
-  color: #00b96b;
-  border: 1px solid #00b96b;
+  color: ${color.primary};
+  border: 1px solid ${color.primary};
   border-radius: 6px;
   padding: 8px 16px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: ${typography.fontSize.sm};
+  font-weight: ${typography.fontWeight.semibold};
   cursor: pointer;
   transition: all 0.3s ease;
   align-self: center;
   margin-top: 0.5rem;
-  flex-shrink: 0;
-  min-height: 36px;
 
   &:hover {
-    background: #00b96b;
-    color: white;
+    background: ${color.primary};
+    color: ${color.white};
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 185, 107, 0.3);
+    box-shadow: ${shadow.sm};
   }
 
   &:active {
     transform: translateY(0);
-  }
-
-  @media (max-width: 480px) {
-    padding: 10px 20px;
-    font-size: 0.9rem;
   }
 `;

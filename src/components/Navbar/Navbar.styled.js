@@ -1,33 +1,30 @@
 import styled from "styled-components";
-import { color } from "../../styles/theme"
+import { color, shadow, typography, breakpoint } from "../../styles/theme";
 
 export const NavbarContainer = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
-  background: ${props => 
-    props.$isScrolled || props.$isMobileMenuOpen 
-      ? 'rgba(255, 255, 255, 0.95)' 
-      : 'transparent'};
-  backdrop-filter: ${props => 
-    props.$isScrolled || props.$isMobileMenuOpen 
-      ? 'blur(10px)' 
-      : 'none'};
+  background: ${({ $isScrolled, $isMobileMenuOpen }) =>
+    $isScrolled || $isMobileMenuOpen
+      ? "rgba(255, 255, 255, 0.95)"
+      : color.transparent};
+  backdrop-filter: ${({ $isScrolled, $isMobileMenuOpen }) =>
+    $isScrolled || $isMobileMenuOpen ? "blur(10px)" : "none"};
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  box-shadow: ${props => 
-    props.$isScrolled && !props.$isMobileMenuOpen 
-      ? '0 2px 20px rgba(0, 0, 0, 0.1)' 
-      : 'none'};
+  box-shadow: ${({ $isScrolled, $isMobileMenuOpen }) =>
+    $isScrolled && !$isMobileMenuOpen ? shadow.sm : "none"};
   z-index: 1000;
   transition: all 0.3s ease;
 
   .logo {
-    font-weight: 800;
-    font-size: 1.4rem;
-    color: ${props => props.$isScrolled ? '#1a202c' : 'white'};
+    font-weight: ${typography.fontWeight.bold};
+    font-size: ${typography.fontSize.xl};
+    color: ${({ $isScrolled }) =>
+      $isScrolled ? color.black : color.white};
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -36,15 +33,15 @@ export const NavbarContainer = styled.nav`
     z-index: 1001;
 
     &:hover {
-      color: #00b96b;
+      color: ${color.primary};
     }
 
-    @media (max-width: 768px) {
-      font-size: 1.2rem;
+    ${breakpoint.mobile} {
+      font-size: ${typography.fontSize.lg};
     }
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     padding: 1rem;
   }
 `;
@@ -54,22 +51,23 @@ export const NavLinks = styled.div`
   gap: 2rem;
   align-items: center;
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     display: none;
   }
 `;
 
 export const NavItem = styled.span`
   cursor: pointer;
-  font-weight: 600;
+  font-weight: ${typography.fontWeight.semibold};
   transition: all 0.3s ease;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  color: ${props => props.$isScrolled ? '#4a5568' : 'white'};
+  color: ${({ $isScrolled }) =>
+    $isScrolled ? color.gray[600] : color.white};
   white-space: nowrap;
 
   &:hover {
-    color: #00b96b;
+    color: ${color.primary};
     background: rgba(0, 185, 107, 0.1);
   }
 `;
@@ -79,7 +77,8 @@ export const MobileMenuButton = styled.button`
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: ${props => props.$isScrolled ? '#4a5568' : 'white'};
+  color: ${({ $isScrolled }) =>
+    $isScrolled ? color.gray[600] : color.white};
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 8px;
@@ -88,10 +87,10 @@ export const MobileMenuButton = styled.button`
 
   &:hover {
     background: rgba(0, 185, 107, 0.1);
-    color: #00b96b;
+    color: ${color.primary};
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,7 +115,7 @@ export const MobileMenuOverlay = styled.div`
     }
   }
 
-  @media (min-width: 769px) {
+  ${breakpoint.tablet} {
     display: none;
   }
 `;
@@ -127,10 +126,10 @@ export const MobileMenu = styled.div`
   right: 0;
   width: 320px;
   height: 100vh;
-  background: white;
+  background: ${color.surface};
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  transform: translateX(${props => props.$isOpen ? '0' : '100%'});
+  transform: translateX(${({ $isOpen }) => ($isOpen ? "0" : "100%")});
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -140,13 +139,13 @@ export const MobileMenu = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid ${color.gray[200]};
 
     .logo {
-      font-size: 1.2rem;
-      font-weight: 600;
+      font-size: ${typography.fontSize.lg};
+      font-weight: ${typography.fontWeight.semibold};
       margin: 0;
-      color: #${color.black};
+      color: ${color.black};
       padding-top: 10px;
     }
 
@@ -157,18 +156,18 @@ export const MobileMenu = styled.div`
 
   .mobile-menu-footer {
     padding: 1.5rem;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid ${color.gray[200]};
     margin-top: auto;
 
     p {
-      color: #718096;
-      font-size: 0.9rem;
+      color: ${color.gray[500]};
+      font-size: ${typography.fontSize.sm};
       text-align: center;
       margin: 0;
     }
   }
 
-  @media (min-width: 769px) {
+  ${breakpoint.tablet} {
     display: none;
   }
 
@@ -188,17 +187,16 @@ export const MobileNavLinks = styled.div`
 export const MobileNavItem = styled.span`
   display: block;
   padding: 1rem 1.5rem;
-  font-weight: 600;
-  color: #4a5568;
+  font-weight: ${typography.fontWeight.semibold};
+  color: ${color.gray[700]};
   border-radius: 12px;
   transition: all 0.3s ease;
   cursor: pointer;
-  font-size: 1.1rem;
-
+  font-size: ${typography.fontSize.lg};
 
   &:hover {
     background: rgba(0, 185, 107, 0.1);
-    color: #00b96b;
+    color: ${color.primary};
     transform: translateX(8px);
   }
 

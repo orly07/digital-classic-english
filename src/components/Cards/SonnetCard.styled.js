@@ -1,23 +1,23 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import {color, shadow, breakpoint } from "../../styles/theme"
+import { color, shadow, breakpoint, typography } from "../../styles/theme";
 
 export const CardContainer = styled.div`
   min-width: 300px;
   max-width: 340px;
-  background: white;
+  background: ${color.surface};
   border-radius: 16px;
-  box-shadow: ${shadow.soft};
+  box-shadow: ${shadow.sm};
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid ${color.gray[200]};
 
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: ${shadow.lg};
   }
 
-  @media ${breakpoint.mobile} {
+  ${breakpoint.mobile} {
     min-width: 280px;
     max-width: 300px;
   }
@@ -34,16 +34,17 @@ export const CardContent = styled.div`
   padding: 1.5rem;
 
   h5 {
-    font-weight: 700;
+    font-weight: ${typography.fontWeight.bold};
     margin-bottom: 0.75rem;
-    font-size: 1.25rem;
+    font-size: ${typography.fontSize.xl};
     color: ${color.gray[700]};
     line-height: 1.3;
+    font-family: ${typography.fontFamily};
   }
 
   p {
     color: ${color.gray[500]};
-    font-size: 0.95rem;
+    font-size: ${typography.fontSize.base};
     line-height: 1.5;
     margin-bottom: 1rem;
     height: 68px;
@@ -51,35 +52,39 @@ export const CardContent = styled.div`
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    font-family: ${typography.fontFamily};
   }
 `;
 
 export const CardAuthor = styled.small`
-  color: ${color.green};
-  font-weight: 600;
-  font-size: 0.85rem;
+  color: ${color.primary};
+  font-weight: ${typography.fontWeight.semibold};
+  font-size: ${typography.fontSize.sm};
   display: block;
   margin-bottom: 1rem;
+  font-family: ${typography.fontFamily};
 `;
 
 export const ListenButton = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: ${color.green};
-  color: white;
+  background: ${color.primary};
+  color: ${color.white};
   padding: 10px 24px;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: ${typography.fontWeight.semibold};
+  font-size: ${typography.fontSize.sm};
   transition: all 0.3s ease;
   width: 100%;
   text-align: center;
+  font-family: ${typography.fontFamily};
+  box-shadow: ${shadow.xs};
 
   &:hover {
-    background: ${color.darkGreen};
+    background: ${color.primaryDark};
     transform: translateY(-2px);
-    box-shadow: ${shadow.medium};
+    box-shadow: ${shadow.md};
   }
 `;

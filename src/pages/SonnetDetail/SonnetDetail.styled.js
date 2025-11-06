@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { color, shadow, breakpoint, typography } from "../../styles/theme";
 
 export const SonnetDetailWrapper = styled.div`
   padding: 2rem;
@@ -7,35 +7,36 @@ export const SonnetDetailWrapper = styled.div`
   margin: 0 auto;
   margin-top: 80px;
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     padding: 1rem;
   }
 `;
-
 
 export const SonnetContent = styled.div`
   text-align: center;
 
   h1 {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: ${typography.fontSize["4xl"]};
+    font-weight: ${typography.fontWeight.bold};
     margin-bottom: 0.5rem;
-    color: #1a202c;
+    color: ${color.gray[700]};
+    font-family: ${typography.fontFamily};
 
-    @media (max-width: 768px) {
-      font-size: 2.5rem;
+    ${breakpoint.mobile} {
+      font-size: ${typography.fontSize["3xl"]};
     }
 
     @media (max-width: 480px) {
-      font-size: 2rem;
+      font-size: ${typography.fontSize["2xl"]};
     }
   }
 
   .author {
-    color: #00b96b;
-    font-size: 1.2rem;
-    font-weight: 600;
+    color: ${color.danger};
+    font-size: ${typography.fontSize.lg};
+    font-weight: ${typography.fontWeight.semibold};
     margin-bottom: 2rem;
+    font-family: ${typography.fontFamily};
   }
 `;
 
@@ -56,13 +57,12 @@ export const ControlButtonsTop = styled.div`
   }
 `;
 
-// Add this new styled component for button content
 export const ButtonContent = styled.span`
   display: flex;
   align-items: center;
   gap: 0.5rem;
   justify-content: center;
-  
+
   svg {
     font-size: 1em;
     vertical-align: middle;
@@ -72,10 +72,11 @@ export const ButtonContent = styled.span`
 `;
 
 export const SettingsPanel = styled.div`
-  background: #f8f9fa;
+  background: ${color.background};
   padding: 1.5rem;
   border-radius: 12px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid ${color.gray[200]};
+  box-shadow: ${shadow.sm};
   animation: slideDown 0.3s ease;
   margin: 0 auto;
   max-width: 500px;
@@ -103,22 +104,25 @@ export const VoiceSettings = styled.div`
     gap: 0.5rem;
 
     label {
-      font-weight: 600;
-      color: #4a5568;
-      font-size: 0.9rem;
+      font-weight: ${typography.fontWeight.semibold};
+      color: ${color.gray[700]};
+      font-size: ${typography.fontSize.sm};
+      font-family: ${typography.fontFamily};
     }
 
-    select, input[type="range"] {
+    select,
+    input[type="range"] {
       padding: 0.5rem;
-      border: 2px solid #e2e8f0;
+      border: 2px solid ${color.gray[200]};
       border-radius: 6px;
-      background: white;
+      background: ${color.white};
       transition: all 0.3s ease;
+      font-family: ${typography.fontFamily};
 
       &:focus {
         outline: none;
-        border-color: #00b96b;
-        box-shadow: 0 0 0 3px rgba(0, 185, 107, 0.1);
+        border-color: ${color.primary};
+        box-shadow: 0 0 0 3px ${color.primaryLight};
       }
 
       &:disabled {
@@ -130,7 +134,7 @@ export const VoiceSettings = styled.div`
     input[type="range"] {
       padding: 0;
       height: 6px;
-      background: #e2e8f0;
+      background: ${color.gray[200]};
       border: none;
       border-radius: 3px;
       outline: none;
@@ -139,13 +143,13 @@ export const VoiceSettings = styled.div`
         appearance: none;
         width: 18px;
         height: 18px;
-        background: #00b96b;
+        background: ${color.primary};
         border-radius: 50%;
         cursor: pointer;
         transition: all 0.2s ease;
 
         &:hover {
-          background: #009e5a;
+          background: ${color.primaryDark};
           transform: scale(1.1);
         }
       }
@@ -153,14 +157,14 @@ export const VoiceSettings = styled.div`
       &::-moz-range-thumb {
         width: 18px;
         height: 18px;
-        background: #00b96b;
+        background: ${color.primary};
         border-radius: 50%;
         cursor: pointer;
         border: none;
         transition: all 0.2s ease;
 
         &:hover {
-          background: #009e5a;
+          background: ${color.primaryDark};
           transform: scale(1.1);
         }
       }
@@ -176,13 +180,14 @@ export const SonnetText = styled.div`
   text-align: center;
   margin: 3rem 0;
   line-height: 1.8;
-  font-size: 1.2rem;
-  color: #4a5568;
+  font-size: ${typography.fontSize.lg};
+  color: ${color.gray[700]};
   font-style: italic;
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  background: linear-gradient(135deg, ${color.background}, ${color.gray[100]});
   padding: 2.5rem;
   border-radius: 16px;
-  border-left: 4px solid #00b96b;
+  border-left: 4px solid ${color.primary};
+  font-family: ${typography.fontFamily};
 
   .sonnet-line {
     margin: 1.5rem 0;
@@ -197,37 +202,38 @@ export const SonnetText = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     padding: 2rem 1.5rem;
-    font-size: 1.1rem;
+    font-size: ${typography.fontSize.base};
   }
 
   @media (max-width: 480px) {
     padding: 1.5rem 1rem;
-    font-size: 1rem;
+    font-size: ${typography.fontSize.sm};
   }
 `;
 
 export const AudioControls = styled.div`
   margin-top: 3rem;
   padding: 2rem;
-  background: white;
+  background: ${color.white};
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: ${shadow.lg};
+  border: 1px solid ${color.gray[200]};
 
   .browser-support {
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid ${color.gray[200]};
     
     small {
-      color: #718096;
+      color: ${color.gray[500]};
       font-style: italic;
+      font-family: ${typography.fontFamily};
     }
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     padding: 1.5rem;
   }
 `;

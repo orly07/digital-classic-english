@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import theme from "../../styles/theme";
+
+const { color, breakpoint, shadow, typography } = theme;
 
 export const Section = styled.section`
   padding: 4rem 2rem;
-  background: #f8f9fa;
-  
+  background: ${color.background};
+
   .scroll-controls {
     display: flex;
     justify-content: center;
@@ -11,7 +14,7 @@ export const Section = styled.section`
     gap: 0.5rem;
     padding-top: 20px;
 
-    @media (max-width: 768px) {
+    ${breakpoint.mobile} {
       align-self: center;
     }
   }
@@ -19,7 +22,7 @@ export const Section = styled.section`
   .no-results {
     text-align: center;
     padding: 3rem 2rem;
-    color: #718096;
+    color: ${color.gray[500]};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,28 +31,30 @@ export const Section = styled.section`
 
     p {
       margin: 0;
-      font-size: 1.1rem;
+      font-size: ${typography.fontSize.lg};
+      font-family: ${typography.fontFamily};
     }
 
     .reset-button {
-      background: #00b96b;
-      color: white;
+      background: ${color.primary};
+      color: ${color.white};
       border: none;
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
-      font-weight: 600;
+      font-weight: ${typography.fontWeight.semibold};
       cursor: pointer;
       transition: all 0.3s ease;
+      box-shadow: ${shadow.sm};
 
       &:hover {
-        background: #009e5a;
+        background: ${color.primaryDark};
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 185, 107, 0.3);
+        box-shadow: ${shadow.md};
       }
     }
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     padding: 3rem 1rem;
   }
 `;
@@ -64,15 +69,15 @@ export const SectionHeader = styled.div`
   gap: 2rem;
 
   .title-section {
-    
     h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #1a202c;
+      font-size: ${typography.fontSize["4xl"]};
+      font-weight: ${typography.fontWeight.bold};
+      color: ${color.black};
       margin: 0 0 0.5rem 0;
+      font-family: ${typography.fontFamily};
 
-      @media (max-width: 768px) {
-        font-size: 2rem;
+      ${breakpoint.mobile} {
+        font-size: ${typography.fontSize["3xl"]};
       }
     }
 
@@ -80,12 +85,12 @@ export const SectionHeader = styled.div`
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: #00b96b;
-      color: white;
+      background: ${color.primary};
+      color: ${color.white};
       padding: 0.5rem;
       border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: ${typography.fontSize.sm};
+      font-weight: ${typography.fontWeight.medium};
       animation: slideIn 0.3s ease;
 
       @keyframes slideIn {
@@ -102,7 +107,7 @@ export const SectionHeader = styled.div`
       .clear-filter {
         background: rgba(255, 255, 255, 0.2);
         border: none;
-        color: white;
+        color: ${color.white};
         width: 20px;
         height: 20px;
         border-radius: 50%;
@@ -121,13 +126,11 @@ export const SectionHeader = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
     align-items: center;
-
-
   }
 `;
 
@@ -150,7 +153,7 @@ export const ScrollContent = styled.div`
     display: none;
   }
 
-  @media (max-width: 768px) {
+  ${breakpoint.mobile} {
     gap: 1.5rem;
     padding: 0.5rem;
   }
