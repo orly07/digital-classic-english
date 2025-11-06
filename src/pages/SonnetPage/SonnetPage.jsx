@@ -13,10 +13,10 @@ import {
   ControlButtonsTop,
   TopControlsContainer,
   ButtonContent,
-} from "./SonnetDetail.styled";
+} from "./SonnetPage.styled";
 import { FaPlay, FaStop, FaCog } from "react-icons/fa";
 
-const SonnetDetail = memo(() => {
+const SonnetPage = memo(() => {
   const { id } = useParams();
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [voices, setVoices] = useState([]);
@@ -276,5 +276,5 @@ const SonnetDetail = memo(() => {
   );
 });
 
-SonnetDetail.displayName = "SonnetDetail";
-export default SonnetDetail;
+SonnetPage.displayName = "SonnetDetail";
+export default SonnetPage;

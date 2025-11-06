@@ -32,7 +32,7 @@ export const SonnetContent = styled.div`
   }
 
   .author {
-    color: ${color.danger};
+    color: ${color.primaryDark};
     font-size: ${typography.fontSize.lg};
     font-weight: ${typography.fontWeight.semibold};
     margin-bottom: 2rem;

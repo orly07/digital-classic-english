@@ -5,18 +5,14 @@ const { color, breakpoint, shadow, typography } = theme;
 
 export const Section = styled.section`
   padding: 4rem 2rem;
-  background: ${color.background};
+  background: ${color.surface};
 
   .scroll-controls {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     padding-top: 20px;
-
-    ${breakpoint.mobile} {
-      align-self: center;
-    }
   }
 
   .no-results {
@@ -32,7 +28,7 @@ export const Section = styled.section`
     p {
       margin: 0;
       font-size: ${typography.fontSize.lg};
-      font-family: ${typography.fontFamily};
+      font-family: ${typography.fontFamily || "inherit"};
     }
 
     .reset-button {
@@ -43,7 +39,7 @@ export const Section = styled.section`
       border-radius: 8px;
       font-weight: ${typography.fontWeight.semibold};
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.22s ease;
       box-shadow: ${shadow.sm};
 
       &:hover {
@@ -69,15 +65,19 @@ export const SectionHeader = styled.div`
   gap: 2rem;
 
   .title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
     h2 {
       font-size: ${typography.fontSize["4xl"]};
       font-weight: ${typography.fontWeight.bold};
       color: ${color.black};
       margin: 0 0 0.5rem 0;
-      font-family: ${typography.fontFamily};
 
       ${breakpoint.mobile} {
         font-size: ${typography.fontSize["3xl"]};
+        text-align: center;
       }
     }
 
@@ -87,16 +87,16 @@ export const SectionHeader = styled.div`
       gap: 0.5rem;
       background: ${color.primary};
       color: ${color.white};
-      padding: 0.5rem;
+      padding: 0.375rem 0.6rem;
       border-radius: 20px;
       font-size: ${typography.fontSize.sm};
-      font-weight: ${typography.fontWeight.medium};
-      animation: slideIn 0.3s ease;
+      font-weight: ${typography.fontWeight.semibold};
+      animation: slideIn 0.28s ease;
 
       @keyframes slideIn {
         from {
           opacity: 0;
-          transform: translateY(-10px);
+          transform: translateY(-6px);
         }
         to {
           opacity: 1;
@@ -105,7 +105,7 @@ export const SectionHeader = styled.div`
       }
 
       .clear-filter {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.14);
         border: none;
         color: ${color.white};
         width: 20px;
@@ -116,11 +116,11 @@ export const SectionHeader = styled.div`
         justify-content: center;
         cursor: pointer;
         font-size: 1rem;
-        transition: all 0.2s ease;
+        transition: transform 0.15s ease, background 0.15s ease;
 
         &:hover {
-          background: rgba(255, 255, 255, 0.3);
-          transform: scale(1.1);
+          transform: scale(1.08);
+          background: rgba(255, 255, 255, 0.2);
         }
       }
     }
@@ -142,19 +142,24 @@ export const ScrollContainer = styled.div`
 
 export const ScrollContent = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 1rem;
-  scrollbar-width: none;
+  scrollbar-width: thin;
   -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
-    display: none;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${color.primary};
+    color: ${color.primary};
+    border-radius: 6px;
   }
 
   ${breakpoint.mobile} {
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 0.5rem;
   }
 `;

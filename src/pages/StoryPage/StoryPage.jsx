@@ -4,9 +4,9 @@ import { storiesData } from '../../data';
 import CharacterCard from "../../components/Cards/CharacterCard";
 import ScrollGallery from '../../components/ScrollGallery/ScrollGallery';
 import Button from '../../components/Buttons/Button';
-import { StoryWrapper } from './Story.styled';
+import { StoryWrapper } from './StoryPage.styled';
 
-const Story = memo(() => {
+const StoryPage = memo(() => {
   const { id } = useParams();
   
   const story = useMemo(() => 
@@ -72,5 +72,5 @@ const Story = memo(() => {
   );
 });
 
-Story.displayName = 'Story';
-export default Story;
+StoryPage.displayName = 'Story';
+export default StoryPage;

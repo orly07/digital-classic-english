@@ -2,10 +2,10 @@ import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import LoadingFallback from "../components/Loading/LoadingFallback";
 
-const LandingPage = lazy(() => import("../pages/LandingPage/LandingPage"));
-const Story = lazy(() => import("../pages/Story/Story"));
-const About = lazy(() => import("../modules/About/About"));
-const SonnetDetail = lazy(() => import("../pages/SonnetDetail/SonnetDetail"));
+const LandingPage = lazy(() => import("../pages/LandingPage"));
+const Story = lazy(() => import("../pages/StoryPage"));
+const About = lazy(() => import("../modules/About"));
+const SonnetPage = lazy(() => import("../pages/SonnetPage"));
 
 const AppRoutes = () => {
   return (
@@ -13,7 +13,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/story/:id" element={<Story />} />
-        <Route path="/sonnet/:id" element={<SonnetDetail />} />
+        <Route path="/sonnet/:id" element={<SonnetPage />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Suspense>

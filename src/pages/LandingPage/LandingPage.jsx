@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState,
   useCallback,
+  useEffect,
 } from "react";
 import { storiesData, sonnetsData } from "../../data";
 import StoryCard from "../../components/Cards/StoryCard";
@@ -15,8 +16,13 @@ import ScrollButton from "../../components/Buttons/ScrollButton";
 import LoadingFallback from "../../components/Loading/LoadingFallback";
 import Hero from "../../modules/Hero/Hero";
 import * as S from "./LandingPage.styled";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
+import { fadeInUp, slideUp } from "../../utils/motionVariants";
 
-const About = lazy(() => import("../../modules/About/About"));
+const About = lazy(() => import("../../modules/About"));
+
+const HORIZONTAL_SCROLL_AMOUNT = 320; // px per click (tweakable)
 
 const LandingPage = memo(() => {
   const storiesRef = useRef(null);
@@ -25,6 +31,17 @@ const LandingPage = memo(() => {
   const [storiesFilter, setStoriesFilter] = useState("");
   const [sonnetsFilter, setSonnetsFilter] = useState("");
 
+  // track if user can scroll for each container
+  const [storiesCanScroll, setStoriesCanScroll] = useState({
+    left: false,
+    right: false,
+  });
+  const [sonnetsCanScroll, setSonnetsCanScroll] = useState({
+    left: false,
+    right: false,
+  });
+
+  // static data memoized
   const stories = useMemo(() => storiesData, []);
   const sonnets = useMemo(() => sonnetsData, []);
 
@@ -38,13 +55,59 @@ const LandingPage = memo(() => {
     return sonnets.filter((sonnet) => sonnet.author === sonnetsFilter);
   }, [sonnets, sonnetsFilter]);
 
+  // smooth, accessible scroll function
   const scroll = useCallback((ref, direction) => {
-    if (ref.current) {
-      const scrollAmount = 300;
-      ref.current.scrollLeft += direction * scrollAmount;
-    }
+    if (!ref?.current) return;
+    const amount = HORIZONTAL_SCROLL_AMOUNT * direction;
+    ref.current.scrollBy({ left: amount, behavior: "smooth" });
   }, []);
 
+  // update whether left/right buttons should be enabled
+  const updateScrollState = useCallback((ref, setter) => {
+    if (!ref?.current) {
+      setter({ left: false, right: false });
+      return;
+    }
+    const el = ref.current;
+    // use rAF for smoother updates
+    window.requestAnimationFrame(() => {
+      const { scrollLeft, scrollWidth, clientWidth } = el;
+      const maxScrollLeft = scrollWidth - clientWidth;
+      setter({
+        left: scrollLeft > 5,
+        right: scrollLeft < maxScrollLeft - 5,
+      });
+    });
+  }, []);
+
+  // hooks to observe scroll/resize for both containers
+  useEffect(() => {
+    const storiesEl = storiesRef.current;
+    const sonnetsEl = sonnetsRef.current;
+
+    const handle = () => {
+      updateScrollState(storiesRef, setStoriesCanScroll);
+      updateScrollState(sonnetsRef, setSonnetsCanScroll);
+    };
+
+    // initial
+    handle();
+
+    // listeners
+    if (storiesEl)
+      storiesEl.addEventListener("scroll", handle, { passive: true });
+    if (sonnetsEl)
+      sonnetsEl.addEventListener("scroll", handle, { passive: true });
+    window.addEventListener("resize", handle, { passive: true });
+
+    return () => {
+      if (storiesEl) storiesEl.removeEventListener("scroll", handle);
+      if (sonnetsEl) sonnetsEl.removeEventListener("scroll", handle);
+      window.removeEventListener("resize", handle);
+    };
+  }, [updateScrollState, filteredStories.length, filteredSonnets.length]);
+
+  // handlers for filters
   const handleStoriesFilterChange = useCallback((author) => {
     setStoriesFilter(author);
   }, []);
@@ -53,137 +116,166 @@ const LandingPage = memo(() => {
     setSonnetsFilter(author);
   }, []);
 
-  const resetStoriesFilter = useCallback(() => {
-    setStoriesFilter("");
-  }, []);
-
-  const resetSonnetsFilter = useCallback(() => {
-    setSonnetsFilter("");
-  }, []);
+  const resetStoriesFilter = useCallback(() => setStoriesFilter(""), []);
+  const resetSonnetsFilter = useCallback(() => setSonnetsFilter(""), []);
 
   return (
     <>
       <Hero />
 
-      <S.Section id="stories">
-        <S.SectionHeader>
-          <div className="title-section">
-            <h2>Explore Stories</h2>
-            {storiesFilter && (
-              <span className="filter-indicator">
-                Showing works by {storiesFilter}
-                <button
-                  onClick={resetStoriesFilter}
-                  className="clear-filter"
-                  aria-label="Clear filter"
-                >
-                  ×
-                </button>
-              </span>
-            )}
-          </div>
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <S.Section id="stories">
+          <S.SectionHeader>
+            <div className="title-section">
+              <h2>Explore Stories</h2>
+              {storiesFilter && (
+                <span className="filter-indicator" aria-live="polite">
+                  Showing works by {storiesFilter}
+                  <button
+                    onClick={resetStoriesFilter}
+                    className="clear-filter"
+                    aria-label="Clear stories filter"
+                  >
+                    ×
+                  </button>
+                </span>
+              )}
+            </div>
 
-          <FilterDropdown
-            data={stories}
-            selectedAuthor={storiesFilter}
-            onAuthorChange={handleStoriesFilterChange}
-            placeholder="All Stories"
-            label="Filter Stories"
-          />
-        </S.SectionHeader>
-
-        <S.ScrollContainer>
-          <S.ScrollContent ref={storiesRef}>
-            {filteredStories.length > 0 ? (
-              filteredStories.map((story) => (
-                <StoryCard key={story.id} story={story} />
-              ))
-            ) : (
-              <div className="no-results">
-                <p>No stories found for the selected author.</p>
-                <button onClick={resetStoriesFilter} className="reset-button">
-                  Show All Stories
-                </button>
-              </div>
-            )}
-          </S.ScrollContent>
-        </S.ScrollContainer>
-
-        {filteredStories.length > 0 && (
-          <div className="scroll-controls">
-            <ScrollButton
-              direction="left"
-              onClick={() => scroll(storiesRef, -1)}
-              aria-label="Scroll stories left"
+            <FilterDropdown
+              data={stories}
+              selectedAuthor={storiesFilter}
+              onAuthorChange={handleStoriesFilterChange}
+              placeholder="All Stories"
+              label="Filter Stories"
             />
-            <ScrollButton
-              direction="right"
-              onClick={() => scroll(storiesRef, 1)}
-              aria-label="Scroll stories right"
+          </S.SectionHeader>
+
+          <S.ScrollContainer>
+            <S.ScrollContent
+              ref={storiesRef}
+              tabIndex={0}
+              aria-label="Stories list"
+            >
+              {filteredStories.length > 0 ? (
+                filteredStories.map((story) => (
+                  <StoryCard key={story.id} story={story} />
+                ))
+              ) : (
+                <div className="no-results" role="status" aria-live="polite">
+                  <p>No stories found for the selected author.</p>
+                  <button onClick={resetStoriesFilter} className="reset-button">
+                    Show All Stories
+                  </button>
+                </div>
+              )}
+            </S.ScrollContent>
+          </S.ScrollContainer>
+
+          {filteredStories.length > 0 && (
+            <div
+              className="scroll-controls"
+              role="group"
+              aria-label="Scroll stories"
+            >
+              <ScrollButton
+                direction="left"
+                onClick={() => scroll(storiesRef, -1)}
+                aria-label="Scroll stories left"
+                disabled={!storiesCanScroll.left}
+              />
+              <ScrollButton
+                direction="right"
+                onClick={() => scroll(storiesRef, 1)}
+                aria-label="Scroll stories right"
+                disabled={!storiesCanScroll.right}
+              />
+            </div>
+          )}
+        </S.Section>
+      </motion.div>
+
+      <motion.div
+        variants={slideUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <S.Section id="sonnets">
+          <S.SectionHeader>
+            <div className="title-section">
+              <h2>Other Literary Works</h2>
+              {sonnetsFilter && (
+                <span className="filter-indicator" aria-live="polite">
+                  Showing works by {sonnetsFilter}
+                  <button
+                    onClick={resetSonnetsFilter}
+                    className="clear-filter"
+                    aria-label="Clear sonnets filter"
+                  >
+                    ×
+                  </button>
+                </span>
+              )}
+            </div>
+
+            <FilterDropdown
+              data={sonnets}
+              selectedAuthor={sonnetsFilter}
+              onAuthorChange={handleSonnetsFilterChange}
+              placeholder="All Sonnets"
+              label="Filter Sonnets"
             />
-          </div>
-        )}
-      </S.Section>
+          </S.SectionHeader>
 
-      <S.Section id="sonnets">
-        <S.SectionHeader>
-          <div className="title-section">
-            <h2>Other Literary Works</h2>
-            {sonnetsFilter && (
-              <span className="filter-indicator">
-                Showing works by {sonnetsFilter}
-                <button
-                  onClick={resetSonnetsFilter}
-                  className="clear-filter"
-                  aria-label="Clear filter"
-                >
-                  ×
-                </button>
-              </span>
-            )}
-          </div>
+          <S.ScrollContainer>
+            <S.ScrollContent
+              ref={sonnetsRef}
+              tabIndex={0}
+              aria-label="Sonnets list"
+            >
+              {filteredSonnets.length > 0 ? (
+                filteredSonnets.map((sonnet) => (
+                  <SonnetCard key={sonnet.id} sonnet={sonnet} />
+                ))
+              ) : (
+                <div className="no-results" role="status" aria-live="polite">
+                  <p>No sonnets found for the selected author.</p>
+                  <button onClick={resetSonnetsFilter} className="reset-button">
+                    Show All Sonnets
+                  </button>
+                </div>
+              )}
+            </S.ScrollContent>
+          </S.ScrollContainer>
 
-          <FilterDropdown
-            data={sonnets}
-            selectedAuthor={sonnetsFilter}
-            onAuthorChange={handleSonnetsFilterChange}
-            placeholder="All Sonnets"
-            label="Filter Sonnets"
-          />
-        </S.SectionHeader>
-
-        <S.ScrollContainer>
-          <S.ScrollContent ref={sonnetsRef}>
-            {filteredSonnets.length > 0 ? (
-              filteredSonnets.map((sonnet) => (
-                <SonnetCard key={sonnet.id} sonnet={sonnet} />
-              ))
-            ) : (
-              <div className="no-results">
-                <p>No sonnets found for the selected author.</p>
-                <button onClick={resetSonnetsFilter} className="reset-button">
-                  Show All Sonnets
-                </button>
-              </div>
-            )}
-          </S.ScrollContent>
-        </S.ScrollContainer>
-
-        {filteredSonnets.length > 0 && (
-          <div className="scroll-controls">
-            <ScrollButton
-              direction="left"
-              onClick={() => scroll(sonnetsRef, -1)}
-              aria-label="Scroll sonnets left"
-            />
-            <ScrollButton
-              direction="right"
-              onClick={() => scroll(sonnetsRef, 1)}
-              aria-label="Scroll sonnets right"
-            />
-          </div>
-        )}
-      </S.Section>
+          {filteredSonnets.length > 0 && (
+            <div
+              className="scroll-controls"
+              role="group"
+              aria-label="Scroll sonnets"
+            >
+              <ScrollButton
+                direction="left"
+                onClick={() => scroll(sonnetsRef, -1)}
+                aria-label="Scroll sonnets left"
+                disabled={!sonnetsCanScroll.left}
+              />
+              <ScrollButton
+                direction="right"
+                onClick={() => scroll(sonnetsRef, 1)}
+                aria-label="Scroll sonnets right"
+                disabled={!sonnetsCanScroll.right}
+              />
+            </div>
+          )}
+        </S.Section>
+      </motion.div>
 
       <Suspense fallback={<LoadingFallback />}>
         <About />
