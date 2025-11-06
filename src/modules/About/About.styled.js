@@ -54,7 +54,7 @@ export const MissionVisionValues = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 2.5rem;
-  margin-top: 4rem;
+  margin-bottom: 4rem;
 
   ${breakpoint.mobile} {
     gap: 2rem;

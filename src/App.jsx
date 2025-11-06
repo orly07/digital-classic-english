@@ -4,6 +4,7 @@ import Layout from "./components/Layout/Layout";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import AppRoutes from "./routes/AppRoutes";
 import GlobalStyle from "./styles/GlobalStyle";
+import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <ErrorBoundary>
         <GlobalStyle />
           <Layout>
+            <ScrollToTop />
             <AppRoutes />
           </Layout>
       </ErrorBoundary>

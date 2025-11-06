@@ -1,4 +1,4 @@
-import React, { memo, useState, useCallback } from "react";
+import React, { memo, useState, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { sonnetsData } from "../../data";
 // eslint-disable-next-line no-unused-vars
@@ -20,6 +20,10 @@ const SonnetPage = memo(() => {
   const sonnet = sonnetsData.find((s) => s.id === id);
   const [showSettings, setShowSettings] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [id]);
+
   const {
     isSpeaking,
     voices,
@@ -32,7 +36,10 @@ const SonnetPage = memo(() => {
     speak,
   } = useSpeechSynthesis(sonnet?.content);
 
-  const toggleSettings = useCallback(() => setShowSettings((prev) => !prev), []);
+  const toggleSettings = useCallback(
+    () => setShowSettings((prev) => !prev),
+    []
+  );
 
   if (!sonnet) {
     return (

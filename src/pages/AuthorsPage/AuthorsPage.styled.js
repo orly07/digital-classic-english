@@ -16,9 +16,9 @@ export const PageContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: ${typography.fontSize["2xl"]};
+  font-size: ${typography.fontSize["4xl"]};
   font-weight: ${typography.fontWeight.bold};
-  color: ${color.black};
+  color: ${color.primaryDark};
   margin-bottom: 1rem;
 `;
 
@@ -31,9 +31,12 @@ export const Description = styled.p`
 `;
 
 export const AuthorsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 3rem;
   max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 `;

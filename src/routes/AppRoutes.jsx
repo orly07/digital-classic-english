@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import LoadingFallback from "../components/Loading/LoadingFallback";
+import ScrollToTop from "../utils/ScrollToTop";
 
 const LandingPage = lazy(() => import("../pages/LandingPage"));
 const Story = lazy(() => import("../pages/StoryPage"));
