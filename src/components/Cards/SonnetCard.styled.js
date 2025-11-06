@@ -78,7 +78,7 @@ export const ListenButton = styled(Link)`
   text-align: center;
 
   &:hover {
-    background: ${color.green};
+    background: ${color.darkGreen};
     transform: translateY(-2px);
     box-shadow: ${shadow.medium};
   }
