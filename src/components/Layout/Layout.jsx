@@ -1,3 +1,4 @@
+// src/components/Layout/Layout.jsx
 import { memo } from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
