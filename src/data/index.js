@@ -5,6 +5,7 @@ export { theCaskOfAmontilladoData } from "./stories/the-cask-of-amontillado";
 export { theTaleOfSirGarethData } from "./stories/the-tale-of-sir-gareth";
 export { othelloData } from "./stories/othello";
 export { millersTaleData } from "./stories/the-millers-tale";
+export { deathOfKingArthurData } from "./stories/the-death0of-king-arthur";
 
 export { sonnetsData } from "./sonnets/sonnets";
 export { missionVisionData, teamData } from "./about";
@@ -17,6 +18,7 @@ import { theCaskOfAmontilladoData } from "./stories/the-cask-of-amontillado";
 import { theTaleOfSirGarethData } from "./stories/the-tale-of-sir-gareth";
 import { othelloData } from "./stories/othello";
 import { millersTaleData } from "./stories/the-millers-tale";
+import { deathOfKingArthurData } from "./stories/the-death0of-king-arthur";
 
 export const storiesData = [
   romeoAndJulietData,
@@ -26,4 +28,5 @@ export const storiesData = [
   theTaleOfSirGarethData,
   othelloData,
   millersTaleData,
+  deathOfKingArthurData,
 ];
