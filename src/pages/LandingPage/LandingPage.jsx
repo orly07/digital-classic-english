@@ -7,7 +7,7 @@ import React, {
   useState,
   useCallback,
 } from "react";
-import { storiesData, sonnetsData } from "../../data/data";
+import { storiesData, sonnetsData } from "../../data"; // Updated import path
 import StoryCard from "../../components/Cards/StoryCard";
 import SonnetCard from "../../components/Cards/SonnetCard";
 import FilterDropdown from "../../components/Filter/FilterDropdown";

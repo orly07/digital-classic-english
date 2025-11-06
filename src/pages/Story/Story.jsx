@@ -1,9 +1,9 @@
 import React, { useMemo, memo, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { storiesData } from '../../data/data';
+import { storiesData } from '../../data'; 
 import CharacterCard from "../../components/Cards/CharacterCard/CharacterCard";
 import ScrollGallery from '../../components/ScrollGallery/ScrollGallery';
-import  Button  from '../../components/Buttons/Button';
+import Button from '../../components/Buttons/Button';
 import { StoryWrapper } from './Story.styled';
 
 const Story = memo(() => {

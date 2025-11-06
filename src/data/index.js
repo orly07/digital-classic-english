@@ -1,0 +1,16 @@
+export { romeoAndJulietData } from "./stories/romeo-and-juliet";
+export { theKnightsTaleData } from "./stories/the-knights-tale";
+export { aRoseForEmilyData } from "./stories/a-rose-for-emily";
+export { sonnetsData } from "./sonnets/sonnets";
+export { missionVisionData, teamData } from "./about";
+export { contactData } from "./contact";
+
+import { romeoAndJulietData } from "./stories/romeo-and-juliet";
+import { theKnightsTaleData } from "./stories/the-knights-tale";
+import { aRoseForEmilyData } from "./stories/a-rose-for-emily";
+
+export const storiesData = [
+  romeoAndJulietData,
+  theKnightsTaleData,
+  aRoseForEmilyData,
+];

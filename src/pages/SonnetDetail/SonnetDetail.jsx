@@ -1,6 +1,6 @@
 import React, { memo, useState, useRef, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
-import { sonnetsData } from "../../data/data";
+import { sonnetsData } from "../../data"; // Updated import path
 import Button from "../../components/Buttons/Button";
 import {
   SonnetDetailWrapper,
@@ -152,7 +152,7 @@ const SonnetDetail = memo(() => {
     setShowSettings((prev) => !prev);
   }, []);
 
-if (!sonnet) {
+  if (!sonnet) {
     return (
       <div style={{ textAlign: 'center', padding: '2rem', marginTop: '80px' }}>
         <h2>Sonnet not found!</h2>

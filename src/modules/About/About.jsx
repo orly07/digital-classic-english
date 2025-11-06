@@ -7,8 +7,8 @@ import {
 } from "./About.styled";
 import MissionVisionCard from "../../components/Cards/MissionVisionCard";
 import TeamCard from "../../components/Cards/TeamCard";
-import  Button  from "../../components/Buttons/Button";
-import { missionVisionData, teamData, contactData } from "../../data/data";
+import Button from "../../components/Buttons/Button";
+import { missionVisionData, teamData, contactData } from "../../data"; // Added teamData import
 
 const About = memo(() => {
   return (
