@@ -1,20 +1,11 @@
 import { memo } from "react";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 import * as S from "./Hero.styled";
 import Button from "../../components/Buttons/Button";
-import { motion } from "framer-motion";
+import { fadeIn, fadeInUp } from "../../utils/motionVariants";
 
 const Hero = memo(() => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-  };
-
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { delay: 0.4, duration: 1 } },
-  };
-
   return (
     <S.HeroSection id="hero-section">
       <S.HeroContent
@@ -28,8 +19,8 @@ const Hero = memo(() => {
         </motion.h1>
 
         <motion.h2 variants={fadeIn}>
-          Explore stories with narration, visuals, and interactive content
-          that make learning more engaging.
+          Explore stories with narration, visuals, and interactive content that
+          make learning more engaging.
         </motion.h2>
 
         <motion.div variants={fadeIn} className="hero-buttons">
