@@ -7,6 +7,7 @@ export const AboutSection = styled.section`
   background: ${color.surface};
   color: ${color.black};
 
+
   h1 {
     font-size: ${typography.fontSize["4xl"]};
     font-weight: ${typography.fontWeight.bold};
@@ -42,13 +43,12 @@ export const AboutSection = styled.section`
   }
 
   ${breakpoint.mobile} {
-    padding: 4rem 1rem;
+    padding: 4rem 2rem;
+
   }
 `;
 
-/* =============================
-   🔹 Mission, Vision, Values
-============================= */
+
 export const MissionVisionValues = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -59,12 +59,10 @@ export const MissionVisionValues = styled.div`
   ${breakpoint.mobile} {
     gap: 2rem;
     margin-top: 3rem;
+    padding: 0 40px;
   }
 `;
 
-/* =============================
-   🔹 Team Section
-============================= */
 export const TeamSection = styled.section`
   background: ${color.gray[50]};
   padding: 5rem 2rem;
