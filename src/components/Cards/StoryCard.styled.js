@@ -1,22 +1,23 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { color, shadow, breakpoint } from "../../styles/theme";
 
 export const CardContainer = styled.div`
   min-width: 300px;
   max-width: 340px;
   background: white;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: ${shadow.soft};
   overflow: hidden;
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.05);
 
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: ${shadow.medium};
   }
 
-  @media (max-width: 768px) {
+  @media ${breakpoint.mobile} {
     min-width: 280px;
     max-width: 300px;
   }
@@ -36,12 +37,12 @@ export const CardContent = styled.div`
     font-weight: 700;
     margin-bottom: 0.75rem;
     font-size: 1.25rem;
-    color: #1a202c;
+    color: ${color.gray[700]};
     line-height: 1.3;
   }
 
   p {
-    color: #718096;
+    color: ${color.gray[500]};
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 1rem;
@@ -54,7 +55,7 @@ export const CardContent = styled.div`
 `;
 
 export const CardAuthor = styled.small`
-  color: #00b96b;
+  color: ${color.green};
   font-weight: 600;
   font-size: 0.85rem;
   display: block;
@@ -65,7 +66,7 @@ export const CardLink = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #00b96b;
+  background: ${color.green};
   color: white;
   padding: 10px 24px;
   border-radius: 8px;
@@ -77,7 +78,7 @@ export const CardLink = styled(Link)`
   text-align: center;
 
   &:hover {
-    background: #009e5a;
+    background: ${color.darkGreen};
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 185, 107, 0.3);
   }

@@ -3,14 +3,12 @@ import { useEffect } from 'react';
 export const useBodyScroll = (isLocked) => {
   useEffect(() => {
     if (isLocked) {
-      // Store current scroll position
       const scrollY = window.scrollY;
       document.body.style.position = 'fixed';
       document.body.style.top = `-${scrollY}px`;
       document.body.style.width = '100%';
       document.body.classList.add('menu-open');
     } else {
-      // Restore scroll position
       const scrollY = document.body.style.top;
       document.body.style.position = '';
       document.body.style.top = '';
@@ -23,7 +21,6 @@ export const useBodyScroll = (isLocked) => {
     }
 
     return () => {
-      // Cleanup on unmount
       document.body.style.position = '';
       document.body.style.top = '';
       document.body.style.width = '';

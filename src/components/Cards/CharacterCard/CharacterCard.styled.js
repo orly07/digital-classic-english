@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { color, shadow } from "../../../styles/theme";
 
 export const CardContainer = styled.div`
   min-width: 350px;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: ${shadow.soft};
   padding: 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
@@ -15,7 +16,7 @@ export const CardContainer = styled.div`
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: ${shadow.medium};
   }
 
   @media (max-width: 768px) {
@@ -26,7 +27,6 @@ export const CardContainer = styled.div`
   @media (max-width: 480px) {
     min-width: 280px;
     height: fit-content;
-
 
     padding: 1rem;
   }
@@ -39,13 +39,13 @@ export const CardImage = styled.img`
   object-fit: cover;
   object-position: center;
   margin: 0 auto 1rem;
-  border: 3px solid #00b96b;
+  border: 3px solid ${color.green};
   display: block;
   transition: all 0.3s ease;
   cursor: pointer;
 
   &:hover {
-    border-color: #009e5a;
+    border-color: ${color.green};
     transform: scale(1.02);
     box-shadow: 0 4px 20px rgba(0, 185, 107, 0.3);
   }
@@ -72,7 +72,7 @@ export const CardContent = styled.div`
 export const CardTitle = styled.h6`
   font-weight: 700;
   margin: 0;
-  color: #1a202c;
+  color: ${color.gray[700]};
   font-size: 1.25rem;
   line-height: 1.3;
   flex-shrink: 0;
@@ -87,7 +87,7 @@ export const LinesContainer = styled.div`
   padding: 1rem;
   background: linear-gradient(135deg, #f8f9fa, #e9ecef);
   border-radius: 8px;
-  border-left: 4px solid #00b96b;
+  border-left: 4px solid ${color.green};
   animation: fadeInUp 0.3s ease;
 
   @keyframes fadeInUp {
@@ -107,21 +107,21 @@ export const LinesText = styled.p`
   font-style: italic;
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #4a5568;
+  color: ${color.gray[600]};
   text-align: center;
   font-weight: 500;
 
   &::before {
     content: "“";
     font-size: 1.2em;
-    color: #00b96b;
+    color: ${color.green};
     margin-right: 4px;
   }
 
   &::after {
     content: "”";
     font-size: 1.2em;
-    color: #00b96b;
+    color: ${color.green};
     margin-left: 4px;
   }
 `;

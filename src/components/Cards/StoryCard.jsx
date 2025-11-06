@@ -1,4 +1,3 @@
-// src/components/Cards/StoryCard.jsx
 import { memo } from "react";
 import { CardContainer, CardImage, CardContent, CardAuthor, CardLink } from "./StoryCard.styled";
 
