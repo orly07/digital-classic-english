@@ -1,5 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { color, shadow, typography, breakpoint } from "../../styles/theme";
+
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
 
 export const NavbarContainer = styled.nav`
   position: fixed;
@@ -15,8 +20,7 @@ export const NavbarContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  box-shadow: ${({ $isScrolled, $isMobileMenuOpen }) =>
-    $isScrolled && !$isMobileMenuOpen ? shadow.sm : "none"};
+  box-shadow: ${({ $isScrolled }) => ($isScrolled ? shadow.sm : "none")};
   z-index: 1000;
   transition: all 0.3s ease;
 
@@ -25,7 +29,6 @@ export const NavbarContainer = styled.nav`
     font-size: ${typography.fontSize.xl};
     color: ${({ $isScrolled }) =>
       $isScrolled ? color.black : color.white};
-    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -63,12 +66,12 @@ export const NavItem = styled.span`
   padding: 0.5rem 1rem;
   border-radius: 8px;
   color: ${({ $isScrolled }) =>
-    $isScrolled ? color.gray[600] : color.white};
+    $isScrolled ? color.gray[700] : color.white};
   white-space: nowrap;
 
   &:hover {
     color: ${color.primary};
-    background: rgba(0, 185, 107, 0.1);
+    background: rgba(0, 185, 107, 0.08);
   }
 `;
 
@@ -76,9 +79,9 @@ export const MobileMenuButton = styled.button`
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: ${({ $isScrolled }) =>
-    $isScrolled ? color.gray[600] : color.white};
+    $isScrolled ? color.gray[700] : color.white};
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 8px;
@@ -103,17 +106,11 @@ export const MobileMenuOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(4px);
   z-index: 999;
   opacity: 0;
-  animation: fadeIn 0.3s ease forwards;
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
+  animation: ${fadeIn} 0.3s ease forwards;
 
   ${breakpoint.tablet} {
     display: none;
@@ -130,7 +127,7 @@ export const MobileMenu = styled.div`
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   transform: translateX(${({ $isOpen }) => ($isOpen ? "0" : "100%")});
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease;
   display: flex;
   flex-direction: column;
 
@@ -144,8 +141,8 @@ export const MobileMenu = styled.div`
     .logo {
       font-size: ${typography.fontSize.lg};
       font-weight: ${typography.fontWeight.semibold};
-      margin: 0;
       color: ${color.black};
+      margin: 0;
       padding-top: 10px;
     }
 
@@ -165,10 +162,6 @@ export const MobileMenu = styled.div`
       text-align: center;
       margin: 0;
     }
-  }
-
-  ${breakpoint.tablet} {
-    display: none;
   }
 
   @media (max-width: 480px) {
