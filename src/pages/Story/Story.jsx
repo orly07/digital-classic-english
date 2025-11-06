@@ -55,7 +55,7 @@ const Story = memo(() => {
             variant="primary"
             size="large"
           >
-            Read More Stories
+            Read Full Story
           </Button>
         )}
 
