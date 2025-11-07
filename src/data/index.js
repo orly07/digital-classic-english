@@ -8,6 +8,7 @@ export { millersTaleData } from "./stories/the-millers-tale";
 export { deathOfKingArthurData } from "./stories/the-death0of-king-arthur";
 export { tellTaleHeartData } from "./stories/the-tell-tale-heart";
 export { fallOfTheHouseOfUsherData } from "./stories/the-fall-of-the-house-of-usher";
+export { blackCatData } from "./stories/the-black-cat";
 
 export { sonnetsData } from "./sonnets/sonnets";
 
@@ -24,6 +25,7 @@ import { millersTaleData } from "./stories/the-millers-tale";
 import { deathOfKingArthurData } from "./stories/the-death0of-king-arthur";
 import { tellTaleHeartData } from "./stories/the-tell-tale-heart";
 import { fallOfTheHouseOfUsherData } from "./stories/the-fall-of-the-house-of-usher";
+import { blackCatData } from "./stories/the-black-cat";
 
 export const storiesData = [
   romeoAndJulietData,
@@ -36,4 +38,5 @@ export const storiesData = [
   deathOfKingArthurData,
   tellTaleHeartData,
   fallOfTheHouseOfUsherData,
+  blackCatData,
 ];
