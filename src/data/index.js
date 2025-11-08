@@ -13,6 +13,7 @@ export { pardonersTaleData } from "./stories/the-pardoners-tale";
 export { masqueOfTheRedDeathData } from "./stories/the-masque-of-the-red-death";
 export { wifeOfBathsTaleData } from "./stories/the-wife-of-baths-tale";
 export { soundAndTheFuryData } from "./stories/the-sound-and-the-fury.js";
+export { macbethData } from "./stories/macbeth.js";
 
 export { sonnetsData } from "./sonnets/sonnets";
 
@@ -34,6 +35,7 @@ import { pardonersTaleData } from "./stories/the-pardoners-tale";
 import { masqueOfTheRedDeathData } from "./stories/the-masque-of-the-red-death";
 import { wifeOfBathsTaleData } from "./stories/the-wife-of-baths-tale.js";
 import { soundAndTheFuryData } from "./stories/the-sound-and-the-fury.js";
+import { macbethData } from "./stories/macbeth.js";
 
 export const storiesData = [
   romeoAndJulietData,
@@ -51,4 +53,5 @@ export const storiesData = [
   masqueOfTheRedDeathData,
   wifeOfBathsTaleData,
   soundAndTheFuryData,
+  macbethData,
 ];
