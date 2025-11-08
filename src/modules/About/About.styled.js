@@ -7,7 +7,6 @@ export const AboutSection = styled.section`
   background: ${color.surface};
   color: ${color.black};
 
-
   h1 {
     font-size: ${typography.fontSize["4xl"]};
     font-weight: ${typography.fontWeight.bold};
@@ -44,22 +43,31 @@ export const AboutSection = styled.section`
 
   ${breakpoint.mobile} {
     padding: 4rem 2rem;
-
   }
 `;
 
-
 export const MissionVisionValues = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  gap: 2.5rem;
-  margin-bottom: 4rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+  padding: 0 2rem;
 
   ${breakpoint.mobile} {
     gap: 2rem;
     margin-top: 3rem;
     padding: 0 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  ${breakpoint.tablet} {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 `;
 

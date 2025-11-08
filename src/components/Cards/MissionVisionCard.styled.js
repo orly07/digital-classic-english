@@ -12,6 +12,7 @@ export const CardContainer = styled.div`
   transition: all 0.3s ease;
   overflow: hidden;
   position: relative;
+  width: 100%;
 
   &:hover {
     transform: translateY(-8px);
