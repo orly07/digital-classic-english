@@ -1,28 +1,26 @@
 // src/components/Cards/SonnetCard.jsx
 import { memo } from "react";
-import { 
-  CardContainer, 
-  CardImage, 
-  CardContent, 
-  CardAuthor, 
-  ListenButton 
+import {
+  CardContainer,
+  CardImage,
+  CardContent,
+  CardAuthor,
+  ListenButton,
 } from "./SonnetCard.styled";
 
 const SonnetCard = memo(({ sonnet }) => {
   return (
-    <CardContainer>
+    <CardContainer to={`/sonnet/${sonnet.id}`}>
       <CardImage src={sonnet.img} alt={sonnet.title} loading="lazy" />
       <CardContent>
         <h5>{sonnet.title}</h5>
         <p>{sonnet.description}</p>
         <CardAuthor>By {sonnet.author}</CardAuthor>
-        <ListenButton to={`/sonnet/${sonnet.id}`}>
-          Listen Now
-        </ListenButton>
+        <ListenButton>Listen Now</ListenButton>
       </CardContent>
     </CardContainer>
   );
 });
 
-SonnetCard.displayName = 'SonnetCard';
+SonnetCard.displayName = "SonnetCard";
 export default SonnetCard;

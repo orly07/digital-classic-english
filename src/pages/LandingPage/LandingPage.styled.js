@@ -60,8 +60,7 @@ export const SectionHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  margin: 0 auto 2rem;
-  padding: 0 1rem;
+  margin: 0 auto 1rem;
   gap: 2rem;
 
   .title-section {
@@ -145,7 +144,7 @@ export const ScrollContent = styled.div`
   gap: 1.5rem;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 1rem;
+  padding: 1rem 0;
   scrollbar-width: thin;
   -ms-overflow-style: none;
 

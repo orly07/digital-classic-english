@@ -60,7 +60,7 @@ const Navbar = () => {
             { to: "stories", label: "Stories", type: "scroll" },
             { to: "sonnets", label: "Sonnets", type: "scroll" },
             { to: "about", label: "About", type: "scroll" },
-            {to: "authors", label: "Authors", type: "link"}
+            { to: "authors", label: "Authors", type: "link" },
           ]
         : [
             { to: "/", label: "Home", type: "link" },
@@ -88,7 +88,7 @@ const Navbar = () => {
                 to={item.to}
                 smooth
                 duration={800}
-                offset={-80}
+                offset={-64}
               >
                 <S.NavItem $isScrolled={isScrolled}>{item.label}</S.NavItem>
               </ScrollLink>
@@ -120,7 +120,10 @@ const Navbar = () => {
           <Link to="/" className="logo" onClick={closeMobileMenu}>
             CLASSIC ENGLISH
           </Link>
-          <S.MobileMenuButton onClick={toggleMobileMenu} aria-label="Close menu">
+          <S.MobileMenuButton
+            onClick={toggleMobileMenu}
+            aria-label="Close menu"
+          >
             <FaTimes />
           </S.MobileMenuButton>
         </div>
