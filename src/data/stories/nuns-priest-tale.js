@@ -13,7 +13,7 @@ export const nunsPriestData = {
   title: "The Nun’s Priest’s Tale",
   author: "Geoffrey Chaucer",
   description:
-    "A humorous and moral fable from Geoffrey Chaucer’s *The Canterbury Tales*. The story follows Chanticleer, a proud rooster who learns a lesson about pride and flattery after being tricked by a sly fox. Through clever storytelling, The Nun’s Priest delivers a tale full of wit, irony, and wisdom about the dangers of vanity and the power of quick thinking.",
+    "The Nun’s Priest’s Tale is a humorous and moral fable told by the Nun’s Priest in The Canterbury Tales. It takes place in a poor widow’s small farm, where a proud rooster named Chanticleer lives with his favorite hen, Pertelote, and several other hens. Later, a sly fox named Sir Russel flatters Chanticleer into singing with his eyes closed and catches him. Chanticleer manages to escape when he tricks the fox into speaking.",
   img: NunsPriestCover,
   video: "https://www.youtube.com/embed/20R_g8E5AxQ?si=CnFxSwvDLSfMNvLT",
   fullStories:
