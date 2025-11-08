@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { color, shadow, breakpoint, typography } from "../../styles/theme";
 
-export const CardContainer = styled.div`
+export const CardContainer = styled(Link)`
   min-width: 300px;
   max-width: 340px;
   background: ${color.surface};
@@ -66,7 +66,7 @@ export const CardAuthor = styled.small`
   font-family: ${typography.fontFamily};
 `;
 
-export const ListenButton = styled(Link)`
+export const ListenButton = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;

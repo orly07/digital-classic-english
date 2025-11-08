@@ -21,7 +21,8 @@ export const HeroSection = styled.section`
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    background-attachment: fixed;
     z-index: 0;
   }
 

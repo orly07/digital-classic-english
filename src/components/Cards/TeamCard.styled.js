@@ -70,7 +70,7 @@ export const MemberDescription = styled.p`
   font-size: ${typography.fontSize.sm};
   line-height: 1.6;
   overflow: hidden;
-  text-align: justify;
+  text-align: center;
 
   ${({ $expanded }) =>
     !$expanded &&

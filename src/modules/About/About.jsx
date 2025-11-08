@@ -8,7 +8,6 @@ import Button from "../../components/Buttons/Button";
 import { missionVisionData, teamData, contactData } from "../../data";
 import { fadeInUp, fadeIn, slideUp } from "../../utils/motionVariants";
 
-
 const AboutIntro = () => (
   <S.AboutSection id="about">
     <motion.h1
@@ -26,7 +25,8 @@ const AboutIntro = () => (
       whileInView="visible"
       viewport={{ once: true }}
     >
-      Making literature more engaging through Classic English digital storytelling.
+      Making literature more engaging through Classic English digital
+      storytelling.
     </motion.p>
 
     <motion.h2
@@ -44,9 +44,10 @@ const AboutIntro = () => (
       whileInView="visible"
       viewport={{ once: true }}
     >
-      Classic English is a platform dedicated to reimagining the way students and educators
-      experience literature. By blending traditional storytelling with digital tools, we make
-      stories more interactive, relatable, and impactful for today's generation.
+      Classic English is a platform dedicated to reimagining the way students
+      and educators experience literature. By blending traditional storytelling
+      with digital tools, we make stories more interactive, relatable, and
+      impactful for today's generation.
     </motion.p>
   </S.AboutSection>
 );
