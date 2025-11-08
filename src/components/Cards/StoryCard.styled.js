@@ -38,7 +38,7 @@ export const CardContent = styled.div`
   h5 {
     font-weight: ${typography.fontWeight.bold};
     margin-bottom: 0.75rem;
-    font-size: ${typography.fontSize.xl};
+    font-size: ${typography.fontSize.base};
     color: ${color.gray[700]};
     line-height: 1.3;
   }
@@ -50,7 +50,7 @@ export const CardContent = styled.div`
     margin-bottom: 1rem;
     height: 68px;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

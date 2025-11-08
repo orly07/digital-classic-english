@@ -38,10 +38,10 @@ const TeamCard = memo(({ member }) => {
         </div>
 
         <S.MemberDescription $expanded={isExpanded}>
-          {member.description}
+          {displayText}
         </S.MemberDescription>
 
-        {/* {shouldTruncate && (
+        {shouldTruncate && (
           <S.ToggleButton
             onClick={toggleDescription}
             aria-expanded={isExpanded}
@@ -49,7 +49,7 @@ const TeamCard = memo(({ member }) => {
           >
             {isExpanded ? "See Less" : "See More"}
           </S.ToggleButton>
-        )} */}
+        )}
       </S.CardContent>
     </S.CardContainer>
   );
