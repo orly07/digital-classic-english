@@ -1,9 +1,9 @@
 import { FaBookOpen, FaLightbulb, FaHandshake, FaGlobe } from "react-icons/fa";
 
-import GeanImg from "../assets/team/gean-jpg.jpg";
-import DarcyImg from "../assets/team/darcy-jpg.jpg";
-import IrisImg from "../assets/team/iris-jpg.jpg";
-import OrlandoImg from "../assets/team/orlando.webp";
+import GeanImg from "../optimized-assets/team/gean-jpg.webp";
+import DarcyImg from "../optimized-assets/team/darcy-jpg.webp";
+import IrisImg from "../optimized-assets/team/iris-jpg.webp";
+import OrlandoImg from "../optimized-assets/team/orlando.webp";
 
 export const missionVisionData = [
   {

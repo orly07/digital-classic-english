@@ -1,11 +1,11 @@
 // The Wife of Bath's Tale - Images
-import WifeOfBathCover from "../../assets/stories/the_wife_of_baths_tale/cover.jpg";
-import TheWifeOfBathImg from "../../assets/stories/the_wife_of_baths_tale/WifeOfBath.jpg";
-import TheKnightImg from "../../assets/stories/the_wife_of_baths_tale/Knight.jpg";
-import TheQueenImg from "../../assets/stories/the_wife_of_baths_tale/Queen.jpg";
-import KingArthurImg from "../../assets/stories/the_wife_of_baths_tale/KingArthur.jpg";
-import TheOldWomanImg from "../../assets/stories/the_wife_of_baths_tale/OldWoman.jpg";
-import TheMaidenImg from "../../assets/stories/the_wife_of_baths_tale/Maiden.jpg";
+import WifeOfBathCover from "../../optimized-assets/stories/the_wife_of_baths_tale/cover.webp";
+import TheWifeOfBathImg from "../../optimized-assets/stories/the_wife_of_baths_tale/Wife of Bath.webp";
+import TheKnightImg from "../../optimized-assets/stories/the_wife_of_baths_tale/Knight.webp";
+import TheQueenImg from "../../optimized-assets/stories/the_wife_of_baths_tale/Queen.webp";
+import KingArthurImg from "../../optimized-assets/stories/the_wife_of_baths_tale/King Arthur.webp";
+import TheOldWomanImg from "../../optimized-assets/stories/the_wife_of_baths_tale/Old Woman.webp";
+import TheMaidenImg from "../../optimized-assets/stories/the_wife_of_baths_tale/Maiden.webp";
 
 export const wifeOfBathsTaleData = {
   id: "the-wife-of-baths-tale",

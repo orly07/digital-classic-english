@@ -1,11 +1,11 @@
 // The Black Cat - Images
-import BlackCatCover from "../../assets/stories/the_black_cat/cover.jpg";
-import NarratorImg from "../../assets/stories/the_black_cat/Narrator.jpg";
-import WifeImg from "../../assets/stories/the_black_cat/Wife.jpg";
-import PlutoImg from "../../assets/stories/the_black_cat/Pluto.jpg";
-import SecondBlackCatImg from "../../assets/stories/the_black_cat/SecondBlackCat.jpg";
-import PolicemenImg from "../../assets/stories/the_black_cat/Policemen.jpg";
-import ServantsImg from "../../assets/stories/the_black_cat/Servants.jpg";
+import BlackCatCover from "../../optimized-assets/stories/the_black_cat/cover.webp";
+import NarratorImg from "../../optimized-assets/stories/the_black_cat/Narrator.webp";
+import WifeImg from "../../optimized-assets/stories/the_black_cat/Wife.webp";
+import PlutoImg from "../../optimized-assets/stories/the_black_cat/Pluto.webp";
+import SecondBlackCatImg from "../../optimized-assets/stories/the_black_cat/SecondBlackCat.webp";
+import PolicemenImg from "../../optimized-assets/stories/the_black_cat/Policemen.webp";
+import ServantsImg from "../../optimized-assets/stories/the_black_cat/Servants.webp";
 
 export const blackCatData = {
   id: "the-black-cat",

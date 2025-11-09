@@ -1,8 +1,8 @@
 // The Fall of the House of Usher - Images
-import UsherCover from "../../assets/stories/the_fall_of_the_house_of_usher/cover.jpg";
-import RoderickUsherImg from "../../assets/stories/the_fall_of_the_house_of_usher/RoderickUsher.jpg";
-import MadelineUsherImg from "../../assets/stories/the_fall_of_the_house_of_usher/MadelineUsher.jpg";
-import NarratorImg from "../../assets/stories/the_fall_of_the_house_of_usher/Narrator.jpg";
+import UsherCover from "../../optimized-assets/stories/the_fall_of_the_house_of_usher/cover.webp";
+import RoderickUsherImg from "../../optimized-assets/stories/the_fall_of_the_house_of_usher/RoderickUsher.webp";
+import MadelineUsherImg from "../../optimized-assets/stories/the_fall_of_the_house_of_usher/MadelineUsher.webp";
+import NarratorImg from "../../optimized-assets/stories/the_fall_of_the_house_of_usher/Narrator.webp";
 
 export const fallOfTheHouseOfUsherData = {
   id: "the-fall-of-the-house-of-usher",

@@ -1,9 +1,9 @@
 // The Masque of the Red Death - Images
-import RedDeathCover from "../../assets/stories/the_masque_of_the_red_death/cover.jpg";
-import PrinceProsperoImg from "../../assets/stories/the_masque_of_the_red_death/PrinceProspero.jpg";
-import RedDeathImg from "../../assets/stories/the_masque_of_the_red_death/RedDeath.jpg";
-import MusiciansDancersImg from "../../assets/stories/the_masque_of_the_red_death/MusiciansDancers.jpg";
-import ServantsGuardsImg from "../../assets/stories/the_masque_of_the_red_death/ServantsGuards.jpg";
+import RedDeathCover from "../../optimized-assets/stories/the_masque_of_the_red_death/cover.webp";
+import PrinceProsperoImg from "../../optimized-assets/stories/the_masque_of_the_red_death/PrinceProspero.webp";
+import RedDeathImg from "../../optimized-assets/stories/the_masque_of_the_red_death/RedDeath.webp";
+import MusiciansDancersImg from "../../optimized-assets/stories/the_masque_of_the_red_death/MusiciansDancers.webp";
+import ServantsGuardsImg from "../../optimized-assets/stories/the_masque_of_the_red_death/ServantsGuards.webp";
 
 export const masqueOfTheRedDeathData = {
   id: "the-masque-of-the-red-death",

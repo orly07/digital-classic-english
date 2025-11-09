@@ -1,12 +1,12 @@
 // The Nun’s Priest’s Tale - Images
-import NunsPriestCover from "../../assets/stories/nunspriest/cover.jpg";
-import NunsPriestImg from "../../assets/stories/nunspriest/NunsPriest.jpg";
-import ChanticleerImg from "../../assets/stories/nunspriest/Chanticleer.jpg";
-import PerteloteImg from "../../assets/stories/nunspriest/Pertelote.jpg";
-import FoxImg from "../../assets/stories/nunspriest/Fox.jpg";
-import WidowImg from "../../assets/stories/nunspriest/Widow.jpg";
-import DaughtersImg from "../../assets/stories/nunspriest/WidowsDaughters.jpg";
-import HensImg from "../../assets/stories/nunspriest/Hens.jpg";
+import NunsPriestCover from "../../optimized-assets/stories/nunspriest/cover.webp";
+import NunsPriestImg from "../../optimized-assets/stories/nunspriest/NunsPriest.webp";
+import ChanticleerImg from "../../optimized-assets/stories/nunspriest/Chanticleer.webp";
+import PerteloteImg from "../../optimized-assets/stories/nunspriest/Pertelote.webp";
+import FoxImg from "../../optimized-assets/stories/nunspriest/Fox.webp";
+import WidowImg from "../../optimized-assets/stories/nunspriest/Widow.webp";
+import DaughtersImg from "../../optimized-assets/stories/nunspriest/WidowsDaughters.webp";
+import HensImg from "../../optimized-assets/stories/nunspriest/Hens.webp";
 
 export const nunsPriestData = {
   id: "nuns-priest-tale",

@@ -1,9 +1,9 @@
 // The Tell-Tale Heart - Images
-import TellTaleCover from "../../assets/stories/the_tell_tale_heart/cover.jpg";
-import NarratorImg from "../../assets/stories/the_tell_tale_heart/Narrator.jpg";
-import OldManImg from "../../assets/stories/the_tell_tale_heart/OldMan.jpg";
-import NeighborImg from "../../assets/stories/the_tell_tale_heart/Neighbor.jpg";
-import PoliceOfficersImg from "../../assets/stories/the_tell_tale_heart/PoliceOfficers.jpg";
+import TellTaleCover from "../../optimized-assets/stories/the_tell_tale_heart/cover.webp";
+import NarratorImg from "../../optimized-assets/stories/the_tell_tale_heart/Narrator.webp";
+import OldManImg from "../../optimized-assets/stories/the_tell_tale_heart/OldMan.webp";
+import NeighborImg from "../../optimized-assets/stories/the_tell_tale_heart/Neighbor.webp";
+import PoliceOfficersImg from "../../optimized-assets/stories/the_tell_tale_heart/PoliceOfficers.webp";
 
 export const tellTaleHeartData = {
   id: "the-tell-tale-heart",

@@ -1,19 +1,19 @@
 // The Knight Tale Images
-import TheKnightTaleCover from "../../assets/stories/the-knights-tale/the-knight-tale-cover.jpg";
-import TheseusImg from "../../assets/stories/the-knights-tale/theseus.jpg";
-import HippolytaImg from "../../assets/stories/the-knights-tale/hippolyta.jpg";
-import EmelyeImg from "../../assets/stories/the-knights-tale/emelye.jpg";
-import PalamonImg from "../../assets/stories/the-knights-tale/palamon.jpg";
-import ArciteImg from "../../assets/stories/the-knights-tale/arcite.jpg";
-import CreonImg from "../../assets/stories/the-knights-tale/creo.jpg";
-import PerotheusImg from "../../assets/stories/the-knights-tale/perotheus.jpg";
-import EgeusImg from "../../assets/stories/the-knights-tale/egeus.jpg";
-import VenusImg from "../../assets/stories/the-knights-tale/venus.jpg";
-import MarsImg from "../../assets/stories/the-knights-tale/mars.jpg";
-import DianaImg from "../../assets/stories/the-knights-tale/diana.jpg";
-import SaturnImg from "../../assets/stories/the-knights-tale/saturn.jpg";
-import JailerImg from "../../assets/stories/the-knights-tale/jailer.jpg";
-import ServantsImg from "../../assets/stories/the-knights-tale/the-servants.jpg";
+import TheKnightTaleCover from "../../optimized-assets/stories/the-knights-tale/the-knight-tale-cover.webp";
+import TheseusImg from "../../optimized-assets/stories/the-knights-tale/theseus.webp";
+import HippolytaImg from "../../optimized-assets/stories/the-knights-tale/hippolyta.webp";
+import EmelyeImg from "../../optimized-assets/stories/the-knights-tale/emelye.webp";
+import PalamonImg from "../../optimized-assets/stories/the-knights-tale/palamon.webp";
+import ArciteImg from "../../optimized-assets/stories/the-knights-tale/arcite.webp";
+import CreonImg from "../../optimized-assets/stories/the-knights-tale/creo.webp";
+import PerotheusImg from "../../optimized-assets/stories/the-knights-tale/perotheus.webp";
+import EgeusImg from "../../optimized-assets/stories/the-knights-tale/egeus.webp";
+import VenusImg from "../../optimized-assets/stories/the-knights-tale/venus.webp";
+import MarsImg from "../../optimized-assets/stories/the-knights-tale/mars.webp";
+import DianaImg from "../../optimized-assets/stories/the-knights-tale/diana.webp";
+import SaturnImg from "../../optimized-assets/stories/the-knights-tale/saturn.webp";
+import JailerImg from "../../optimized-assets/stories/the-knights-tale/jailer.webp";
+import ServantsImg from "../../optimized-assets/stories/the-knights-tale/the-servants.webp";
 
 export const theKnightsTaleData = {
   id: "the-knights-tale",

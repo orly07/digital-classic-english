@@ -1,15 +1,15 @@
 // The Death of King Arthur - Images
-import ArthurCover from "../../assets/stories/death_of_king_arthur/cover.jpg";
-import ArthurImg from "../../assets/stories/death_of_king_arthur/Arthur.jpg";
-import GuinevereImg from "../../assets/stories/death_of_king_arthur/Guinevere.jpg";
-import LancelotImg from "../../assets/stories/death_of_king_arthur/Lancelot.jpg";
-import BedivereImg from "../../assets/stories/death_of_king_arthur/Bedivere.jpg";
-import LucanImg from "../../assets/stories/death_of_king_arthur/Lucan.jpg";
-import GrifletImg from "../../assets/stories/death_of_king_arthur/Griflet.jpg";
-import AglovaleImg from "../../assets/stories/death_of_king_arthur/Aglovale.jpg";
-import LyonelImg from "../../assets/stories/death_of_king_arthur/Lyonel.jpg";
-import GawainImg from "../../assets/stories/death_of_king_arthur/Gawain.jpg";
-import LadyOfTheLakeImg from "../../assets/stories/death_of_king_arthur/LadyOfTheLake.jpg";
+import ArthurCover from "../../optimized-assets/stories/death_of_king_arthur/cover.webp";
+import ArthurImg from "../../optimized-assets/stories/death_of_king_arthur/Arthur.webp";
+import GuinevereImg from "../../optimized-assets/stories/death_of_king_arthur/Guinevere.webp";
+import LancelotImg from "../../optimized-assets/stories/death_of_king_arthur/Lancelot.webp";
+import BedivereImg from "../../optimized-assets/stories/death_of_king_arthur/Bedivere.webp";
+import LucanImg from "../../optimized-assets/stories/death_of_king_arthur/Lucan.webp";
+import GrifletImg from "../../optimized-assets/stories/death_of_king_arthur/Griflet.webp";
+import AglovaleImg from "../../optimized-assets/stories/death_of_king_arthur/Aglovale.webp";
+import LyonelImg from "../../optimized-assets/stories/death_of_king_arthur/Lyonel.webp";
+import GawainImg from "../../optimized-assets/stories/death_of_king_arthur/Gawain.webp";
+import LadyOfTheLakeImg from "../../optimized-assets/stories/death_of_king_arthur/LadyOfTheLake.webp";
 
 export const deathOfKingArthurData = {
   id: "death-of-king-arthur",

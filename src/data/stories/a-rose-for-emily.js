@@ -1,16 +1,16 @@
 // A Rose for Emily - Images
-import RoseForEmilyCover from "../../assets/../assets/stories/a-rose-for-emily/a-rose-for-emily-cover.jpg";
-import MissEmilyImg from "../../assets/stories/a-rose-for-emily/Miss Emily Grierson.jpg";
-import HomerBarronImg from "../../assets/stories/a-rose-for-emily/Homer Barron.jpg";
-import MrGriersonImg from "../../assets/stories/a-rose-for-emily/Mr. Grierson.jpg";
-import TobeImg from "../../assets/stories/a-rose-for-emily/Tobe.jpg";
-import ColonelSartorisImg from "../../assets/stories/a-rose-for-emily/Colonel Sartoris.jpg";
-import JudgeStevensImg from "../../assets/stories/a-rose-for-emily/Judge Stevens.jpg";
-import DruggistImg from "../../assets/stories/a-rose-for-emily/Druggist.jpg";
-import MinisterImg from "../../assets/stories/a-rose-for-emily/Minister.jpg";
-import MinistersWifeImg from "../../assets/stories/a-rose-for-emily/Minister’s Wife.jpg";
-import TownspeopleImg from "../../assets/stories/a-rose-for-emily/Townspeople.jpg";
-import CityAuthoritiesImg from "../../assets/stories/a-rose-for-emily/City Authorities.jpg";
+import RoseForEmilyCover from "../../optimized-assets/stories/a-rose-for-emily/a-rose-for-emily-cover.webp";
+import MissEmilyImg from "../../optimized-assets/stories/a-rose-for-emily/Miss Emily Grierson.webp";
+import HomerBarronImg from "../../optimized-assets/stories/a-rose-for-emily/Homer Barron.webp";
+import MrGriersonImg from "../../optimized-assets/stories/a-rose-for-emily/Mr. Grierson.webp";
+import TobeImg from "../../optimized-assets/stories/a-rose-for-emily/Tobe.webp";
+import ColonelSartorisImg from "../../optimized-assets/stories/a-rose-for-emily/Colonel Sartoris.webp";
+import JudgeStevensImg from "../../optimized-assets/stories/a-rose-for-emily/Judge Stevens.webp";
+import DruggistImg from "../../optimized-assets/stories/a-rose-for-emily/Druggist.webp";
+import MinisterImg from "../../optimized-assets/stories/a-rose-for-emily/Minister.webp";
+import MinistersWifeImg from "../../optimized-assets/stories/a-rose-for-emily/Minister’s Wife.webp";
+import TownspeopleImg from "../../optimized-assets/stories/a-rose-for-emily/Townspeople.webp";
+import CityAuthoritiesImg from "../../optimized-assets/stories/a-rose-for-emily/City Authorities.webp";
 
 export const aRoseForEmilyData = {
   id: "a-rose-for-emily",

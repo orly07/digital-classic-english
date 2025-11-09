@@ -1,9 +1,9 @@
-import MillerCover from "../../assets/stories/the-millers-tale/cover.jpg";
-import JohnImg from "../../assets/stories/the-millers-tale/John.jpg";
-import AlisonImg from "../../assets/stories/the-millers-tale/Alison.jpg";
-import NicholasImg from "../../assets/stories/the-millers-tale/Nicholas.jpg";
-import AbsolonImg from "../../assets/stories/the-millers-tale/Absolon.jpg";
-import GervaseImg from "../../assets/stories/the-millers-tale/Gervase.jpg";
+import MillerCover from "../../optimized-assets/stories/the-millers-tale/cover.webp";
+import JohnImg from "../../optimized-assets/stories/the-millers-tale/John.webp";
+import AlisonImg from "../../optimized-assets/stories/the-millers-tale/Alison.webp";
+import NicholasImg from "../../optimized-assets/stories/the-millers-tale/Nicholas.webp";
+import AbsolonImg from "../../optimized-assets/stories/the-millers-tale/Absolon.webp"
+import GervaseImg from "../../optimized-assets/stories/the-millers-tale/Gervase.webp";
 
 export const millersTaleData = {
   id: "millers-tale",

@@ -1,13 +1,13 @@
 // The Sound and the Fury - Images
-import SoundAndFuryCover from "../../assets/stories/the_sound_and_the_fury/cover.jpg";
-import BenjyImg from "../../assets/stories/the_sound_and_the_fury/Benjy.jpg";
-import QuentinImg from "../../assets/stories/the_sound_and_the_fury/Quentin.jpg";
-import JasonImg from "../../assets/stories/the_sound_and_the_fury/Jason.jpg";
-import CaddyImg from "../../assets/stories/the_sound_and_the_fury/Caddy.jpg";
-import CarolineImg from "../../assets/stories/the_sound_and_the_fury/Caroline.jpg";
-import FatherImg from "../../assets/stories/the_sound_and_the_fury/Father.jpg";
-import DilseyImg from "../../assets/stories/the_sound_and_the_fury/Dilsey.jpg";
-import MissQuentinImg from "../../assets/stories/the_sound_and_the_fury/MissQuentin.jpg";
+import SoundAndFuryCover from "../../optimized-assets/stories/the_sound_and_the_fury/cover.webp";
+import BenjyImg from "../../optimized-assets/stories/the_sound_and_the_fury/Benjy.webp";
+import QuentinImg from "../../optimized-assets/stories/the_sound_and_the_fury/Quentin.webp";
+import JasonImg from "../../optimized-assets/stories/the_sound_and_the_fury/Jason.webp";
+import CaddyImg from "../../optimized-assets/stories/the_sound_and_the_fury/Caddy.webp";
+import CarolineImg from "../../optimized-assets/stories/the_sound_and_the_fury/Caroline.webp";
+import FatherImg from "../../optimized-assets/stories/the_sound_and_the_fury/Father.webp";
+import DilseyImg from "../../optimized-assets/stories/the_sound_and_the_fury/Dilsey.webp";
+import MissQuentinImg from "../../optimized-assets/stories/the_sound_and_the_fury/MissQuentin.webp";
 
 export const soundAndTheFuryData = {
   id: "the-sound-and-the-fury",

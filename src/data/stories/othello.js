@@ -1,20 +1,20 @@
 // Othello - Images
-import OthelloCover from "../../assets/stories/othello/cover.jpg";
-import OthelloImg from "../../assets/stories/othello/othello.jpg";
-import DesdemonaImg from "../../assets/stories/othello/Desdemona.jpg";
-import IagoImg from "../../assets/stories/othello/Iago.jpg";
-import CassioImg from "../../assets/stories/othello/Cassio.jpg";
-import EmiliaImg from "../../assets/stories/othello/Emilia.jpg";
-import RoderigoImg from "../../assets/stories/othello/Roderigo.jpg";
-import BrabantioImg from "../../assets/stories/othello/Brabantio.jpg";
-import DukeOfVeniceImg from "../../assets/stories/othello/Duke of Venice.jpg";
-import BiancaImg from "../../assets/stories/othello/Bianca.jpg";
-import MontanoImg from "../../assets/stories/othello/Montano.jpg";
-import GratianoImg from "../../assets/stories/othello/Gratiano.jpg";
-import LodovicoImg from "../../assets/stories/othello/Lodovico.jpg";
-import SailorImg from "../../assets/stories/othello/Sailor or Messenger.jpg";
-import OfficersImg from "../../assets/stories/othello/Officers, Soldiers, and Attendants.jpg";
-import MusiciansImg from "../../assets/stories/othello/Musicians.jpg";
+import OthelloCover from "../../optimized-assets/stories/othello/cover.webp";
+import OthelloImg from "../../optimized-assets/stories/othello/othello.webp";
+import DesdemonaImg from "../../optimized-assets/stories/othello/Desdemona.webp";
+import IagoImg from "../../optimized-assets/stories/othello/Iago.webp";
+import CassioImg from "../../optimized-assets/stories/othello/Cassio.webp";
+import EmiliaImg from "../../optimized-assets/stories/othello/Emilia.webp";
+import RoderigoImg from "../../optimized-assets/stories/othello/Roderigo.webp";
+import BrabantioImg from "../../optimized-assets/stories/othello/Brabantio.webp";
+import DukeOfVeniceImg from "../../optimized-assets/stories/othello/Duke of Venice.webp";
+import BiancaImg from "../../optimized-assets/stories/othello/Bianca.webp";
+import MontanoImg from "../../optimized-assets/stories/othello/Montano.webp";
+import GratianoImg from "../../optimized-assets/stories/othello/Gratiano.webp";
+import LodovicoImg from "../../optimized-assets/stories/othello/Lodovico.webp";
+import SailorImg from "../../optimized-assets/stories/othello/Sailor or Messenger.webp";
+import OfficersImg from "../../optimized-assets/stories/othello/Officers, Soldiers, and Attendants.webp";
+import MusiciansImg from "../../optimized-assets/stories/othello/Musicians.webp";
 
 export const othelloData = {
   id: "othello",

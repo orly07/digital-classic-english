@@ -1,8 +1,8 @@
 // The Cask of Amontillado - Images
-import CaskCover from "../../assets/stories/the-cask-of-amontillado/cover.jpg";
-import MontresorImg from "../../assets/stories/the-cask-of-amontillado/Montresor.jpg";
-import FortunatoImg from "../../assets/stories/the-cask-of-amontillado/Fortunato.jpg";
-import ServantsImg from "../../assets/stories/the-cask-of-amontillado/The Montresor Family's Servants.jpg";
+import CaskCover from "../../optimized-assets/stories/the-cask-of-amontillado/cover.webp";
+import MontresorImg from "../../optimized-assets/stories/the-cask-of-amontillado/Montresor.webp";
+import FortunatoImg from "../../optimized-assets/stories/the-cask-of-amontillado/Fortunato.webp";
+import ServantsImg from "../../optimized-assets/stories/the-cask-of-amontillado/The Montresor Family's Servants.webp";
 
 export const theCaskOfAmontilladoData = {
   id: "the-cask-of-amontillado",

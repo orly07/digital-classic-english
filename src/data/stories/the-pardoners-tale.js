@@ -1,13 +1,13 @@
 // The Pardoner's Tale - Images
-import PardonerCover from "../../assets/stories/the_pardoners_tale/cover.jpg";
-import PardonerImg from "../../assets/stories/the_pardoners_tale/Pardoner.jpg";
-import FirstRioterImg from "../../assets/stories/the_pardoners_tale/FirstRioter.jpg";
-import SecondRioterImg from "../../assets/stories/the_pardoners_tale/SecondRioter.jpg";
-import ThirdRioterImg from "../../assets/stories/the_pardoners_tale/ThirdRioter.jpg";
-import OldManImg from "../../assets/stories/the_pardoners_tale/OldMan.jpg";
-import DeathImg from "../../assets/stories/the_pardoners_tale/Death.jpg";
-import TavernBoyImg from "../../assets/stories/the_pardoners_tale/TavernBoy.jpg";
-import TavernKeeperImg from "../../assets/stories/the_pardoners_tale/TavernKeeper.jpg";
+import PardonerCover from "../../optimized-assets/stories/the_pardoners_tale/cover.webp";
+import PardonerImg from "../../optimized-assets/stories/the_pardoners_tale/Pardoner.webp";
+import FirstRioterImg from "../../optimized-assets/stories/the_pardoners_tale/FirstRioter.webp";
+import SecondRioterImg from "../../optimized-assets/stories/the_pardoners_tale/SecondRioter.webp";
+import ThirdRioterImg from "../../optimized-assets/stories/the_pardoners_tale/ThirdRioter.webp";
+import OldManImg from "../../optimized-assets/stories/the_pardoners_tale/OldMan.webp";
+import DeathImg from "../../optimized-assets/stories/the_pardoners_tale/Death.webp";
+import TavernBoyImg from "../../optimized-assets/stories/the_pardoners_tale/TavernBoy.webp";
+import TavernKeeperImg from "../../optimized-assets/stories/the_pardoners_tale/TavernKeeper.webp";
 
 export const pardonersTaleData = {
   id: "the-pardoners-tale",

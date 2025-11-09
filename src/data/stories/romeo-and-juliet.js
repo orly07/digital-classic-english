@@ -1,23 +1,23 @@
 // src/data/stories/romeo-and-juliet.js
 
 // STORY IMAGES
-import RomeoJulietCover from "../../assets/stories/romeo-and-juliet/romeo-and-juliet-cover.webp";
-import RomeoImg from "../../assets/stories/romeo-and-juliet/characters/romeo.webp";
-import JulietImg from "../../assets/stories/romeo-and-juliet/characters/juliet.webp";
-import FriarLaurenceImg from "../../assets/stories/romeo-and-juliet/characters/friar-laurence.webp";
-import MercutioImg from "../../assets/stories/romeo-and-juliet/characters/mercutio.webp";
-import TybaltImg from "../../assets/stories/romeo-and-juliet/characters/Tybalt Capulet.webp";
-import NurseImg from "../../assets/stories/romeo-and-juliet/characters/The Nurse.webp";
-import LordCapuletImg from "../../assets/stories/romeo-and-juliet/characters/Lord Capulet.webp";
-import LadyCapuletImg from "../../assets/stories/romeo-and-juliet/characters/Lady Capulet.webp";
-import LadyMontagueImg from "../../assets/stories/romeo-and-juliet/characters/Lady Montague.webp";
-import LordMontagueImg from "../../assets/stories/romeo-and-juliet/characters/Lord Montague.webp";
-import ParisImg from "../../assets/stories/romeo-and-juliet/characters/paris.webp";
-import PrinceEscalusImg from "../../assets/stories/romeo-and-juliet/characters/Prince Escalus.webp";
-import SampsonGregoryImg from "../../assets/stories/romeo-and-juliet/characters/Sampson and Gregory.webp";
-import BenvolioImg from "../../assets/stories/romeo-and-juliet/characters/Benvolio.webp";
-import BalthasarImg from "../../assets/stories/romeo-and-juliet/characters/Balthasar.webp";
-import ApothecaryImg from "../../assets/stories/romeo-and-juliet/characters/The Apothecary.webp";
+import RomeoJulietCover from "../../optimized-assets/stories/romeo-and-juliet/romeo-and-juliet-cover.webp";
+import RomeoImg from "../../optimized-assets/stories/romeo-and-juliet/characters/romeo.webp";
+import JulietImg from "../../optimized-assets/stories/romeo-and-juliet/characters/juliet.webp";
+import FriarLaurenceImg from "../../optimized-assets/stories/romeo-and-juliet/characters/friar-laurence.webp";
+import MercutioImg from "../../optimized-assets/stories/romeo-and-juliet/characters/mercutio.webp";
+import TybaltImg from "../../optimized-assets/stories/romeo-and-juliet/characters/Tybalt Capulet.webp";
+import NurseImg from "../../optimized-assets/stories/romeo-and-juliet/characters/The Nurse.webp";
+import LordCapuletImg from "../../optimized-assets/stories/romeo-and-juliet/characters/Lord Capulet.webp";
+import LadyCapuletImg from "../../optimized-assets/stories/romeo-and-juliet/characters/Lady Capulet.webp";
+import LadyMontagueImg from "../../optimized-assets/stories/romeo-and-juliet/characters/Lady Montague.webp";
+import LordMontagueImg from "../../optimized-assets/stories/romeo-and-juliet/characters/Lord Montague.webp";
+import ParisImg from "../../optimized-assets/stories/romeo-and-juliet/characters/paris.webp";
+import PrinceEscalusImg from "../../optimized-assets/stories/romeo-and-juliet/characters/Prince Escalus.webp";
+import SampsonGregoryImg from "../../optimized-assets/stories/romeo-and-juliet/characters/Sampson and Gregory.webp";
+import BenvolioImg from "../../optimized-assets/stories/romeo-and-juliet/characters/Benvolio.webp";
+import BalthasarImg from "../../optimized-assets/stories/romeo-and-juliet/characters/Balthasar.webp";
+import ApothecaryImg from "../../optimized-assets/stories/romeo-and-juliet/characters/The Apothecary.webp";
 
 export const romeoAndJulietData = {
   id: "romeo-juliet",

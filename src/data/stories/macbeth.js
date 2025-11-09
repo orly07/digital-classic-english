@@ -1,18 +1,18 @@
 // Macbeth - Images
-import MacbethCover from "../../assets/stories/macbeth/cover.jpg";
-import MacbethImg from "../../assets/stories/macbeth/Macbeth.jpg";
-import LadyMacbethImg from "../../assets/stories/macbeth/LadyMacbeth.jpg";
-import MalcolmImg from "../../assets/stories/macbeth/Malcolm.jpg";
-import DonalbainImg from "../../assets/stories/macbeth/Donalbain.jpg";
-import KingDuncanImg from "../../assets/stories/macbeth/KingDuncan.jpg";
-import MacduffImg from "../../assets/stories/macbeth/Macduff.jpg";
-import LadyMacduffImg from "../../assets/stories/macbeth/LadyMacduff.jpg";
-import BanquoImg from "../../assets/stories/macbeth/Banquo.jpg";
-import WitchesImg from "../../assets/stories/macbeth/TheThreeWitches.jpg";
-import GuardsImg from "../../assets/stories/macbeth/Guards.jpg";
-import MessengersImg from "../../assets/stories/macbeth/Messengers.jpg";
-import AssassinsImg from "../../assets/stories/macbeth/Assassins.jpg";
-import SoldiersImg from "../../assets/stories/macbeth/Soldiers.jpg";
+import MacbethCover from "../../optimized-assets/stories/macbeth/cover.webp";
+import MacbethImg from "../../optimized-assets/stories/macbeth/Macbeth.webp";
+import LadyMacbethImg from "../../optimized-assets/stories/macbeth/LadyMacbeth.webp";
+import MalcolmImg from "../../optimized-assets/stories/macbeth/Malcolm.webp";
+import DonalbainImg from "../../optimized-assets/stories/macbeth/Donalbain.webp";
+import KingDuncanImg from "../../optimized-assets/stories/macbeth/KingDuncan.webp";
+import MacduffImg from "../../optimized-assets/stories/macbeth/Macduff.webp";
+import LadyMacduffImg from "../../optimized-assets/stories/macbeth/LadyMacduff.webp";
+import BanquoImg from "../../optimized-assets/stories/macbeth/Banquo.webp";
+import WitchesImg from "../../optimized-assets/stories/macbeth/TheThreeWitches.webp";
+import GuardsImg from "../../optimized-assets/stories/macbeth/Guards.webp";
+import MessengersImg from "../../optimized-assets/stories/macbeth/Messengers.webp";
+import AssassinsImg from "../../optimized-assets/stories/macbeth/Assassins.webp";
+import SoldiersImg from "../../optimized-assets/stories/macbeth/Soldiers.webp";
 
 export const macbethData = {
   id: "macbeth",

@@ -1,6 +1,6 @@
 // The Tale of Sir Gareth of Orkney - Images
-import SirGarethCover from "../../assets/stories/the-tale-of-sir-gareth-of-orkney/cover.jpg";
-import SirGarethImg from "../../assets/stories/the-tale-of-sir-gareth-of-orkney/Sir Gareth.jpg";
+import SirGarethCover from "../../optimized-assets/stories/the-tale-of-sir-gareth-of-orkney/cover.webp";
+import SirGarethImg from "../../optimized-assets/stories/the-tale-of-sir-gareth-of-orkney/Sir Gareth.webp";
 import KingArthurImg from "../../assets/stories/the-tale-of-sir-gareth-of-orkney/King Arthur.jpg";
 import PrincessLyonesseImg from "../../assets/stories/the-tale-of-sir-gareth-of-orkney/Princess Lyonesse.jpg";
 import SirLancelotImg from "../../assets/stories/the-tale-of-sir-gareth-of-orkney/Sir Lancelot.jpg";
