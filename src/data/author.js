@@ -1,8 +1,8 @@
-import Shakespeare from "../assets/authors/William Shakespeare.webp";
-import Geoffrey from "../assets/authors/Geoffrey Chaucer.jpg";
-import Edgar from "../assets/authors/Edgar Allan Poe.jpg";
-import Faulkner from "../assets/authors/William Faulkner.jpg";
-import Thomas from "../assets/authors/Thomas Malory.jpg";
+import Shakespeare from "../optimized-assets/authors/William Shakespeare.webp";
+import Geoffrey from "../optimized-assets/authors/Geoffrey Chaucer.webp";
+import Edgar from "../optimized-assets/authors/Edgar Allan Poe.webp";
+import Faulkner from "../optimized-assets/authors/William Faulkner.webp";
+import Thomas from "../optimized-assets/authors/Thomas Malory.webp";
 
 export const authors = [
   {
