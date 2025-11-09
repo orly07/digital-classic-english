@@ -30,11 +30,11 @@ const variantStyles = {
     hoverColor: color.white,
   },
   secondary: {
-    background: color.transparent,
+    background: color.primaryDark,
     color: color.white,
-    border: `2px solid ${color.white}`,
-    hoverBackground: color.white,
-    hoverColor: color.gray[900],
+    border: "none",
+    hoverBackground: color.primary,
+    hoverColor: color.white,
   },
   outline: {
     background: color.transparent,
@@ -78,7 +78,8 @@ export const ButtonContainer = styled.button`
     background: ${({ $variant }) => variantStyles[$variant].hoverBackground};
     color: ${({ $variant }) => variantStyles[$variant].hoverColor};
     border-color: ${({ $variant }) =>
-      variantStyles[$variant].hoverBorder || variantStyles[$variant].hoverBackground};
+      variantStyles[$variant].hoverBorder ||
+      variantStyles[$variant].hoverBackground};
     transform: translateY(-2px);
     box-shadow: ${shadow.md};
   }
