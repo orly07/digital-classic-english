@@ -41,7 +41,7 @@ const Hero = memo(() => {
             smooth
             duration={1000}
             offset={-80}
-            variant="secondary"
+            variant="primary"
             size="large"
           >
             Explore Sonnets

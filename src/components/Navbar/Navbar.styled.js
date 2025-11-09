@@ -54,7 +54,7 @@ export const NavLinks = styled.div`
   gap: 2rem;
   align-items: center;
 
-  ${breakpoint.mobile} {
+  ${breakpoint.tablet} {
     display: none;
   }
 `;
@@ -91,7 +91,7 @@ export const MobileMenuButton = styled.button`
     color: ${color.primary};
   }
 
-  ${breakpoint.mobile} {
+  ${breakpoint.tablet} {
     display: flex;
     align-items: center;
     justify-content: center;

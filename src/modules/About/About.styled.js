@@ -26,7 +26,8 @@ export const AboutSection = styled.section`
     margin-top: 3rem;
     font-size: ${typography.fontSize["2xl"]};
     font-weight: ${typography.fontWeight.medium};
-    color: ${color.gray[400]};
+    color: ${color.gray[700]};
+    margin-bottom: 0;
 
     ${breakpoint.mobile} {
       font-size: ${typography.fontSize["2xl"]};
@@ -35,7 +36,7 @@ export const AboutSection = styled.section`
 
   p {
     max-width: 700px;
-    margin: 1rem auto;
+    margin: 0 auto;
     line-height: 1.7;
     color: ${color.gray[600]};
     font-size: ${typography.fontSize.lg};
@@ -77,9 +78,9 @@ export const TeamSection = styled.section`
   text-align: center;
 
   h2 {
-    font-size: ${typography.fontSize["3xl"]};
+    font-size: ${typography.fontSize["4xl"]};
     font-weight: ${typography.fontWeight.bold};
-    color: ${color.black};
+    color: ${color.primaryDark};
     margin-bottom: 1rem;
 
     ${breakpoint.mobile} {

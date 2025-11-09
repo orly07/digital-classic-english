@@ -25,7 +25,8 @@ export const CardContainer = styled.div`
     margin-bottom: 1.25rem;
   }
 
-  ${breakpoint.mobile} {
+  ${breakpoint.tablet} {
+  max-width: 100%;
     padding: 2rem 1.25rem;
   }
 `;
@@ -41,13 +42,14 @@ export const CardTitle = styled.h3`
 export const CardContent = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.25rem;
 
   .card-description {
     color: ${color.gray[700]};
     font-size: ${typography.fontSize.base};
     line-height: 1.7;
-    text-align: justify;
+    text-align: center;
   }
 `;
 

@@ -12,7 +12,7 @@ export const color = {
   black: "#1a202c",
 
   primary: "#00b96b",
-  primaryDark: "#009e5c",
+  primaryDark: "#008b51ff",
   primaryLight: "#a7f3d0",
 
   secondary: "#059669", 
