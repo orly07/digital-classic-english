@@ -26,7 +26,7 @@ export const HeroSection = styled.section`
     z-index: 0;
   }
 
-  ${breakpoint.mobile} {
+  ${breakpoint.tablet} {
     background: url(${heroBgMobile}) center/cover no-repeat;
     background-attachment: scroll;
     min-height: 500px;
