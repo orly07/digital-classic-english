@@ -18,6 +18,11 @@ export const CardContainer = styled.div`
     box-shadow: ${shadow.lg};
   }
 
+  ${breakpoint.tablet} {
+  width: 350px;
+
+  }
+
   ${breakpoint.mobile} {
     padding: 1.5rem;
     width: 100%;
