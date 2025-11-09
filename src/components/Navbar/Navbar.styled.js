@@ -27,7 +27,7 @@ export const NavbarContainer = styled.nav`
   .logo {
     font-weight: ${typography.fontWeight.bold};
     font-size: ${typography.fontSize.xl};
-    color: ${({ $isScrolled }) => ($isScrolled ? color.black : color.white)};
+    color: ${({ $isScrolled }) => ($isScrolled ? color.primaryDark : color.white)};
     display: flex;
     align-items: center;
     gap: 10px;
@@ -36,6 +36,7 @@ export const NavbarContainer = styled.nav`
 
     &:hover {
       color: ${color.primary};
+      text-decoration: underline;
     }
 
     ${breakpoint.mobile} {
@@ -78,7 +79,7 @@ export const MobileMenuButton = styled.button`
   background: none;
   border: none;
   font-size: 1.6rem;
-  color: ${({ $isScrolled }) => ($isScrolled ? color.gray[700] : color.white)};
+  color: ${({ $isScrolled }) => ($isScrolled ? color.primaryDark : color.white)};
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 8px;

@@ -71,7 +71,7 @@ export const SectionHeader = styled.div`
     h2 {
       font-size: ${typography.fontSize["4xl"]};
       font-weight: ${typography.fontWeight.bold};
-      color: ${color.black};
+      color: ${color.primaryDark};
       margin: 0 0 0.5rem 0;
 
       ${breakpoint.mobile} {

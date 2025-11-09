@@ -18,7 +18,7 @@ const socialLinks = [
 const Footer = memo(() => (
   <FooterContainer>
     <p>
-      © {new Date().getFullYear()} Digital Storytelling | All Rights Reserved
+      © {new Date().getFullYear()} Classic Story | All Rights Reserved
     </p>
 
     <div className="socials">

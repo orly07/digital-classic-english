@@ -22,7 +22,7 @@ import { fadeInUp, slideUp } from "../../utils/motionVariants";
 
 const About = lazy(() => import("../../modules/About"));
 
-const HORIZONTAL_SCROLL_AMOUNT = 320; // px per click (tweakable)
+const HORIZONTAL_SCROLL_AMOUNT = 320; 
 
 const LandingPage = memo(() => {
   const storiesRef = useRef(null);
@@ -31,7 +31,6 @@ const LandingPage = memo(() => {
   const [storiesFilter, setStoriesFilter] = useState("");
   const [sonnetsFilter, setSonnetsFilter] = useState("");
 
-  // track if user can scroll for each container
   const [storiesCanScroll, setStoriesCanScroll] = useState({
     left: false,
     right: false,
@@ -41,7 +40,6 @@ const LandingPage = memo(() => {
     right: false,
   });
 
-  // static data memoized
   const stories = useMemo(() => storiesData, []);
   const sonnets = useMemo(() => sonnetsData, []);
 
@@ -55,21 +53,18 @@ const LandingPage = memo(() => {
     return sonnets.filter((sonnet) => sonnet.author === sonnetsFilter);
   }, [sonnets, sonnetsFilter]);
 
-  // smooth, accessible scroll function
   const scroll = useCallback((ref, direction) => {
     if (!ref?.current) return;
     const amount = HORIZONTAL_SCROLL_AMOUNT * direction;
     ref.current.scrollBy({ left: amount, behavior: "smooth" });
   }, []);
 
-  // update whether left/right buttons should be enabled
   const updateScrollState = useCallback((ref, setter) => {
     if (!ref?.current) {
       setter({ left: false, right: false });
       return;
     }
     const el = ref.current;
-    // use rAF for smoother updates
     window.requestAnimationFrame(() => {
       const { scrollLeft, scrollWidth, clientWidth } = el;
       const maxScrollLeft = scrollWidth - clientWidth;
@@ -80,7 +75,7 @@ const LandingPage = memo(() => {
     });
   }, []);
 
-  // hooks to observe scroll/resize for both containers
+
   useEffect(() => {
     const storiesEl = storiesRef.current;
     const sonnetsEl = sonnetsRef.current;
@@ -90,10 +85,9 @@ const LandingPage = memo(() => {
       updateScrollState(sonnetsRef, setSonnetsCanScroll);
     };
 
-    // initial
+
     handle();
 
-    // listeners
     if (storiesEl)
       storiesEl.addEventListener("scroll", handle, { passive: true });
     if (sonnetsEl)
@@ -107,7 +101,6 @@ const LandingPage = memo(() => {
     };
   }, [updateScrollState, filteredStories.length, filteredSonnets.length]);
 
-  // handlers for filters
   const handleStoriesFilterChange = useCallback((author) => {
     setStoriesFilter(author);
   }, []);

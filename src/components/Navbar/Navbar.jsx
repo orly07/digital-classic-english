@@ -11,7 +11,6 @@ const Navbar = () => {
 
   const isHome = location.pathname === "/";
 
-  // Handle scroll
   useEffect(() => {
     if (!isHome) {
       setIsScrolled(true);
@@ -32,7 +31,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
-  // Prevent background scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
     return () => {

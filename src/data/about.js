@@ -34,17 +34,18 @@ export const teamData = [
     description: "Leads the thesis project and ensures overall progress.",
     image: GeanImg,
   },
-  {
-    name: "Darcy Mae Tabafunda",
-    role: "Theoretical Framework Specialist",
-    description: "Builds and writes the theoretical and conceptual foundation.",
-    image: DarcyImg,
-  },
+
   {
     name: "Iris Jean Polintang",
     role: "Research & Documentation Specialist",
     description: "Assists in research, writing, and documentation.",
     image: IrisImg,
+  },
+  {
+    name: "Darcy Mae Tabafunda",
+    role: "Theoretical Framework Specialist",
+    description: "Builds and writes the theoretical and conceptual foundation.",
+    image: DarcyImg,
   },
   {
     name: "Orlando Jr. Dela Cruz",

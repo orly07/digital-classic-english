@@ -5,7 +5,7 @@ export const CardContainer = styled.div`
   background: ${color.white};
   border-radius: 16px;
   box-shadow: ${shadow.md};
-  max-width: 320px;
+  width: 250px;
   padding: 2rem;
   text-align: center;
   transition: all 0.3s ease, transform 0.3s ease;
@@ -20,7 +20,7 @@ export const CardContainer = styled.div`
 
   ${breakpoint.mobile} {
     padding: 1.5rem;
-    max-width: 100%;
+    width: 100%;
   }
 `;
 
@@ -53,19 +53,29 @@ export const CardContent = styled.div`
 export const MemberName = styled.h4`
   font-weight: ${typography.fontWeight.bold};
   color: ${color.black};
-  font-size: ${typography.fontSize.xl};
+  font-size: ${typography.fontSize.lg};
   margin: 0;
+
+  ${breakpoint.mobile} {
+  font-size: ${typography.fontSize["2xl"]};
+
+  }
 `;
 
 export const MemberRole = styled.p`
   color: ${color.primary};
-  font-weight: ${typography.fontWeight.semibold};
-  font-size: ${typography.fontSize.base};
+  font-weight: ${typography.fontWeight.bold};
+  font-size: ${typography.fontSize.sm};
   margin: 0;
+
+  ${breakpoint.mobile} {
+  font-size: ${typography.fontSize.base};
+
+  } 
 `;
 
 export const MemberDescription = styled.p`
-  color: ${color.gray[600]};
+  color: ${color.gray[500]};
   margin: 0;
   font-size: ${typography.fontSize.sm};
   line-height: 1.6;
@@ -79,6 +89,11 @@ export const MemberDescription = styled.p`
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
   `}
+
+  ${breakpoint.mobile} {
+  font-size: ${typography.fontSize.base};
+    
+  }
 `;
 
 export const ToggleButton = styled.button`

@@ -11,7 +11,7 @@ export const AboutSection = styled.section`
     font-size: ${typography.fontSize["4xl"]};
     font-weight: ${typography.fontWeight.bold};
     margin-bottom: 1rem;
-    color: ${color.black};
+    color: ${color.primaryDark};
 
     ${breakpoint.mobile} {
       font-size: ${typography.fontSize["3xl"]};
@@ -24,9 +24,9 @@ export const AboutSection = styled.section`
 
   h2 {
     margin-top: 3rem;
-    font-size: ${typography.fontSize["3xl"]};
-    font-weight: ${typography.fontWeight.bold};
-    color: ${color.black};
+    font-size: ${typography.fontSize["2xl"]};
+    font-weight: ${typography.fontWeight.medium};
+    color: ${color.gray[400]};
 
     ${breakpoint.mobile} {
       font-size: ${typography.fontSize["2xl"]};
