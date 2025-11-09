@@ -13,6 +13,13 @@ export const CardContainer = styled(Link)`
   transition: all 0.3s ease;
   border: 1px solid ${color.gray[200]};
 
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+  }
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: ${shadow.lg};
@@ -22,13 +29,6 @@ export const CardContainer = styled(Link)`
     min-width: 280px;
     max-width: 300px;
   }
-`;
-
-export const CardImage = styled.img`
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
 `;
 
 export const CardContent = styled.div`

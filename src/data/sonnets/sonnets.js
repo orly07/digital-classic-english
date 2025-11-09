@@ -1,14 +1,16 @@
+// src/data/sonnets/sonnets.js
+
 // SONNET COVERS
-import Sonnet18Cover from "../../assets/sonnets/Sonnet18.png";
-import Sonnet29Cover from "../../assets/sonnets/Sonnet29.png";
-import Sonnet73Cover from "../../assets/sonnets/Sonnet73.png";
-import Soonet55Cover from "../../assets/sonnets/Sonnet55.png";
-import TheRavenCover from "../../assets/sonnets/The Raven.webp";
-import ABCcover from "../../assets/sonnets/abccover.png";
-import TruthCover from "../../assets/sonnets/truthcover.jpg";
-import SteadfastnessCover from "../../assets/sonnets/Lack Of Steadfastness.jpg";
-import TheComplaintUntoPityCover from "../../assets/sonnets/The Complaint Unto Pity.jpg";
-import TheParlementOfFowls from "../../assets/sonnets/THE PARLEMENT OF FOWLS.jpg";
+import Sonnet18Cover from "../../optimized-assets/sonnets/Sonnet18.webp";
+import Sonnet29Cover from "../../optimized-assets/sonnets/Sonnet29.webp";
+import Sonnet73Cover from "../../optimized-assets/sonnets/Sonnet73.webp";
+import Soonet55Cover from "../../optimized-assets/sonnets/Sonnet55.webp";
+import TheRavenCover from "../../optimized-assets/sonnets/The Raven.webp";
+import ABCcover from "../../optimized-assets/sonnets/ABC.webp";
+import TruthCover from "../../optimized-assets/sonnets/truthcover.webp";
+import SteadfastnessCover from "../../optimized-assets/sonnets/Lack Of Steadfastness.webp";
+import TheComplaintUntoPityCover from "../../optimized-assets/sonnets/The Complaint Unto Pity.webp";
+import TheParlementOfFowls from "../../optimized-assets/sonnets/THE PARLEMENT OF FOWLS.webp";
 
 export const sonnetsData = [
   {

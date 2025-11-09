@@ -2,16 +2,21 @@
 import { memo } from "react";
 import {
   CardContainer,
-  CardImage,
   CardContent,
   CardAuthor,
   CardLink,
 } from "./StoryCard.styled";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const StoryCard = memo(({ story }) => {
   return (
     <CardContainer to={`/story/${story.id}`}>
-      <CardImage src={story.img} alt={story.title} loading="lazy" />
+      <LazyLoadImage
+        src={story.img}
+        alt={story.title}
+        effect="blur"
+      />
+
       <CardContent>
         <h5>{story.title}</h5>
         <p>{story.description}</p>

@@ -3,6 +3,7 @@ import React, { memo, useState } from "react";
 import { motion } from "framer-motion";
 import * as S from "./AuthorCard.styled";
 import { fadeInUp } from "../../utils/motionVariants";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const MAX_LENGTH = 160;
 
@@ -20,7 +21,12 @@ const AuthorCard = memo(({ author }) => {
     <motion.div variants={fadeInUp} whileHover={{ scale: 1.03 }}>
       <S.CardContainer>
         <S.ImageWrapper>
-          <S.AuthorImage src={author.image} alt={author.name} loading="lazy" />
+          <LazyLoadImage
+            src={author.image}
+            alt={author.name}
+            effect="blur"
+            width="100%"
+          />
         </S.ImageWrapper>
 
         <S.AuthorName>{author.name}</S.AuthorName>

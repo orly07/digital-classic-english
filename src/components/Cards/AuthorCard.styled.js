@@ -37,6 +37,12 @@ export const ImageWrapper = styled.div`
   margin-bottom: 1.2rem;
   transition: transform 0.3s ease;
 
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   ${CardContainer}:hover & {
     transform: scale(1.05);
   }
@@ -45,12 +51,6 @@ export const ImageWrapper = styled.div`
     width: 140px;
     height: 140px;
   }
-`;
-
-export const AuthorImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 `;
 
 export const AuthorName = styled.h3`
