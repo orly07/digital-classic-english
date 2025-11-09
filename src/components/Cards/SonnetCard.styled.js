@@ -6,12 +6,19 @@ import { color, shadow, breakpoint, typography } from "../../styles/theme";
 export const CardContainer = styled(Link)`
   min-width: 300px;
   max-width: 340px;
+  height: 530px;
   background: ${color.surface};
   border-radius: 16px;
   box-shadow: ${shadow.sm};
   overflow: hidden;
   transition: all 0.3s ease;
   border: 1px solid ${color.gray[200]};
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    height: 300px;
+  }
 
   &:hover {
     transform: translateY(-8px);
@@ -24,33 +31,28 @@ export const CardContainer = styled(Link)`
   }
 `;
 
-export const CardImage = styled.img`
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
-`;
-
 export const CardContent = styled.div`
   padding: 1.5rem;
 
   h5 {
     font-weight: ${typography.fontWeight.bold};
+    margin-top: 0;
     margin-bottom: 0.75rem;
-    font-size: ${typography.fontSize.xl};
+    font-size: ${typography.fontSize.base};
     color: ${color.gray[700]};
     line-height: 1.3;
     font-family: ${typography.fontFamily};
   }
 
   p {
-    color: ${color.gray[500]};
-    font-size: ${typography.fontSize.base};
-    line-height: 1.5;
+    margin: 0px;
     margin-bottom: 1rem;
-    height: 68px;
+    color: ${color.gray[500]};
+    font-size: ${typography.fontSize.sm};
+    line-height: 1.5;
+    height: 50px;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-family: ${typography.fontFamily};

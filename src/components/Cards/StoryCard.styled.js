@@ -48,9 +48,9 @@ export const CardContent = styled.div`
     font-size: ${typography.fontSize.sm};
     line-height: 1.5;
     margin-bottom: 1rem;
-    height: 68px;
+    height: 45px;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

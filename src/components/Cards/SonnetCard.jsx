@@ -1,17 +1,23 @@
-// src/components/Cards/SonnetCard.jsx
 import { memo } from "react";
 import {
   CardContainer,
-  CardImage,
   CardContent,
   CardAuthor,
   ListenButton,
 } from "./SonnetCard.styled";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const SonnetCard = memo(({ sonnet }) => {
   return (
     <CardContainer to={`/sonnet/${sonnet.id}`}>
-      <CardImage src={sonnet.img} alt={sonnet.title} loading="lazy" />
+        <LazyLoadImage
+          src={sonnet.img}
+          alt={sonnet.title}
+          effect="blur"
+          width="100%"
+        />
+
       <CardContent>
         <h5>{sonnet.title}</h5>
         <p>{sonnet.description}</p>

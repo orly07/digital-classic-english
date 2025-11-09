@@ -4,7 +4,11 @@ import Sonnet29Cover from "../../assets/sonnets/Sonnet29.png";
 import Sonnet73Cover from "../../assets/sonnets/Sonnet73.png";
 import Soonet55Cover from "../../assets/sonnets/Sonnet55.png";
 import TheRavenCover from "../../assets/sonnets/The Raven.webp";
-import ABCcover from "../../assets/sonnets/abccover.png"
+import ABCcover from "../../assets/sonnets/abccover.png";
+import TruthCover from "../../assets/sonnets/truthcover.jpg";
+import SteadfastnessCover from "../../assets/sonnets/Lack Of Steadfastness.jpg";
+import TheComplaintUntoPityCover from "../../assets/sonnets/The Complaint Unto Pity.jpg";
+import TheParlementOfFowls from "../../assets/sonnets/THE PARLEMENT OF FOWLS.jpg";
 
 export const sonnetsData = [
   {
@@ -124,7 +128,7 @@ Shall be lifted—nevermore!`,
     title: "An A.B.C",
     author: "Geoffrey Chaucer",
     description:
-      "A haunting narrative poem that explores grief, loss, and despair.",
+      "A moving prayer to the Virgin Mary, asking for mercy, forgiveness, and relief from pain.",
     img: ABCcover,
     content: `Almyghty and al merciable Queene,
 To whom that al this world fleeth for socour,
@@ -133,5 +137,139 @@ Glorious Virgin, flour of alle flour,
 To thee I flee, confounded in errour!
 Help and releve, thou mighty debonayre,
 Have mercy on my perilous langour!`,
+  },
+  {
+    id: "truth",
+    title: "Truth",
+    author: "Geoffrey Chaucer",
+    description: "Ballad of Good Counsel",
+    img: TruthCover,
+    content: `Flee from the crowd and dwell with truth. Let your 
+goods suffice you, small though they may be, for a 
+hoard brings hate, and climbing insecurity, crowds 
+bring ill-will, and everywhere prosperity brings 
+blindness. Lust after no more than is necessary for
+you to have. You that counsel other people, work 
+well yourself; and truth shall make you free, doubt it 
+not. 
+
+Be not in a tempest to make straight all that is 
+crooked, trusting Fortune that turns like a ball. Little 
+anxiety means great repose, and beware also of 
+kicking an awl; strive not like the crock against the 
+wall38. Control yourself; who control the deeds of 
+others; and truth shall make you free, doubt it not. 
+Receive submissively what is sent you; wrestling to
+win the world invites an overthrow. Here there is no 
+continuing home; here is but wilderness. Forth, 
+pilgrim, forth! Forth, beast, out of your stall! Know 
+your true native land, look up, thank God for all 
+things; hold the highway, let your spirit lead you; and 
+truth shall make you free, doubt it not. 
+
+Envoy 
+
+Therefore, brute-beast, leave to the world your old
+sorry ways; cease now to be a slave. Cry Him mercy 
+Who of His own high goodness made you from 
+nothing, and draw to Him most of all; pray for a 
+common heavenly payment for you and for others as 
+well. And truth shall make you free, doubt it not. 
+Here Ends The Ballad of Good Counsel of G. 
+Chaucer.`,
+  },
+  {
+    id: "lack-of-steadfastness",
+    title: "Lack of Steadfastness",
+    author: "Geoffrey Chaucer",
+    description: "Ballad",
+    img: SteadfastnessCover,
+    content: `At one time this world was so steadfast and stable 
+that a man’s word was sufficient bond; now it is so
+false and deceitful that, in effect, word and deed be in 
+no way alike, for the whole world is so turned upside-
+down by willfulness and corruption that all is lost for 
+the lack of steadfastness. 
+
+Why is this world so variable, except that people 
+rejoice in dissension? Among us now a man is 
+believed to be powerless unless by some conspiracy 
+he can wrong or oppress his neighbor. What except 
+wretched willfulness causes all to be lost for the lack 
+of steadfastness? 
+
+Truth is put down, reason is esteemed a fable; virtue 
+has now no dominion, pity is exiled, no man is 
+merciful, through covetousness discernment is 
+blinded. The world has made transmutation from 
+right to wrong, from fidelity to instability, so that all 
+is lost for the lack of steadfastness. 
+
+The Envoy to King Richard 
+
+O prince, desire to be honorable, cherish your people, 
+hate extortion! Allow nothing to be done in your 
+domains that may be a reproach to your office. Show
+forth your sword of chastisement, fear God, execute
+the law, love fidelity and worth, and wed your people 
+again to steadfastness. `,
+  },
+  {
+    id: "the-complaint-unto-pity",
+    title: "The Complaint Unto Pity",
+    author: "Geoffrey Chaucer",
+    description: "(Original Middle English)",
+    img: TheComplaintUntoPityCover,
+    content: `Stanza 3:
+But in the house if that Pite had be,
+With many fair alleis in general,
+Shortly, dar I say, as thinketh me,
+Hir aduersaries stooden in the halle,
+Wel nigh abouten, and grete hem everich alle;
+This is to say, the Bountee of hir linage,
+Which held that Pite dide hem no damage.
+
+Stanza 4:
+Adown I fel, when that I saugh the herse,
+Dead as a stone, while that the swough me laste;
+But up I roos, with colour ful dyverse,
+And pitously on hir myn eyen I caste,
+And ner the corps I gan to presen faste,
+And for the soule I shope me for to preye;
+I was but lorn, ther was no more to seye.
+
+Stanza 5:
+Thus am I slayn, sith that Pite is ded.
+Allas, that day, that ever hyt shulde falle!
+What maner man dar now hold up his hed?
+To whom shal any sorwful herte calle?
+Now Cruelte hath cast to slee us alle,
+In ydel hope, folk redeless of peyne,
+Sith Pite is deed, to whom shal we now pleyne?
+`,
+  },
+  {
+    id: "the-parlement-of-fowls",
+    title: "THE PARLEMENT OF FOWLS",
+    author: "Geoffrey Chaucer",
+    description: "",
+    img: TheParlementOfFowls,
+    content: `
+    Now welcome, somer, with thy sonne soft{.e},
+That hast this wintr{.e}s wedr{.e}s overshak{.e}, 
+And driven away the long{.e} nyght{.e}s blak{.e}!
+
+Saynt Valentyn, that art ful hy on-lofte,
+Thus syngen smal{.e} foul{.e]s for thy sak[.e}:
+Now welcome, somer, with thy sonn{.e} soft{.e},
+That hast this wintr{.e}s wedr{.e}s overshak{.e].
+
+Wel han they caus{.e} for to gladen oft{.e},
+Sith ech of hem recover{.e}d hath hys mak{.e}; 
+Ful blissful mowe they syng{.e} when they wak{.e}: 
+Now welcome, somer, with thy sonn{.e} soft{.e} 
+That hast this wintr{.e}s wedr{.e}s overshak{.e} 
+And driven away the long{.e} nyght{.e}s blak{.e}!
+    `,
   },
 ];
