@@ -3,7 +3,8 @@ import Sonnet18Cover from "../../assets/sonnets/Sonnet18.png";
 import Sonnet29Cover from "../../assets/sonnets/Sonnet29.png";
 import Sonnet73Cover from "../../assets/sonnets/Sonnet73.png";
 import Soonet55Cover from "../../assets/sonnets/Sonnet55.png";
-import TheRavenCover from "../../assets/sonnets/The Raven.webp"
+import TheRavenCover from "../../assets/sonnets/The Raven.webp";
+import ABCcover from "../../assets/sonnets/abccover.png"
 
 export const sonnetsData = [
   {
@@ -91,13 +92,13 @@ So, till the judgment that yourself arise,
 You live in this, and dwell in lovers' eyes.`,
   },
   {
-  id: "the-raven",
-  title: "The Raven",
-  author: "Edgar Allan Poe",
-  description:
-    "A haunting narrative poem that explores grief, loss, and despair.",
-  img: TheRavenCover,
-  content: `“Prophet!” said I, “thing of evil!—prophet still, if bird or devil!
+    id: "the-raven",
+    title: "The Raven",
+    author: "Edgar Allan Poe",
+    description:
+      "A haunting narrative poem that explores grief, loss, and despair.",
+    img: TheRavenCover,
+    content: `“Prophet!” said I, “thing of evil!—prophet still, if bird or devil!
 By that Heaven that bends above us—by that God we both adore—
 Tell this soul with sorrow laden if, within the distant Aidenn,
 It shall clasp a sainted maiden whom the angels name Lenore—
@@ -117,6 +118,20 @@ And his eyes have all the seeming of a demon’s that is dreaming,
 And the lamplight o’er him streaming throws his shadow on the floor;
 And my soul from out that shadow that lies floating on the floor
 Shall be lifted—nevermore!`,
-},
-
+  },
+  {
+    id: "abc",
+    title: "An A.B.C",
+    author: "Geoffrey Chaucer",
+    description:
+      "A haunting narrative poem that explores grief, loss, and despair.",
+    img: ABCcover,
+    content: `Almyghty and al merciable Queene,
+To whom that al this world fleeth for socour,
+To have relees of sinne, sorwe, and teene,
+Glorious Virgin, flour of alle flour,
+To thee I flee, confounded in errour!
+Help and releve, thou mighty debonayre,
+Have mercy on my perilous langour!`,
+  },
 ];
