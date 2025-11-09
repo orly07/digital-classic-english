@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { color, typography, breakpoint } from "../../styles/theme";
-import heroBg from "../../assets/hero-bg.webp";
-import heroBgMobile from "../../assets/classic-english-cover-mobile.webp";
+import heroBg from "../../optimized-assets/hero-bg.webp";
+import heroBgMobile from "../../optimized-assets/classic-english-cover-mobile.webp";
+
 
 export const HeroSection = styled.section`
   height: 100vh;

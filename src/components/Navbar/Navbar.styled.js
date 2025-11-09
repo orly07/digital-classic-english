@@ -27,7 +27,8 @@ export const NavbarContainer = styled.nav`
   .logo {
     font-weight: ${typography.fontWeight.bold};
     font-size: ${typography.fontSize.xl};
-    color: ${({ $isScrolled }) => ($isScrolled ? color.primaryDark : color.white)};
+    color: ${({ $isScrolled }) =>
+      $isScrolled ? color.primaryDark : color.white};
     display: flex;
     align-items: center;
     gap: 10px;
@@ -57,6 +58,10 @@ export const NavLinks = styled.div`
   ${breakpoint.tablet} {
     display: none;
   }
+
+  ${breakpoint.mobile} {
+    display: none;
+  }
 `;
 
 export const NavItem = styled.span`
@@ -79,7 +84,8 @@ export const MobileMenuButton = styled.button`
   background: none;
   border: none;
   font-size: 1.6rem;
-  color: ${({ $isScrolled }) => ($isScrolled ? color.primaryDark : color.white)};
+  color: ${({ $isScrolled }) =>
+    $isScrolled ? color.primaryDark : color.white};
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 8px;
@@ -92,6 +98,11 @@ export const MobileMenuButton = styled.button`
   }
 
   ${breakpoint.tablet} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ${breakpoint.mobile} {
     display: flex;
     align-items: center;
     justify-content: center;
