@@ -3,7 +3,6 @@ import { color, typography, breakpoint } from "../../styles/theme";
 import heroBg from "../../optimized-assets/hero-bg.webp";
 import heroBgMobile from "../../optimized-assets/classic-english-cover-mobile.webp";
 
-
 export const HeroSection = styled.section`
   height: 100vh;
   min-height: 600px;
@@ -29,7 +28,14 @@ export const HeroSection = styled.section`
 
   ${breakpoint.tablet} {
     background: url(${heroBgMobile}) center/cover no-repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
+    min-height: 500px;
+    padding: 0 1rem;
+  }
+
+  ${breakpoint.mobile} {
+    background: url(${heroBgMobile}) center/cover no-repeat;
+    background-attachment: fixed;
     min-height: 500px;
     padding: 0 1rem;
   }
