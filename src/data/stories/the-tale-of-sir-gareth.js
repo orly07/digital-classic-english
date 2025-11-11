@@ -1,12 +1,12 @@
 // The Tale of Sir Gareth of Orkney - Images
 import SirGarethCover from "../../optimized-assets/stories/the-tale-of-sir-gareth-of-orkney/cover.webp";
 import SirGarethImg from "../../optimized-assets/stories/the-tale-of-sir-gareth-of-orkney/Sir Gareth.webp";
-import KingArthurImg from "../../assets/stories/the-tale-of-sir-gareth-of-orkney/King Arthur.jpg";
-import PrincessLyonesseImg from "../../assets/stories/the-tale-of-sir-gareth-of-orkney/Princess Lyonesse.jpg";
-import SirLancelotImg from "../../assets/stories/the-tale-of-sir-gareth-of-orkney/Sir Lancelot.jpg";
-import QueenGuinevereImg from "../../assets/stories/the-tale-of-sir-gareth-of-orkney/Queen Guinevere.jpg";
-import LionImg from "../../assets/stories/the-tale-of-sir-gareth-of-orkney/Lion.jpg";
-import EnemyImg from "../../assets/stories/the-tale-of-sir-gareth-of-orkney/Enemy.jpg";
+import KingArthurImg from "../../optimized-assets/stories/the-tale-of-sir-gareth-of-orkney/King Arthur.webp";
+import PrincessLyonesseImg from "../../optimized-assets/stories/the-tale-of-sir-gareth-of-orkney/Princess Lyonesse.webp";
+import SirLancelotImg from "../../optimized-assets/stories/the-tale-of-sir-gareth-of-orkney/Sir Lancelot.webp";
+import QueenGuinevereImg from "../../optimized-assets/stories/the-tale-of-sir-gareth-of-orkney/Queen Guinevere.webp";
+import LionImg from "../../optimized-assets/stories/the-tale-of-sir-gareth-of-orkney/Lion.webp";
+import EnemyImg from "../../optimized-assets/stories/the-tale-of-sir-gareth-of-orkney/Enemy.webp";
 
 export const theTaleOfSirGarethData = {
   id: "the-tale-of-sir-gareth-of-orkney",
