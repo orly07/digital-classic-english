@@ -28,7 +28,6 @@ export const Section = styled.section`
     p {
       margin: 0;
       font-size: ${typography.fontSize.lg};
-      font-family: ${typography.fontFamily || "inherit"};
     }
 
     .reset-button {
@@ -76,7 +75,6 @@ export const SectionHeader = styled.div`
 
       ${breakpoint.mobile} {
         font-size: ${typography.fontSize["3xl"]};
-        text-align: center;
       }
     }
 
@@ -114,8 +112,6 @@ export const SectionHeader = styled.div`
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        font-size: 1rem;
-        transition: transform 0.15s ease, background 0.15s ease;
 
         &:hover {
           transform: scale(1.08);
@@ -127,9 +123,7 @@ export const SectionHeader = styled.div`
 
   ${breakpoint.mobile} {
     flex-direction: column;
-    gap: 1rem;
     text-align: center;
-    align-items: center;
   }
 `;
 
@@ -145,20 +139,16 @@ export const ScrollContent = styled.div`
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 1rem 0;
-  scrollbar-width: thin;
-  -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
     height: 8px;
   }
   &::-webkit-scrollbar-thumb {
     background: ${color.primary};
-    color: ${color.primary};
     border-radius: 6px;
   }
 
   ${breakpoint.mobile} {
     gap: 1rem;
-    padding: 0.5rem;
   }
 `;
