@@ -1,14 +1,14 @@
 import React, { memo } from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import * as S from "./About.styled";
 import MissionVisionCard from "../../components/Cards/MissionVisionCard";
 import TeamCard from "../../components/Cards/TeamCard";
 import Button from "../../components/Buttons/Button";
-import { missionVisionData, teamData, contactData } from "../../data";
 import { fadeInUp, fadeIn, slideUp } from "../../utils/helpers/motionVariants";
+import * as FaIcons from "react-icons/fa";
 
 import { useContact } from "../../utils/hooks/useContact";
+import { useAbout } from "../../utils/hooks/useAbout";
 
 const AboutIntro = () => (
   <S.AboutSection id="about">
@@ -54,50 +54,89 @@ const AboutIntro = () => (
   </S.AboutSection>
 );
 
-const MissionVisionSection = () => (
-  <motion.section
-    variants={slideUp}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true }}
-  >
-    <S.MissionVisionValues>
-      {missionVisionData.map((item) => (
-        <MissionVisionCard
-          key={item.title}
-          title={item.title}
-          content={item.content}
-          values={item.values}
-        />
-      ))}
-    </S.MissionVisionValues>
-  </motion.section>
-);
+const MissionVisionSection = () => {
+  const { mission, vision, coreValues, loading, error } = useAbout();
 
-const TeamSection = () => (
-  <S.TeamSection>
-    <motion.h2
-      variants={fadeInUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-      Meet the Team
-    </motion.h2>
+  if (loading) return <p>Loading About info...</p>;
+  if (error) return <p>Error loading About info.</p>;
 
-    <motion.div
-      className="team-container"
+  // Transform coreValues into {icon, text} array for each value
+  const formattedCoreValues = coreValues.map((item) => ({
+    title: item.title,
+    values: item.icon.map((iconName, index) => ({
+      icon: FaIcons[iconName] || FaIcons.FaBook, // fallback icon
+      text: item.text[index] || "",
+    })),
+  }));
+
+  // Combine mission, vision, and coreValues for rendering
+  const missionVisionData = [
+    ...mission.map((item) => ({ title: item.title, content: item.content })),
+    ...vision.map((item) => ({ title: item.title, content: item.content })),
+    ...formattedCoreValues.map((item) => ({
+      title: item.title,
+      values: item.values,
+    })),
+  ];
+
+  return (
+    <motion.section
       variants={slideUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
-      {teamData.map((member) => (
-        <TeamCard key={member.name} member={member} />
-      ))}
-    </motion.div>
-  </S.TeamSection>
-);
+      <S.MissionVisionValues>
+        {missionVisionData.map((item, index) => (
+          <MissionVisionCard
+            key={index}
+            title={item.title}
+            content={item.content}
+            values={item.values} // only coreValues will have values array
+          />
+        ))}
+      </S.MissionVisionValues>
+    </motion.section>
+  );
+};
+
+const TeamSection = () => {
+  const { team, loading, error } = useAbout();
+
+  if (loading) return <p>Loading Team info...</p>;
+  if (error) return <p>Error loading Team info.</p>;
+
+  return (
+    <S.TeamSection>
+      <motion.h2
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        Meet the Team
+      </motion.h2>
+
+      <motion.div
+        className="team-container"
+        variants={slideUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {team.map((member) => (
+          <TeamCard
+            key={member.name}
+            member={{
+              ...member,
+              image: member.image?.url || "", // ensure image url is passed
+            }}
+          />
+        ))}
+      </motion.div>
+    </S.TeamSection>
+  );
+};
 
 const ContactSection = () => {
   const { contacts = [], loading, error } = useContact();
