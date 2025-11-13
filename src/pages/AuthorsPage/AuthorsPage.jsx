@@ -1,10 +1,15 @@
 import { motion } from "framer-motion";
 import * as S from "./AuthorsPage.styled";
-import { authors } from "../../data/author";
 import AuthorCard from "../../components/Cards/AuthorCard";
 import { fadeIn } from "../../utils/helpers/motionVariants";
+import { useAuthor } from "../../utils/hooks/useAuthor";
 
 const AuthorsPage = () => {
+  const { authors, loading, error } = useAuthor();
+
+  if (loading) return <p>Loading authors...</p>;
+  if (error) return <p>Error loading authors.</p>;
+
   return (
     <S.PageContainer
       as={motion.section}
@@ -21,7 +26,14 @@ const AuthorsPage = () => {
 
       <S.AuthorsGrid>
         {authors.map((author) => (
-          <AuthorCard key={author.id} author={author} />
+          <AuthorCard
+            key={author.key || author.id}
+            author={{
+              name: author.name,
+              image: author.image?.url,
+              description: author.description,
+            }}
+          />
         ))}
       </S.AuthorsGrid>
     </S.PageContainer>
