@@ -1,4 +1,3 @@
-// src/modules/Sonnet/Sonnet.jsx
 import React, {
   useRef,
   useState,
@@ -87,7 +86,7 @@ const Sonnet = memo(() => {
           data={sonnets}
           selectedAuthor={sonnetsFilter}
           onAuthorChange={handleFilterChange}
-          placeholder="All Sonnets"
+          placeholder="Other Literary Works"
           label="Filter Sonnets"
         />
       </S.SectionHeader>
