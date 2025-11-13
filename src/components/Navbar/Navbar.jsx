@@ -1,15 +1,19 @@
 import { memo, useState, useCallback, useEffect, useMemo } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaBook, FaTimes, FaBars } from "react-icons/fa";
+import Button from "../Buttons/Button";
 import * as S from "./Navbar.styled";
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const isHome = location.pathname === "/";
+  const isStoryPage = location.pathname.startsWith("/story/");
+  const isSonnetPage = location.pathname.startsWith("/sonnet/");
 
   useEffect(() => {
     if (!isHome) {
@@ -27,7 +31,6 @@ const Navbar = () => {
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
@@ -50,22 +53,46 @@ const Navbar = () => {
     closeMobileMenu();
   }, [location, closeMobileMenu]);
 
-  const navItems = useMemo(
-    () =>
-      isHome
-        ? [
-            { to: "hero-section", label: "Home", type: "scroll" },
-            { to: "stories", label: "Stories", type: "scroll" },
-            { to: "sonnets", label: "Sonnets", type: "scroll" },
-            { to: "about", label: "About", type: "scroll" },
-            { to: "authors", label: "Authors", type: "link" },
-          ]
-        : [
-            { to: "/", label: "Home", type: "link" },
-            { to: "/#about", label: "About", type: "link" },
-          ],
-    [isHome]
-  );
+  const navItems = useMemo(() => {
+    if (isHome) {
+      return [
+        { to: "hero-section", label: "Home", type: "scroll" },
+        { to: "stories", label: "Stories", type: "scroll" },
+        { to: "sonnets", label: "Sonnets", type: "scroll" },
+        { to: "about", label: "About", type: "scroll" },
+        { to: "authors", label: "Authors", type: "link" },
+      ];
+    }
+
+    if (isStoryPage) {
+      return [
+        {
+          label: "← Go Back to Stories",
+          action: () => navigate("/#stories"),
+          button: true,
+        },
+        { to: "/", label: "Home", type: "link" },
+        { to: "/#about", label: "About", type: "link" },
+      ];
+    }
+
+    if (isSonnetPage) {
+      return [
+        {
+          label: "← Go Back to Sonnets",
+          action: () => navigate("/#sonnets"),
+          button: true,
+        },
+        { to: "/", label: "Home", type: "link" },
+        { to: "/#about", label: "About", type: "link" },
+      ];
+    }
+
+    return [
+      { to: "/", label: "Home", type: "link" },
+      { to: "/#about", label: "About", type: "link" },
+    ];
+  }, [isHome, isStoryPage, isSonnetPage, navigate]);
 
   return (
     <>
@@ -79,23 +106,41 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <S.NavLinks>
-          {navItems.map((item) =>
-            item.type === "scroll" ? (
-              <ScrollLink
-                key={item.to}
-                to={item.to}
-                smooth
-                duration={800}
-                offset={-64}
-              >
-                <S.NavItem $isScrolled={isScrolled}>{item.label}</S.NavItem>
-              </ScrollLink>
-            ) : (
+          {navItems.map((item, i) => {
+            if (item.button) {
+              return (
+                <Button
+                  key={i}
+                  variant="outline"
+                  size="small"
+                  onClick={item.action}
+                  style={{ marginRight: "8px" }}
+                >
+                  {item.label}
+                </Button>
+              );
+            }
+
+            if (item.type === "scroll") {
+              return (
+                <ScrollLink
+                  key={item.to}
+                  to={item.to}
+                  smooth
+                  duration={800}
+                  offset={-64}
+                >
+                  <S.NavItem $isScrolled={isScrolled}>{item.label}</S.NavItem>
+                </ScrollLink>
+              );
+            }
+
+            return (
               <Link key={item.to} to={item.to}>
                 <S.NavItem $isScrolled={isScrolled}>{item.label}</S.NavItem>
               </Link>
-            )
-          )}
+            );
+          })}
         </S.NavLinks>
 
         {/* Mobile Menu Button */}
@@ -127,24 +172,45 @@ const Navbar = () => {
         </div>
 
         <S.MobileNavLinks>
-          {navItems.map((item) =>
-            item.type === "scroll" ? (
-              <ScrollLink
-                key={item.to}
-                to={item.to}
-                smooth
-                duration={800}
-                offset={-80}
-                onClick={closeMobileMenu}
-              >
-                <S.MobileNavItem>{item.label}</S.MobileNavItem>
-              </ScrollLink>
-            ) : (
+          {navItems.map((item, i) => {
+            if (item.button) {
+              return (
+                <Button
+                  key={i}
+                  variant="outline"
+                  size="medium"
+                  onClick={() => {
+                    item.action();
+                    closeMobileMenu();
+                  }}
+                  style={{ marginBottom: "12px", width: "100%" }}
+                >
+                  {item.label}
+                </Button>
+              );
+            }
+
+            if (item.type === "scroll") {
+              return (
+                <ScrollLink
+                  key={item.to}
+                  to={item.to}
+                  smooth
+                  duration={800}
+                  offset={-80}
+                  onClick={closeMobileMenu}
+                >
+                  <S.MobileNavItem>{item.label}</S.MobileNavItem>
+                </ScrollLink>
+              );
+            }
+
+            return (
               <Link key={item.to} to={item.to} onClick={closeMobileMenu}>
                 <S.MobileNavItem>{item.label}</S.MobileNavItem>
               </Link>
-            )
-          )}
+            );
+          })}
         </S.MobileNavLinks>
 
         <div className="mobile-menu-footer">

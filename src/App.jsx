@@ -5,6 +5,7 @@ import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import AppRoutes from "./routes/AppRoutes";
 import GlobalStyle from "./styles/GlobalStyle";
 import ScrollToTop from "./utils/ScrollToTop";
+import HashElement from "./helpers/HashElement";
 
 function App() {
   return (
@@ -17,10 +18,11 @@ function App() {
       </Helmet>
       <ErrorBoundary>
         <GlobalStyle />
-          <Layout>
-            <ScrollToTop />
-            <AppRoutes />
-          </Layout>
+        <Layout>
+          <ScrollToTop />
+          <HashElement />
+          <AppRoutes />
+        </Layout>
       </ErrorBoundary>
     </>
   );
