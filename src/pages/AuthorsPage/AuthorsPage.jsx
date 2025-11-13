@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import * as S from "./AuthorsPage.styled";
 import { authors } from "../../data/author";
 import AuthorCard from "../../components/Cards/AuthorCard";
-import { fadeIn } from "../../utils/motionVariants";
+import { fadeIn } from "../../utils/helpers/motionVariants";
 
 const AuthorsPage = () => {
   return (

@@ -6,7 +6,7 @@ import MissionVisionCard from "../../components/Cards/MissionVisionCard";
 import TeamCard from "../../components/Cards/TeamCard";
 import Button from "../../components/Buttons/Button";
 import { missionVisionData, teamData, contactData } from "../../data";
-import { fadeInUp, fadeIn, slideUp } from "../../utils/motionVariants";
+import { fadeInUp, fadeIn, slideUp } from "../../utils/helpers/motionVariants";
 
 const AboutIntro = () => (
   <S.AboutSection id="about">

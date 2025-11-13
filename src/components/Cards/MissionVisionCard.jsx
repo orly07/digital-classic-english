@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { motion } from "framer-motion";
 import * as S from "./MissionVisionCard.styled";
-import { fadeInUp } from "../../utils/motionVariants";
+import { fadeInUp } from "../../utils/helpers/motionVariants";
 
 const MissionVisionCard = memo(
   ({ title, content, values = [], icon: Icon }) => {

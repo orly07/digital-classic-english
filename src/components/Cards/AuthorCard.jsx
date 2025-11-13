@@ -2,7 +2,7 @@ import React, { memo, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import * as S from "./AuthorCard.styled";
-import { fadeInUp } from "../../utils/motionVariants";
+import { fadeInUp } from "../../utils/helpers/motionVariants";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const MAX_LENGTH = 160;

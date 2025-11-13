@@ -11,7 +11,7 @@ import {
   PlaybackControls,
   TopControlsContainer,
 } from "./SonnetPage.styled";
-import { useSpeechSynthesis } from "../../hooks/useSpeechSynthesis";
+import { useSpeechSynthesis } from "../../utils/helpers/useSpeechSynthesis";
 import PlaybackButtonGroup from "./PlaybackButtonGroup";
 import VoiceSettingsPanel from "./VoiceSettingsPanel";
 
