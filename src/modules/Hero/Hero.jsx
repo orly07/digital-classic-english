@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import * as S from "./Hero.styled";
 import Button from "../../components/Buttons/Button";
-import { fadeIn, fadeInUp } from "../../utils/motionVariants";
+import { fadeIn, fadeInUp } from "../../utils/helpers/motionVariants";
 
 const Hero = memo(() => {
   return (

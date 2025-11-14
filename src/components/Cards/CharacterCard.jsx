@@ -1,21 +1,21 @@
-import React, { memo, useState, useCallback } from 'react';
-import { 
-  CardContainer, 
-  CardImage, 
-  CardContent, 
-  CardTitle, 
+import React, { memo, useState, useCallback } from "react";
+import {
+  CardContainer,
+  CardImage,
+  CardContent,
+  CardTitle,
   CardDescription,
   SeeMoreButton,
   LinesContainer,
-  LinesText
-} from './CharacterCard.styled';
+  LinesText,
+} from "./CharacterCard.styled";
 
 const CharacterCard = memo(({ character }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showLines, setShowLines] = useState(false);
 
   const toggleDescription = useCallback(() => {
-    setIsExpanded(prev => !prev);
+    setIsExpanded((prev) => !prev);
   }, []);
 
   const handleImageInteraction = useCallback(() => {
@@ -26,14 +26,15 @@ const CharacterCard = memo(({ character }) => {
     setShowLines(false);
   }, []);
 
-  const needsTruncation = character.description && character.description.length > 60;
+  const needsTruncation =
+    character.description && character.description.length > 60;
   const hasLines = character.lines && character.lines.trim().length > 0;
 
   return (
     <CardContainer>
-      <CardImage 
-        src={character.img} 
-        alt={character.name} 
+      <CardImage
+        src={character.image?.url}
+        alt={character.name}
         loading="lazy"
         onMouseEnter={handleImageInteraction}
         onMouseLeave={handleImageLeave}
@@ -42,7 +43,7 @@ const CharacterCard = memo(({ character }) => {
 
       <CardContent>
         <CardTitle>{character.name}</CardTitle>
-        
+
         {hasLines && showLines && (
           <LinesContainer>
             <LinesText>"{character.lines}"</LinesText>
@@ -52,13 +53,10 @@ const CharacterCard = memo(({ character }) => {
         <CardDescription $isExpanded={isExpanded}>
           {character.description}
         </CardDescription>
-        
+
         {needsTruncation && (
-          <SeeMoreButton 
-            onClick={toggleDescription}
-            $isExpanded={isExpanded}
-          >
-            {isExpanded ? 'See Less' : 'See More'}
+          <SeeMoreButton onClick={toggleDescription} $isExpanded={isExpanded}>
+            {isExpanded ? "See Less" : "See More"}
           </SeeMoreButton>
         )}
       </CardContent>
@@ -66,5 +64,5 @@ const CharacterCard = memo(({ character }) => {
   );
 });
 
-CharacterCard.displayName = 'CharacterCard';
+CharacterCard.displayName = "CharacterCard";
 export default CharacterCard;

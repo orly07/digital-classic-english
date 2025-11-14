@@ -1,4 +1,3 @@
-// src/modules/Story/Story.jsx
 import React, {
   useRef,
   useState,
@@ -7,7 +6,8 @@ import React, {
   useEffect,
   memo,
 } from "react";
-import { storiesData } from "../../data";
+
+import { useStories } from "../../utils/hooks/useStory";
 import StoryCard from "../../components/Cards/StoryCard";
 import FilterDropdown from "../../components/Filter/FilterDropdown";
 import ScrollButton from "../../components/Buttons/ScrollButton";
@@ -16,14 +16,15 @@ import * as S from "./Story.styled";
 const HORIZONTAL_SCROLL_AMOUNT = 320;
 
 const Story = memo(() => {
+  const { stories, loading, error } = useStories();
+
   const storiesRef = useRef(null);
   const [storiesFilter, setStoriesFilter] = useState("");
+
   const [storiesCanScroll, setStoriesCanScroll] = useState({
     left: false,
     right: false,
   });
-
-  const stories = useMemo(() => storiesData, []);
 
   const filteredStories = useMemo(() => {
     if (!storiesFilter) return stories;
@@ -43,6 +44,7 @@ const Story = memo(() => {
     const el = storiesRef.current;
     const { scrollLeft, scrollWidth, clientWidth } = el;
     const maxScrollLeft = scrollWidth - clientWidth;
+
     setStoriesCanScroll({
       left: scrollLeft > 5,
       right: scrollLeft < maxScrollLeft - 5,
@@ -52,14 +54,20 @@ const Story = memo(() => {
   useEffect(() => {
     const el = storiesRef.current;
     updateScrollState();
+
     if (!el) return;
+
     el.addEventListener("scroll", updateScrollState, { passive: true });
     window.addEventListener("resize", updateScrollState, { passive: true });
+
     return () => {
       el.removeEventListener("scroll", updateScrollState);
       window.removeEventListener("resize", updateScrollState);
     };
   }, [updateScrollState, filteredStories.length]);
+
+  if (loading) return <p>Loading stories...</p>;
+  if (error) return <p>Error loading stories.</p>;
 
   const handleFilterChange = (author) => setStoriesFilter(author);
   const resetFilter = () => setStoriesFilter("");
@@ -69,6 +77,7 @@ const Story = memo(() => {
       <S.SectionHeader>
         <div className="title-section">
           <h2>Explore Stories</h2>
+
           {storiesFilter && (
             <span className="filter-indicator" aria-live="polite">
               Showing works by {storiesFilter}

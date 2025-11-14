@@ -26,7 +26,7 @@ export const useSpeechSynthesis = (text) => {
 
       if (!selectedVoice && allVoices.length > 0) {
         const preferred =
-          allVoices.find(v =>
+          allVoices.find((v) =>
             /female|Samantha|Google UK English Female/i.test(v.name)
           ) || allVoices[0];
         setSelectedVoice(preferred);

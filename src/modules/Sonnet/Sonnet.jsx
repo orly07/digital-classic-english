@@ -1,12 +1,13 @@
 import React, {
+  memo,
   useRef,
   useState,
   useMemo,
   useCallback,
   useEffect,
-  memo,
 } from "react";
-import { sonnetsData } from "../../data";
+import { motion } from "framer-motion";
+import { useSonnet } from "../../utils/hooks/useSonnet";
 import SonnetCard from "../../components/Cards/SonnetCard";
 import FilterDropdown from "../../components/Filter/FilterDropdown";
 import ScrollButton from "../../components/Buttons/ScrollButton";
@@ -16,13 +17,12 @@ const HORIZONTAL_SCROLL_AMOUNT = 320;
 
 const Sonnet = memo(() => {
   const sonnetsRef = useRef(null);
+  const { sonnets, loading } = useSonnet();
   const [sonnetsFilter, setSonnetsFilter] = useState("");
   const [sonnetsCanScroll, setSonnetsCanScroll] = useState({
     left: false,
     right: false,
   });
-
-  const sonnets = useMemo(() => sonnetsData, []);
 
   const filteredSonnets = useMemo(() => {
     if (!sonnetsFilter) return sonnets;
@@ -49,8 +49,8 @@ const Sonnet = memo(() => {
   }, []);
 
   useEffect(() => {
-    const el = sonnetsRef.current;
     updateScrollState();
+    const el = sonnetsRef.current;
     if (!el) return;
     el.addEventListener("scroll", updateScrollState, { passive: true });
     window.addEventListener("resize", updateScrollState, { passive: true });
@@ -63,6 +63,8 @@ const Sonnet = memo(() => {
   const handleFilterChange = (author) => setSonnetsFilter(author);
   const resetFilter = () => setSonnetsFilter("");
 
+  if (loading) return <p>Loading sonnets...</p>;
+
   return (
     <S.Section id="sonnets">
       <S.SectionHeader>
@@ -74,7 +76,7 @@ const Sonnet = memo(() => {
               <button
                 onClick={resetFilter}
                 className="clear-filter"
-                aria-label="Clear sonnets filter"
+                aria-label="Clear filter"
               >
                 ×
               </button>
@@ -99,7 +101,7 @@ const Sonnet = memo(() => {
         >
           {filteredSonnets.length > 0 ? (
             filteredSonnets.map((sonnet) => (
-              <SonnetCard key={sonnet.id} sonnet={sonnet} />
+              <SonnetCard key={sonnet.slug} sonnet={sonnet} />
             ))
           ) : (
             <div className="no-results" role="status" aria-live="polite">

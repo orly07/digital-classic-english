@@ -2,7 +2,7 @@ import React, { memo, lazy, Suspense } from "react";
 import { motion as Motion } from "framer-motion";
 import Hero from "../../modules/Hero/Hero";
 import LoadingFallback from "../../components/Loading/LoadingFallback";
-import { fadeInUp, slideUp } from "../../utils/motionVariants";
+import { fadeInUp, slideUp } from "../../utils/helpers/motionVariants";
 
 const Story = lazy(() => import("../../modules/Story"));
 const Sonnet = lazy(() => import("../../modules/Sonnet"));

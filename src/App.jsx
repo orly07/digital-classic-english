@@ -4,8 +4,8 @@ import Layout from "./components/Layout/Layout";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import AppRoutes from "./routes/AppRoutes";
 import GlobalStyle from "./styles/GlobalStyle";
-import ScrollToTop from "./utils/ScrollToTop";
-import HashElement from "./helpers/HashElement";
+import ScrollToTop from "./utils/helpers/ScrollToTop";
+import HashElement from "./utils/helpers/HashElement";
 
 function App() {
   return (

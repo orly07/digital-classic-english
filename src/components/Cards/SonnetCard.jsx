@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { Link } from "react-router-dom";
 import {
   CardContainer,
   CardContent,
@@ -10,13 +11,13 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 const SonnetCard = memo(({ sonnet }) => {
   return (
-    <CardContainer to={`/sonnet/${sonnet.id}`}>
-        <LazyLoadImage
-          src={sonnet.img}
-          alt={sonnet.title}
-          effect="blur"
-          width="100%"
-        />
+    <CardContainer as={Link} to={`/sonnet/${sonnet.slug}`}>
+      <LazyLoadImage
+        src={sonnet.image?.url} // nested from GraphQL
+        alt={sonnet.title}
+        effect="blur"
+        width="100%"
+      />
 
       <CardContent>
         <h5>{sonnet.title}</h5>

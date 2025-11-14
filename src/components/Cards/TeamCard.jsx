@@ -1,7 +1,7 @@
 import React, { memo, useState } from "react";
 import { motion } from "framer-motion";
 import * as S from "./TeamCard.styled";
-import { fadeInUp } from "../../utils/motionVariants";
+import { fadeInUp } from "../../utils/helpers/motionVariants";
 
 const TeamCard = memo(({ member }) => {
   const [isExpanded, setIsExpanded] = useState(false);
