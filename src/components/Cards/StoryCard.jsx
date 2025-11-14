@@ -7,16 +7,12 @@ import {
   CardLink,
 } from "./StoryCard.styled";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css"
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const StoryCard = memo(({ story }) => {
   return (
-    <CardContainer to={`/story/${story.id}`}>
-      <LazyLoadImage
-        src={story.img}
-        alt={story.title}
-        effect="blur"
-      />
+    <CardContainer to={`/story/${story.slug}`}>
+      <LazyLoadImage src={story.image?.url} alt={story.title} effect="blur" />
 
       <CardContent>
         <h5>{story.title}</h5>
