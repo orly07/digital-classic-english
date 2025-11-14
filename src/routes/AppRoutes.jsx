@@ -15,7 +15,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/story/:id" element={<Story />} />
-        <Route path="/sonnet/:id" element={<SonnetPage />} />
+        <Route path="/sonnet/:slug" element={<SonnetPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/authors" element={<AuthorsPage />} />
       </Routes>
