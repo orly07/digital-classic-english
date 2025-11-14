@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const GET_STORIES = gql`
   query GetStories {
-    stories {
+    stories(first: 100) {
       id
       title
       slug
@@ -13,7 +13,7 @@ export const GET_STORIES = gql`
       }
       video
       fullStory
-      character {
+      character(first: 200) {
         id
         name
         lines
