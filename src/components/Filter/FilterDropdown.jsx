@@ -10,7 +10,9 @@ const FilterDropdown = memo(
     label = "Filter by Author",
   }) => {
     const authors = useMemo(() => {
-      const uniqueAuthors = Array.from(new Set(data.map(item => item.author))).sort();
+      const uniqueAuthors = Array.from(
+        new Set(data.map((item) => item.author))
+      ).sort();
       return uniqueAuthors;
     }, [data]);
 

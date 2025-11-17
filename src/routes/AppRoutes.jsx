@@ -2,7 +2,7 @@
 import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import LoadingFallback from "../components/Loading/LoadingFallback";
-import ScrollToTop from "../utils/ScrollToTop";
+import ScrollToTop from "../utils/helpers/ScrollToTop";
 
 const LandingPage = lazy(() => import("../pages/LandingPage"));
 const Story = lazy(() => import("../pages/StoryPage"));
@@ -15,7 +15,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/story/:id" element={<Story />} />
-        <Route path="/sonnet/:id" element={<SonnetPage />} />
+        <Route path="/sonnet/:slug" element={<SonnetPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/authors" element={<AuthorsPage />} />
       </Routes>

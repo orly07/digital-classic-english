@@ -1,8 +1,10 @@
-import React, { memo, useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
-import { sonnetsData } from "../../data";
-// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
+import { useSonnet } from "../../utils/hooks/useSonnet";
+import { useSpeechSynthesis } from "../../utils/helpers/useSpeechSynthesis";
+import PlaybackButtonGroup from "./PlaybackButtonGroup";
+import VoiceSettingsPanel from "./VoiceSettingsPanel";
 import {
   SonnetDetailWrapper,
   SonnetContent,
@@ -11,18 +13,24 @@ import {
   PlaybackControls,
   TopControlsContainer,
 } from "./SonnetPage.styled";
-import { useSpeechSynthesis } from "../../hooks/useSpeechSynthesis";
-import PlaybackButtonGroup from "./PlaybackButtonGroup";
-import VoiceSettingsPanel from "./VoiceSettingsPanel";
 
-const SonnetPage = memo(() => {
-  const { id } = useParams();
-  const sonnet = sonnetsData.find((s) => s.id === id);
+const SonnetPage = () => {
+  const { slug } = useParams();
+  const { sonnets, loading, error } = useSonnet();
+  const [sonnet, setSonnet] = useState(null);
   const [showSettings, setShowSettings] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [id]);
+  }, [slug]);
+
+  useEffect(() => {
+    if (!loading && sonnets.length > 0) {
+      const found = sonnets.find((s) => s.slug === slug);
+      console.log("Looking for slug:", slug, "Found:", found);
+      setSonnet(found || null);
+    }
+  }, [loading, sonnets, slug]);
 
   const {
     isSpeaking,
@@ -41,14 +49,9 @@ const SonnetPage = memo(() => {
     []
   );
 
-  if (!sonnet) {
-    return (
-      <div style={{ textAlign: "center", padding: "2rem", marginTop: "80px" }}>
-        <h2>Sonnet not found</h2>
-        <Link to="/">Go back home</Link>
-      </div>
-    );
-  }
+  if (loading) return <div>Loading sonnet...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+  if (!sonnet) return <div>Sonnet not found</div>;
 
   return (
     <SonnetDetailWrapper>
@@ -93,7 +96,6 @@ const SonnetPage = memo(() => {
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
-              className="sonnet-line"
             >
               {line}
             </motion.p>
@@ -108,7 +110,6 @@ const SonnetPage = memo(() => {
       </SonnetContent>
     </SonnetDetailWrapper>
   );
-});
+};
 
-SonnetPage.displayName = "SonnetPage";
 export default SonnetPage;
