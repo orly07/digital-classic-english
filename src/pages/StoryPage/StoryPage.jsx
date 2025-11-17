@@ -1,7 +1,7 @@
 import React, { useMemo, memo, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import { LoadingFallback } from "../../components/Loading/LoadingFallback";
 import { useStories } from "../../utils/hooks/useStory";
 
 import CharacterCard from "../../components/Cards/CharacterCard";
@@ -26,7 +26,7 @@ const StoryPage = memo(() => {
   if (loading) {
     return (
       <S.NotFound>
-        <h2>Loading story...</h2>
+        <LoadingFallback />
       </S.NotFound>
     );
   }

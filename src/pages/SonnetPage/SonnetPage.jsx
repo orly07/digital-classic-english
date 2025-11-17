@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion";
+import { LoadingFallback } from "../../components/Loading/LoadingFallback";
+
 import { useSonnet } from "../../utils/hooks/useSonnet";
 import { useSpeechSynthesis } from "../../utils/helpers/useSpeechSynthesis";
 import PlaybackButtonGroup from "./PlaybackButtonGroup";
@@ -49,16 +51,16 @@ const SonnetPage = () => {
     []
   );
 
-  if (loading) return <div>Loading sonnet...</div>;
+  if (loading) return <LoadingFallback />;
   if (error) return <div>Error: {error.message}</div>;
   if (!sonnet) return <div>Sonnet not found</div>;
 
   return (
     <SonnetDetailWrapper>
       <SonnetContent>
-        <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <Motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           {sonnet.title}
-        </motion.h1>
+        </Motion.h1>
         <p className="author">By {sonnet.author}</p>
 
         <TopControlsContainer>
@@ -91,14 +93,14 @@ const SonnetPage = () => {
 
         <SonnetText>
           {sonnet.content.split("\n").map((line, i) => (
-            <motion.p
+            <Motion.p
               key={i}
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
             >
               {line}
-            </motion.p>
+            </Motion.p>
           ))}
         </SonnetText>
 
