@@ -6,11 +6,12 @@ import React, {
   useCallback,
   useEffect,
 } from "react";
-import { motion } from "framer-motion";
+
 import { useSonnet } from "../../utils/hooks/useSonnet";
 import SonnetCard from "../../components/Cards/SonnetCard";
 import FilterDropdown from "../../components/Filter/FilterDropdown";
 import ScrollButton from "../../components/Buttons/ScrollButton";
+import LoadingFallback from "../../components/Loading/LoadingFallback";
 import * as S from "./Sonnet.styled";
 
 const HORIZONTAL_SCROLL_AMOUNT = 320;
@@ -63,7 +64,7 @@ const Sonnet = memo(() => {
   const handleFilterChange = (author) => setSonnetsFilter(author);
   const resetFilter = () => setSonnetsFilter("");
 
-  if (loading) return <p>Loading sonnets...</p>;
+  if (loading) return <LoadingFallback />;
 
   return (
     <S.Section id="sonnets">
