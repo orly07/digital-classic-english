@@ -1,4 +1,3 @@
-// src/modules/About/About.jsx
 import React, { memo } from "react";
 import { motion as MOTION } from "framer-motion";
 import * as S from "./About.styled";
