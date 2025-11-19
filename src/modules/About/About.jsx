@@ -1,3 +1,5 @@
+// src/modules/About/About.jsx
+
 import React, { memo } from "react";
 import { motion } from "framer-motion";
 import * as S from "./About.styled";
@@ -6,6 +8,7 @@ import TeamCard from "../../components/Cards/TeamCard";
 import Button from "../../components/Buttons/Button";
 import { fadeInUp, fadeIn, slideUp } from "../../utils/helpers/motionVariants";
 import * as FaIcons from "react-icons/fa";
+import LoadingFallback from "../../components/Loading/LoadingFallback";
 
 import { useContact } from "../../utils/hooks/useContact";
 import { useAbout } from "../../utils/hooks/useAbout";
@@ -57,7 +60,7 @@ const AboutIntro = () => (
 const MissionVisionSection = () => {
   const { mission, vision, coreValues, loading, error } = useAbout();
 
-  if (loading) return <p>Loading About info...</p>;
+  if (loading) return <LoadingFallback />;
   if (error) return <p>Error loading About info.</p>;
 
   // Transform coreValues into {icon, text} array for each value
@@ -103,7 +106,7 @@ const MissionVisionSection = () => {
 const TeamSection = () => {
   const { team, loading, error } = useAbout();
 
-  if (loading) return <p>Loading Team info...</p>;
+  if (loading) return <LoadingFallback />;
   if (error) return <p>Error loading Team info.</p>;
 
   return (
@@ -129,7 +132,7 @@ const TeamSection = () => {
             key={member.name}
             member={{
               ...member,
-              image: member.image?.url || "", // ensure image url is passed
+              image: member.image?.url || "",
             }}
           />
         ))}
@@ -142,7 +145,7 @@ const ContactSection = () => {
   const { contacts = [], loading, error } = useContact();
   const contact = contacts[0] ?? {};
 
-  if (loading) return <p>Loading contact info...</p>;
+  if (loading) return <LoadingFallback />;
   if (error) return <p>Error loading contact info.</p>;
 
   return (

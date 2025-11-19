@@ -11,6 +11,7 @@ import { useStories } from "../../utils/hooks/useStory";
 import StoryCard from "../../components/Cards/StoryCard";
 import FilterDropdown from "../../components/Filter/FilterDropdown";
 import ScrollButton from "../../components/Buttons/ScrollButton";
+import LoadingFallback from "../../components/Loading/LoadingFallback";
 import * as S from "./Story.styled";
 
 const HORIZONTAL_SCROLL_AMOUNT = 320;
@@ -66,7 +67,7 @@ const Story = memo(() => {
     };
   }, [updateScrollState, filteredStories.length]);
 
-  if (loading) return <p>Loading stories...</p>;
+  if (loading) return <LoadingFallback />;
   if (error) return <p>Error loading stories.</p>;
 
   const handleFilterChange = (author) => setStoriesFilter(author);
