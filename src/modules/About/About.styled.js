@@ -74,8 +74,15 @@ export const MissionVisionValues = styled.div`
 
 export const TeamSection = styled.section`
   background: ${color.gray[50]};
-  padding: 5rem 2rem;
+  padding: ${({ $padding }) => $padding || "5rem 2rem"};
   text-align: center;
+
+  h3 {
+    font-size: ${typography.fontSize["3xl"]};
+    font-weight: ${typography.fontWeight.bold};
+    color: ${color.primary};
+    margin: 0;
+  }
 
   h2 {
     font-size: ${typography.fontSize["4xl"]};

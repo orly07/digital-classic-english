@@ -1,5 +1,4 @@
 // src/modules/About/About.jsx
-
 import React, { memo } from "react";
 import { motion } from "framer-motion";
 import * as S from "./About.styled";
@@ -109,35 +108,75 @@ const TeamSection = () => {
   if (loading) return <LoadingFallback />;
   if (error) return <p>Error loading Team info.</p>;
 
-  return (
-    <S.TeamSection>
-      <motion.h2
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        Meet the Team
-      </motion.h2>
+  // Separate the first 3 team members as Proponents and the rest as Web Developers
+  const proponents = team.slice(0, 3);
+  const webDevelopers = team.slice(3);
 
-      <motion.div
-        className="team-container"
-        variants={slideUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        {team.map((member) => (
-          <TeamCard
-            key={member.name}
-            member={{
-              ...member,
-              image: member.image?.url || "",
-            }}
-          />
-        ))}
-      </motion.div>
-    </S.TeamSection>
+  return (
+    <>
+      {/* Proponents Section */}
+      <S.TeamSection $padding="2rem 5rem 0">
+        <motion.h2>Meet the Team</motion.h2>
+        <motion.h3
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          Proponents
+        </motion.h3>
+
+        <motion.div
+          className="team-container"
+          variants={slideUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {proponents.map((member) => (
+            <TeamCard
+              key={member.name}
+              member={{
+                ...member,
+                image: member.image?.url || "",
+              }}
+            />
+          ))}
+        </motion.div>
+      </S.TeamSection>
+
+      {/* Web Developers Section */}
+      {webDevelopers.length > 0 && (
+        <S.TeamSection $padding="1rem 5rem 2rem">
+          <motion.h3
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            Web Developers
+          </motion.h3>
+
+          <motion.div
+            className="team-container"
+            variants={slideUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {webDevelopers.map((member) => (
+              <TeamCard
+                key={member.name}
+                member={{
+                  ...member,
+                  image: member.image?.url || "",
+                }}
+              />
+            ))}
+          </motion.div>
+        </S.TeamSection>
+      )}
+    </>
   );
 };
 
