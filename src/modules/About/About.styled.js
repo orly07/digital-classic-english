@@ -81,7 +81,8 @@ export const TeamSection = styled.section`
     font-size: ${typography.fontSize["3xl"]};
     font-weight: ${typography.fontWeight.bold};
     color: ${color.primary};
-    margin: 0;
+    margin-top: ${({ $marginTop }) => $marginTop || "0"};
+    margin-bottom: ${({ $marginBottom }) => $marginBottom || "0"};
   }
 
   h2 {
@@ -100,7 +101,7 @@ export const TeamSection = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     gap: 2.5rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;

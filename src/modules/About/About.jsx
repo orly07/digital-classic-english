@@ -1,6 +1,6 @@
 // src/modules/About/About.jsx
 import React, { memo } from "react";
-import { motion } from "framer-motion";
+import { motion as MOTION } from "framer-motion";
 import * as S from "./About.styled";
 import MissionVisionCard from "../../components/Cards/MissionVisionCard";
 import TeamCard from "../../components/Cards/TeamCard";
@@ -14,16 +14,16 @@ import { useAbout } from "../../utils/hooks/useAbout";
 
 const AboutIntro = () => (
   <S.AboutSection id="about">
-    <motion.h1
+    <MOTION.h1
       variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
       About Us
-    </motion.h1>
+    </MOTION.h1>
 
-    <motion.p
+    <MOTION.p
       variants={fadeIn}
       initial="hidden"
       whileInView="visible"
@@ -31,18 +31,18 @@ const AboutIntro = () => (
     >
       Making literature more engaging through Classic English digital
       storytelling.
-    </motion.p>
+    </MOTION.p>
 
-    <motion.h2
+    <MOTION.h2
       variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
       Who We Are
-    </motion.h2>
+    </MOTION.h2>
 
-    <motion.p
+    <MOTION.p
       variants={fadeIn}
       initial="hidden"
       whileInView="visible"
@@ -52,7 +52,7 @@ const AboutIntro = () => (
       and educators experience literature. By blending traditional storytelling
       with digital tools, we make stories more interactive, relatable, and
       impactful for today's generation.
-    </motion.p>
+    </MOTION.p>
   </S.AboutSection>
 );
 
@@ -82,7 +82,7 @@ const MissionVisionSection = () => {
   ];
 
   return (
-    <motion.section
+    <MOTION.section
       variants={slideUp}
       initial="hidden"
       whileInView="visible"
@@ -98,7 +98,7 @@ const MissionVisionSection = () => {
           />
         ))}
       </S.MissionVisionValues>
-    </motion.section>
+    </MOTION.section>
   );
 };
 
@@ -116,17 +116,17 @@ const TeamSection = () => {
     <>
       {/* Proponents Section */}
       <S.TeamSection $padding="2rem 5rem 0">
-        <motion.h2>Meet the Team</motion.h2>
-        <motion.h3
+        <MOTION.h2>Meet the Team</MOTION.h2>
+        <MOTION.h3
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           Proponents
-        </motion.h3>
+        </MOTION.h3>
 
-        <motion.div
+        <MOTION.div
           className="team-container"
           variants={slideUp}
           initial="hidden"
@@ -142,22 +142,22 @@ const TeamSection = () => {
               }}
             />
           ))}
-        </motion.div>
+        </MOTION.div>
       </S.TeamSection>
 
       {/* Web Developers Section */}
       {webDevelopers.length > 0 && (
-        <S.TeamSection $padding="1rem 5rem 2rem">
-          <motion.h3
+        <S.TeamSection $padding="2rem 5rem">
+          <MOTION.h3
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             Web Developers
-          </motion.h3>
+          </MOTION.h3>
 
-          <motion.div
+          <MOTION.div
             className="team-container"
             variants={slideUp}
             initial="hidden"
@@ -173,7 +173,7 @@ const TeamSection = () => {
                 }}
               />
             ))}
-          </motion.div>
+          </MOTION.div>
         </S.TeamSection>
       )}
     </>
@@ -189,25 +189,25 @@ const ContactSection = () => {
 
   return (
     <S.ContactSection>
-      <motion.h2
+      <MOTION.h2
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
         Contact Us
-      </motion.h2>
+      </MOTION.h2>
 
-      <motion.p
+      <MOTION.p
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
         We'd love to hear from you! Reach out with questions or ideas.
-      </motion.p>
+      </MOTION.p>
 
-      <motion.div
+      <MOTION.div
         className="contact-info"
         variants={slideUp}
         initial="hidden"
@@ -223,9 +223,9 @@ const ContactSection = () => {
         <p>
           <strong>Address:</strong> {contact.address || "N/A"}
         </p>
-      </motion.div>
+      </MOTION.div>
 
-      <motion.div
+      <MOTION.div
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -240,7 +240,7 @@ const ContactSection = () => {
         >
           Send us an Email
         </Button>
-      </motion.div>
+      </MOTION.div>
     </S.ContactSection>
   );
 };
