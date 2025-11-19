@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion as Motion, AnimatePresence } from "framer-motion";
-import { LoadingFallback } from "../../components/Loading/LoadingFallback";
-
+import LoadingFallback from "../../components/Loading/LoadingFallback";
 import { useSonnet } from "../../utils/hooks/useSonnet";
 import { useSpeechSynthesis } from "../../utils/helpers/useSpeechSynthesis";
 import PlaybackButtonGroup from "./PlaybackButtonGroup";

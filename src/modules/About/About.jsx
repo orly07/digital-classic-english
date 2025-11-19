@@ -92,7 +92,7 @@ const MissionVisionSection = () => {
             key={index}
             title={item.title}
             content={item.content}
-            values={item.values} // only coreValues will have values array
+            values={item.values}
           />
         ))}
       </S.MissionVisionValues>

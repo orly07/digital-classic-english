@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import * as S from "./AuthorsPage.styled";
 import AuthorCard from "../../components/Cards/AuthorCard";
-import { LoadingFallback } from "../../components/Loading/LoadingFallback";
+import LoadingFallback from "../../components/Loading/LoadingFallback";
 import { fadeIn } from "../../utils/helpers/motionVariants";
 import { useAuthor } from "../../utils/hooks/useAuthor";
 
