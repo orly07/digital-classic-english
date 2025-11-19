@@ -101,7 +101,7 @@ const Navbar = () => {
         $isMobileMenuOpen={isMobileMenuOpen}
       >
         <Link to="/" className="logo" onClick={closeMobileMenu}>
-          <FaBook /> CLASSIC ENGLISH
+          <FaBook /> CLASSIC TALES HUB
         </Link>
 
         {/* Desktop Navigation */}
@@ -161,7 +161,7 @@ const Navbar = () => {
       <S.MobileMenu $isOpen={isMobileMenuOpen} aria-hidden={!isMobileMenuOpen}>
         <div className="mobile-menu-header">
           <Link to="/" className="logo" onClick={closeMobileMenu}>
-            CLASSIC ENGLISH
+            CLASSIC TALES HUB
           </Link>
           <S.MobileMenuButton
             onClick={toggleMobileMenu}
