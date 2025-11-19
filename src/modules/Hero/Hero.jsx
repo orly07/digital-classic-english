@@ -14,9 +14,7 @@ const Hero = memo(() => {
         animate="visible"
         variants={fadeInUp}
       >
-        <motion.h1 variants={fadeInUp}>
-          Bringing Literature to Life through Digital Storytelling
-        </motion.h1>
+        <motion.h1 variants={fadeInUp}>Bringing Literature to Life</motion.h1>
 
         <motion.h2 variants={fadeIn}>
           Explore stories with narration, visuals, and interactive content that
