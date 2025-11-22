@@ -42,7 +42,7 @@ const Hero = memo(() => {
             variant="secondary"
             size="large"
           >
-            Explore Sonnets
+            Explore Other Literary Works
           </Button>
         </motion.div>
       </S.HeroContent>
