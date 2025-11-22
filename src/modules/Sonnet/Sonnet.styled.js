@@ -141,11 +141,8 @@ export const ScrollContent = styled.div`
   padding: 1rem 0;
 
   &::-webkit-scrollbar {
-    height: 8px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: ${color.primary};
-    border-radius: 6px;
+    height: 0;
+    width: 0;
   }
 
   ${breakpoint.mobile} {
