@@ -41,6 +41,10 @@ export const CardContent = styled.div`
     font-size: ${typography.fontSize.base};
     color: ${color.gray[700]};
     line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   p {
@@ -48,7 +52,7 @@ export const CardContent = styled.div`
     font-size: ${typography.fontSize.sm};
     line-height: 1.5;
     margin-bottom: 1rem;
-    height: 45px;
+    height: 40px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
